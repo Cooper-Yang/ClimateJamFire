@@ -4,6 +4,7 @@ public class Tile : MonoBehaviour
 {
     public int gridX;
     public int gridZ;
+    public float cellSize;
     public bool isWalkable = true;
     public bool hasTower = false;
 
@@ -13,7 +14,7 @@ public class Tile : MonoBehaviour
         {
             return;
         }
-        Instantiate(towerPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+        //Instantiate(towerPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
         hasTower = true;
     }
 
