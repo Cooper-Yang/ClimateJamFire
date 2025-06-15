@@ -1,0 +1,25 @@
+using UnityEngine;
+
+public class Tile : MonoBehaviour
+{
+    public int gridX;
+    public int gridZ;
+    public bool isWalkable = true;
+    public bool hasTower = false;
+
+    public void PlaceTower(GameObject towerPrefab)
+    {
+        if (hasTower)
+        {
+            return;
+        }
+        Instantiate(towerPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+        hasTower = true;
+    }
+
+    private void OnMouseDown()
+    {
+        Debug.Log($"Tile clicked: ({gridX}, {gridZ})");
+        // You can call PlaceTower() here for testing
+    }
+}
