@@ -18,20 +18,20 @@ MonoBehaviour:
   tileDatabase: {fileID: 11400000, guid: ed0b8039f75d76e42a4c5db8cdc2b7e2, type: 2}
   levelLayout: 'MMMMMMMMMM
 
-    ~~MMMMMMMM
+    MMMMMMMMMM
 
-    T~MMM~~~~~
+    MMMMM~~~~~
 
     T~MMMT~TT~
 
-    .~~~~~~~~~
+    .~MMM~~~T~
 
-    ..MMM.~TTT
+    ..MMM~~TTT
 
-    ....T.~...
+    ....T~~T~.
 
-    .TTTTTTT..
+    .TTTTTTT~.
 
-    .TTTTTTT..
+    ..~.~~~.~.
 
     ..........'
