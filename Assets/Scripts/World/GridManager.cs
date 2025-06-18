@@ -76,7 +76,10 @@ public class GridManager : MonoBehaviour
             z * (cellSize + cellGapZ));        GameObject tileGO = Instantiate(tileData.prefab, pos, 
             Quaternion.identity, transform); 
         tileGO.name = $"{tileData.tileName} ({x},{z})";
-        tileGO.transform.localScale = new Vector3(cellSize, 1f, cellSize);        Tile tile = tileGO.GetComponent<Tile>();
+        tileGO.transform.localScale = new Vector3(cellSize, 1f, cellSize); 
+        Tile tile = tileGO.GetComponent<Tile>();
+
+
         if (tile != null)
         {
             tile.gridX = x;

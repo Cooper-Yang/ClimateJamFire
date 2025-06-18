@@ -66,6 +66,7 @@ public class TileDatabase : ScriptableObject
         {
             tiles.Remove(tile);
             RefreshDictionary();
-        }    }
+        }   
+    }
     
 }
