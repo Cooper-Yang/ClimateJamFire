@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 426351352897203939}
   - component: {fileID: 2134527305999734123}
   - component: {fileID: 6729750462100638682}
+  - component: {fileID: 5724605463541135584}
   m_Layer: 5
   m_Name: Ability Button
   m_TagString: Untagged
@@ -122,6 +123,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5724605463541135584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636120016537876155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f7d7415f48551418607e4e2270aa1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AP: {fileID: 0}
+  abilityButton: {fileID: 6729750462100638682}
+  cooldownImage: {fileID: 5786556365770922001}
+  abilityCost: 3
 --- !u!1 &2367571117161628402
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,12 +204,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 6721eb30b1d4ae649818cd0f15b3b9ff, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 0.251
+  m_FillAmount: 0
   m_FillClockwise: 0
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
