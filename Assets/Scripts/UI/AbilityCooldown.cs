@@ -35,7 +35,7 @@ public class AbilityCooldown : MonoBehaviour
     {
         if(AP.currentActionPoint/abilityCost < 1)
         {
-            cooldownImage.fillAmount = AP.currentActionPoint / abilityCost; 
+            cooldownImage.fillAmount = AP.actionPointSlider.value / abilityCost; 
         }
     }
 

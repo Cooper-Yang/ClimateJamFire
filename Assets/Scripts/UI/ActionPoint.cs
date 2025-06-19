@@ -15,7 +15,7 @@ public class ActionPoint : MonoBehaviour
         }
     }
     [SerializeField] private float actionPointRegenTime = 6.0f;
-    [SerializeField] private Slider actionPointSlider;
+    [SerializeField] public Slider actionPointSlider;
 
     private bool regenActive = true;
     private void Start()
