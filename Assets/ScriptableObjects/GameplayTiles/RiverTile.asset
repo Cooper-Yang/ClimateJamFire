@@ -9,11 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5197532374ba3e042b1486f78d18a39c, type: 3}
-  m_Name: DefaultTile
+  m_Script: {fileID: 11500000, guid: 5bc4f40d5f55fdc4492e8dd27e77ffc8, type: 3}
+  m_Name: RiverTile
   m_EditorClassIdentifier: 
-  character: 46
-  tileType: 3
-  prefab: {fileID: 4292240228651150138, guid: bac202e1bbed3d940b0aba847dd0339e, type: 3}
-  editorColor: {r: 0.5471698, g: 0.24345283, b: 0, a: 1}
-  description: 
+  tileType: 6
+  canBurn: 0
+  burnDuration: 5
+  isWalkable: 1
+  movementSpeedMultiplier: 1
+  canBeCutDown: 0
+  isSpawnPoint: 0
+  isFireSource: 0
+  blocksMovementWhenBurning: 1

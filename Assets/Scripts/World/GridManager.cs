@@ -14,7 +14,10 @@ public class GridManager : MonoBehaviour
 
     [Header("Level System")]
     public LevelData currentLevel;
-    
+
+    [Header("Gameplay Data System")]
+    public GameplayTileDatabase gameplayDatabase;
+
     public void ClearGrid()
     {
 #if UNITY_EDITOR
@@ -73,21 +76,23 @@ public class GridManager : MonoBehaviour
         Vector3 pos = new Vector3(
             x * (cellSize + cellGapX),
             0,
-            z * (cellSize + cellGapZ));        GameObject tileGO = Instantiate(tileData.prefab, pos, 
-            Quaternion.identity, transform); 
+            z * (cellSize + cellGapZ));        
+        GameObject tileGO = Instantiate(tileData.prefab, pos, 
+        Quaternion.identity, transform); 
         tileGO.name = $"{tileData.tileName} ({x},{z})";
-        tileGO.transform.localScale = new Vector3(cellSize, 1f, cellSize); 
+        tileGO.transform.localScale = new Vector3(cellSize, 1f, cellSize);
+
         Tile tile = tileGO.GetComponent<Tile>();
-
-
         if (tile != null)
         {
             tile.gridX = x;
             tile.gridZ = z;
             tile.cellSize = cellSize;
-            
+
+            // NEW: Assign gameplay definition based on tile type
+            tile.definition = gameplayDatabase.GetGameplayDefinition(tileData);
         }
-        
+
         tiles[x, z] = tile;
     }
     
