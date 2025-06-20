@@ -25,3 +25,5 @@ MonoBehaviour:
     gameplayDefinition: {fileID: 11400000, guid: 6bff515988852d24cad65dad2c12172b, type: 2}
   - tileType: 5
     gameplayDefinition: {fileID: 11400000, guid: 537de13baa95cbd44a4db180a7c5b1b5, type: 2}
+  - tileType: 6
+    gameplayDefinition: {fileID: 11400000, guid: 614305254856f46478142134dff80089, type: 2}
