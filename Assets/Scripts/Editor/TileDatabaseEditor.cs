@@ -22,7 +22,7 @@ public class TileDatabaseEditor : Editor
             {
                 if (tile != null)
                 {
-                    EditorGUILayout.LabelField($"'{tile.character}' → {tile.tileName}", EditorStyles.miniLabel);
+                    EditorGUILayout.LabelField($"'{tile.character}' → {tile.GetTileName()}", EditorStyles.miniLabel);
                 }
             }
         }

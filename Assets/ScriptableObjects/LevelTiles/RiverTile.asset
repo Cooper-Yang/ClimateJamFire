@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: RiverTile
   m_EditorClassIdentifier: 
   character: 126
-  tileName: River
+  tileType: 6
   prefab: {fileID: 4292240228651150138, guid: ff4638932ff2e9345b5a7c80a4417a0b, type: 3}
-  canRotate: 1
   editorColor: {r: 0, g: 0.6543069, b: 1, a: 1}
   description: 

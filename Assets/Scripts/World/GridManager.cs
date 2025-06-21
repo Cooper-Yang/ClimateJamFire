@@ -1,5 +1,8 @@
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+using UnityEditor.SceneManagement;
+#endif
 
 public class GridManager : MonoBehaviour
 {
@@ -14,23 +17,25 @@ public class GridManager : MonoBehaviour
 
     [Header("Level System")]
     public LevelData currentLevel;
-    
-    public void ClearGrid()
+
+    [Header("Gameplay Data System")]
+    public GameplayTileDatabase gameplayDatabase;    public void ClearGrid()
     {
 #if UNITY_EDITOR
         while (transform.childCount > 0)
         {
             DestroyImmediate(transform.GetChild(0).gameObject);
         }
+        // Mark the scene as dirty after clearing
+        EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+        EditorUtility.SetDirty(this);
 #else
     foreach (Transform child in transform)
     {
         Destroy(child.gameObject);
     }
 #endif
-    }
-
-    public void GenerateGrid()
+    }public void GenerateGrid()
     {
         if (currentLevel != null)
         {
@@ -40,6 +45,13 @@ public class GridManager : MonoBehaviour
         {
             GenerateDefaultGrid();
         }
+        
+#if UNITY_EDITOR
+        // Mark the scene as dirty so changes are saved
+        EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+        // Mark this GameObject as dirty for undo/redo support
+        EditorUtility.SetDirty(this);
+#endif
     }
     
     public void GenerateFromLevel(LevelData level)
@@ -66,29 +78,34 @@ public class GridManager : MonoBehaviour
                 }
             }
         }
-    }
-    
-    private void CreateTile(int x, int z, TileData tileData)
+    }      private void CreateTile(int x, int z, TileData tileData)
     {
-        Vector3 pos = new Vector3(
+        Vector3 localPos = new Vector3(
             x * (cellSize + cellGapX),
             0,
-            z * (cellSize + cellGapZ));        GameObject tileGO = Instantiate(tileData.prefab, pos, 
-            Quaternion.identity, transform); 
+            z * (cellSize + cellGapZ));        
+        GameObject tileGO = Instantiate(tileData.prefab, transform);
+        tileGO.transform.localPosition = localPos;
         tileGO.name = $"{tileData.tileName} ({x},{z})";
-        tileGO.transform.localScale = new Vector3(cellSize, 1f, cellSize); 
+        tileGO.transform.localScale = new Vector3(cellSize, 1f, cellSize);
+
         Tile tile = tileGO.GetComponent<Tile>();
-
-
         if (tile != null)
         {
             tile.gridX = x;
             tile.gridZ = z;
             tile.cellSize = cellSize;
-            
+
+            // NEW: Assign gameplay definition based on tile type
+            tile.definition = gameplayDatabase.GetGameplayDefinition(tileData);
         }
-        
+
         tiles[x, z] = tile;
+        
+#if UNITY_EDITOR
+        // Register the created tile for undo operations
+        Undo.RegisterCreatedObjectUndo(tileGO, "Create Tile");
+#endif
     }
     
     public Tile GetTileAt(int x, int z)
@@ -106,17 +123,21 @@ public class GridManager : MonoBehaviour
         tiles = new Tile[width, height];
 
         for (int x = 0; x < width; x++)
-        {
-            for (int z = 0; z < height; z++)
+        {            for (int z = 0; z < height; z++)
             {
-                Vector3 pos = new Vector3(
+                Vector3 localPos = new Vector3(
                     x * (cellSize + cellGapX),
                     0,
                     z * (cellSize + cellGapZ));
-                    
-                GameObject tileGO = Instantiate(tilePrefab, pos, Quaternion.identity, transform);
+                      GameObject tileGO = Instantiate(tilePrefab, transform);
+                tileGO.transform.localPosition = localPos;
                 tileGO.name = $"Tile ({x},{z})";
                 tileGO.transform.localScale = new Vector3(cellSize, 1f, cellSize);
+
+#if UNITY_EDITOR
+                // Register the created tile for undo operations
+                Undo.RegisterCreatedObjectUndo(tileGO, "Create Default Tile");
+#endif
 
                 Tile tile = tileGO.GetComponent<Tile>();
                 if (tile != null)

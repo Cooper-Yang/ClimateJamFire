@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: TreeTile
   m_EditorClassIdentifier: 
   character: 84
-  tileName: Tree
+  tileType: 1
   prefab: {fileID: 4292240228651150138, guid: bc192b1ce26bf9541a6c3e23d0ba6d85, type: 3}
-  canRotate: 1
   editorColor: {r: 0, g: 0.8679245, b: 0.038031954, a: 1}
   description: 

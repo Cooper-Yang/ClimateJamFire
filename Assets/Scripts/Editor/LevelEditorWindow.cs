@@ -112,7 +112,7 @@ public class LevelEditorWindow : EditorWindow
                 var tile = allTiles[i];
                 if (tile != null)
                 {
-                    tileLabels[i] = $"'{tile.character}' - {tile.tileName}";
+                    tileLabels[i] = $"'{tile.character}' - {tile.GetTileName()}";
                 }
                 else
                 {
@@ -130,7 +130,7 @@ public class LevelEditorWindow : EditorWindow
         if (selectedTileIndex >= 0 && selectedTileIndex < allTiles.Length && allTiles[selectedTileIndex] != null)
         {
             var selectedTile = allTiles[selectedTileIndex];
-            EditorGUILayout.LabelField($"Selected: '{selectedTile.character}' - {selectedTile.tileName}");        }
+            EditorGUILayout.LabelField($"Selected: '{selectedTile.character}' - {selectedTile.GetTileName()}");        }
     }
 
     void DrawGridEditor()

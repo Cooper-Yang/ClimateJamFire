@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc4f40d5f55fdc4492e8dd27e77ffc8, type: 3}
+  m_Name: FireStationTile
+  m_EditorClassIdentifier: 
+  tileType: 3
+  canBurn: 0
+  burnDuration: 5
+  burnedState:
+    character: 0
+    prefab: {fileID: 0}
+    tileType: 0
+    tileName: 
+  isWalkable: 1
+  movementSpeedMultiplier: 1
+  canBeCutDown: 0
+  cutDownState:
+    character: 0
+    prefab: {fileID: 0}
+    tileType: 0
+    tileName: 
+  isSpawnPoint: 0
+  isFireSource: 0
+  blocksMovementWhenBurning: 1

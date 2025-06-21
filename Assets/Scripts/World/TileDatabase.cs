@@ -33,16 +33,19 @@ public class TileDatabase : ScriptableObject
         
         tileDict.TryGetValue(character, out TileDefinition tile);
         return tile;
-    }    public TileData GetTileData(char character)
+    }    
+    
+    public TileData GetTileData(char character)
     {
         var definition = GetTileDefinition(character);
         if (definition == null) return null;
-        
+
         return new TileData
         {
             character = character,
             prefab = definition.prefab,
-            tileName = definition.tileName
+            tileType = definition.tileType,
+            tileName = definition.GetTileName(),
         };
     }
     
