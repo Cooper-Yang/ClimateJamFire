@@ -16099,6 +16099,7 @@ MonoBehaviour:
   cellGapX: 0.05
   cellGapZ: 0.05
   currentLevel: {fileID: 11400000, guid: 2596af67e154a42499fcdb5b89d86357, type: 2}
+  plainTilePrefab: {fileID: 4292240228651150138, guid: bac202e1bbed3d940b0aba847dd0339e, type: 3}
 --- !u!4 &1405747466
 Transform:
   m_ObjectHideFlags: 0
@@ -21171,7 +21172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c47ed7927a72c43a9f78c74679687e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentActionPoint: 1
+  currentActionPoint: 10
   actionPointRegenTime: 6
   actionPointSlider: {fileID: 108897681}
   firefighterPrefab: {fileID: 2628466661712276602, guid: aef696a1284b13246a2de7bcc9c9074a, type: 3}
