@@ -1,5 +1,7 @@
 using UnityEngine;
 
+public enum TileType { Plain, Tree, FireStation, Mountain, House, Smoke }
+
 public class Tile : MonoBehaviour
 {
     public int gridX;
@@ -7,6 +9,28 @@ public class Tile : MonoBehaviour
     public float cellSize;
     public bool isWalkable = true;
     public bool hasTower = false;
+
+    public TileType type;
+    private Material originalMaterial;
+    public Material highlightMaterial;
+    private Renderer tileRenderer;
+
+    
+
+    private void Start()
+    {
+        tileRenderer = GetComponent<Renderer>();
+        originalMaterial = tileRenderer.material;
+    }
+
+    public void Highlight(bool active)
+    {
+        if (tileRenderer == null)
+        {
+            tileRenderer = GetComponent<Renderer>();
+        }
+        tileRenderer.material = active ? highlightMaterial : originalMaterial;
+    }
 
     public void PlaceTower(GameObject towerPrefab)
     {
@@ -22,5 +46,11 @@ public class Tile : MonoBehaviour
     {
         Debug.Log($"Tile clicked: ({gridX}, {gridZ})");
         // You can call PlaceTower() here for testing
+        
+        Debug.Log($"Tile clicked: ({gridX}, {gridZ}) — Type: {type}");
+        if (TileClickManager.Instance != null)
+        {
+            TileClickManager.Instance.OnTileClicked(this);
+        }
     }
 }

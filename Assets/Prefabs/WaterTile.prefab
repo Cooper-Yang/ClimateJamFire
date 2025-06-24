@@ -127,6 +127,8 @@ MonoBehaviour:
   cellSize: 0
   isWalkable: 1
   hasTower: 0
+  type: 0
+  highlightMaterial: {fileID: -5283888208800200948, guid: dfa222cd50d6b3841b2486f23980cf85, type: 3}
 --- !u!1001 &3413922902287823956
 PrefabInstance:
   m_ObjectHideFlags: 0
