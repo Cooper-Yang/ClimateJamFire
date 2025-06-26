@@ -1,15 +1,7 @@
 using UnityEngine;
 
-public enum TileType
-{
-    Mountain,
-    Tree,
-    Smoke,
-    Plains,
-    House,
-    FireStation,
-    River,
-}
+public enum TileType { Plain, Tree, FireStation, Mountain, House, Smoke }
+
 
 public class Tile : MonoBehaviour
 {
@@ -18,6 +10,27 @@ public class Tile : MonoBehaviour
     public float cellSize;
     public GameplayTileDefinition definition;
 
+    public TileType type;
+    private Material originalMaterial;
+    public Material highlightMaterial;
+    private Renderer tileRenderer;
+
+    
+
+    private void Start()
+    {
+        tileRenderer = GetComponent<Renderer>();
+        originalMaterial = tileRenderer.material;
+    }
+
+    public void Highlight(bool active)
+    {
+        if (tileRenderer == null)
+        {
+            tileRenderer = GetComponent<Renderer>();
+        }
+        tileRenderer.material = active ? highlightMaterial : originalMaterial;
+    }
 //     public void PlaceTower(GameObject towerPrefab)
 //     {
 //         if (hasTower)
@@ -28,9 +41,16 @@ public class Tile : MonoBehaviour
 //         hasTower = true;
 //     }
 
+
     private void OnMouseDown()
     {
         Debug.Log($"Tile clicked: ({gridX}, {gridZ})");
         // You can call PlaceTower() here for testing
+        
+        Debug.Log($"Tile clicked: ({gridX}, {gridZ}) � Type: {type}");
+        if (TileClickManager.Instance != null)
+        {
+            TileClickManager.Instance.OnTileClicked(this);
+        }
     }
 }
