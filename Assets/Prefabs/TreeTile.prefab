@@ -126,10 +126,10 @@ MonoBehaviour:
   gridX: 0
   gridZ: 0
   cellSize: 0
-  isWalkable: 1
-  hasTower: 0
-  type: 0
+  definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  type: 1
   highlightMaterial: {fileID: -5283888208800200948, guid: 3cb0f2ca11eafae45b0ac6d8f8678a07, type: 3}
+  isWalkable: 1
 --- !u!1001 &1602609815341586743
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class Firefighter : MonoBehaviour
     public float moveTimePerTile = 1.5f;
     private Tile currentTile;
     private GridManager gmm;
+    public float cutTime = 2.5f; // Time to cut a tree
 
     /*private void Start()
     {
@@ -77,7 +78,7 @@ public class Firefighter : MonoBehaviour
             yield return new WaitForSeconds(moveTimePerTile);
         }
 
-        yield return new WaitForSeconds(4f); 
+        yield return new WaitForSeconds(cutTime); 
 
         //target.type = TileType.Plain;
         //target.Highlight(false);

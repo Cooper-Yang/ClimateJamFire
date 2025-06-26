@@ -126,7 +126,10 @@ MonoBehaviour:
   gridX: 0
   gridZ: 0
   cellSize: 0
-  definition: {fileID: 0}
+  definition: {fileID: 11400000, guid: 6bff515988852d24cad65dad2c12172b, type: 2}
+  type: 4
+  highlightMaterial: {fileID: 0}
+  isWalkable: 0
 --- !u!1001 &1771522843332450076
 PrefabInstance:
   m_ObjectHideFlags: 0
