@@ -15,7 +15,7 @@ MonoBehaviour:
   tileType: 6
   canBurn: 0
   burnDuration: 5
-  isWalkable: 1
+  isWalkable: 0
   movementSpeedMultiplier: 1
   canBeCutDown: 0
   isSpawnPoint: 0

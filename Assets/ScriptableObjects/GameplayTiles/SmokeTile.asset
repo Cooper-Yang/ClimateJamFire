@@ -15,19 +15,9 @@ MonoBehaviour:
   tileType: 2
   canBurn: 0
   burnDuration: 5
-  burnedState:
-    character: 0
-    prefab: {fileID: 0}
-    tileType: 0
-    tileName: 
-  isWalkable: 1
+  isWalkable: 0
   movementSpeedMultiplier: 1
   canBeCutDown: 0
-  cutDownState:
-    character: 0
-    prefab: {fileID: 0}
-    tileType: 0
-    tileName: 
   isSpawnPoint: 0
   isFireSource: 0
   blocksMovementWhenBurning: 1

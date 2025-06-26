@@ -128,7 +128,7 @@ MonoBehaviour:
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 3cb0f2ca11eafae45b0ac6d8f8678a07, type: 3}
-  isWalkable: 1
+  isWalkable: 0
 --- !u!1001 &8893287440103276468
 PrefabInstance:
   m_ObjectHideFlags: 0

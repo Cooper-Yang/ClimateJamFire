@@ -1,4 +1,5 @@
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
 
 [CustomEditor(typeof(GridManager))]
@@ -23,3 +24,4 @@ public class GridManagerEditor : Editor
         }
     }
 }
+#endif
