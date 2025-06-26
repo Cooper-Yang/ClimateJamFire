@@ -3,9 +3,9 @@ using UnityEngine.UI;
 public class ActionPoint : MonoBehaviour
 {
     //AP Max should always be 10
-    [SerializeField] public int currentActionPoint = 10;
-    [SerializeField] private float actionPointRegenTime = 6.0f;
-    [SerializeField] private Slider actionPointSlider;
+    //[SerializeField] public int currentActionPoint = 10;
+    [SerializeField] public float actionPointRegenTime = 6.0f;
+    [SerializeField] public Slider actionPointSlider;
     [SerializeField] public GameObject firefighterPrefab;
     [SerializeField] public Transform fireStationTile;
 
@@ -14,7 +14,7 @@ public class ActionPoint : MonoBehaviour
     private float timer = 0.0f;
     public int currentPhase = 1;
 
-    /*
+    
     public int currentActionPoint
     {
         get
@@ -25,7 +25,7 @@ public class ActionPoint : MonoBehaviour
         {
 
         }
-    } */
+    }
 
     private void Start()
     {

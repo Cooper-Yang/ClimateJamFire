@@ -23,14 +23,12 @@ public class TileDefinition : ScriptableObject
                 return "Tree";
             case TileType.Smoke:
                 return "Smoke";
-            case TileType.Plains:
+            case TileType.Plain:
                 return "Plains";
             case TileType.House:
                 return "House";
             case TileType.FireStation:
                 return "Fire Station";
-            case TileType.River:
-                return "River";
             default:
                 return "Default";
         }

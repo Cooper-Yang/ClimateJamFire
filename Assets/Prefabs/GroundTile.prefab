@@ -34,7 +34,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2742920011957782125}
-  - {fileID: 1239758382652973802}
   - {fileID: 7278335293074917928}
   - {fileID: 3303110812270973236}
   m_Father: {fileID: 0}
@@ -128,10 +127,10 @@ MonoBehaviour:
   gridX: 0
   gridZ: 0
   cellSize: 0
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 3cb0f2ca11eafae45b0ac6d8f8678a07, type: 3}
+  isWalkable: 1
 --- !u!1001 &2421377812527096198
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -258,6 +257,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9bada9dbc6517284cad1430080a16dc1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: -9117483709511198939, guid: 9bada9dbc6517284cad1430080a16dc1, type: 3}
     - target: {fileID: 919132149155446097, guid: 9bada9dbc6517284cad1430080a16dc1, type: 3}
       propertyPath: m_Name
       value: crops_leafsStageB
