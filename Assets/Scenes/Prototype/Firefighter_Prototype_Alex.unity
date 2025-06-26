@@ -170,10 +170,10 @@ MonoBehaviour:
   gridX: 2
   gridZ: 1
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &2854469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -299,10 +299,10 @@ MonoBehaviour:
   gridX: 6
   gridZ: 5
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &6752356
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -515,10 +515,10 @@ MonoBehaviour:
   gridX: 1
   gridZ: 2
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &15855594
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -732,10 +732,10 @@ MonoBehaviour:
   gridX: 2
   gridZ: 5
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 1
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &43792177
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -948,10 +948,10 @@ MonoBehaviour:
   gridX: 8
   gridZ: 6
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &51928613
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1077,10 +1077,10 @@ MonoBehaviour:
   gridX: 7
   gridZ: 1
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &51931984
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1206,10 +1206,10 @@ MonoBehaviour:
   gridX: 3
   gridZ: 4
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &55181006
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1871,10 +1871,10 @@ MonoBehaviour:
   gridX: 7
   gridZ: 0
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &144332379
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2000,10 +2000,10 @@ MonoBehaviour:
   gridX: 8
   gridZ: 1
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &162647412
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2129,10 +2129,10 @@ MonoBehaviour:
   gridX: 6
   gridZ: 2
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &162741192
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2258,10 +2258,10 @@ MonoBehaviour:
   gridX: 9
   gridZ: 7
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &170678271
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2387,10 +2387,10 @@ MonoBehaviour:
   gridX: 6
   gridZ: 1
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &188649763
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2967,10 +2967,10 @@ MonoBehaviour:
   gridX: 1
   gridZ: 4
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 1
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &210198103
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3096,10 +3096,10 @@ MonoBehaviour:
   gridX: 4
   gridZ: 6
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &211111907
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3399,10 +3399,10 @@ MonoBehaviour:
   gridX: 2
   gridZ: 7
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 1
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &230362157
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3528,10 +3528,10 @@ MonoBehaviour:
   gridX: 9
   gridZ: 4
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &239036961
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3657,10 +3657,10 @@ MonoBehaviour:
   gridX: 9
   gridZ: 8
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &249948171
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3959,10 +3959,10 @@ MonoBehaviour:
   gridX: 5
   gridZ: 8
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &293232808
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4299,10 +4299,10 @@ MonoBehaviour:
   gridX: 4
   gridZ: 9
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &305648471
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4515,10 +4515,10 @@ MonoBehaviour:
   gridX: 0
   gridZ: 2
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &334249614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4817,10 +4817,10 @@ MonoBehaviour:
   gridX: 3
   gridZ: 3
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &403996289
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5033,10 +5033,10 @@ MonoBehaviour:
   gridX: 7
   gridZ: 2
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &421040245
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5162,10 +5162,10 @@ MonoBehaviour:
   gridX: 5
   gridZ: 2
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &426276089
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5726,10 +5726,10 @@ MonoBehaviour:
   gridX: 5
   gridZ: 7
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 1
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &459432057
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5855,10 +5855,10 @@ MonoBehaviour:
   gridX: 7
   gridZ: 5
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &475261911
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5984,10 +5984,10 @@ MonoBehaviour:
   gridX: 4
   gridZ: 2
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &479687577
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6113,10 +6113,10 @@ MonoBehaviour:
   gridX: 3
   gridZ: 9
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &488053985
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6243,10 +6243,10 @@ MonoBehaviour:
   gridX: 2
   gridZ: 6
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 1
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &499918143
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6544,10 +6544,10 @@ MonoBehaviour:
   gridX: 7
   gridZ: 8
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &542707718
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6759,10 +6759,10 @@ MonoBehaviour:
   gridX: 3
   gridZ: 8
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &562747924
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7240,10 +7240,10 @@ MonoBehaviour:
   gridX: 0
   gridZ: 7
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &612574700
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7369,10 +7369,10 @@ MonoBehaviour:
   gridX: 8
   gridZ: 8
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &623817704
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7671,10 +7671,10 @@ MonoBehaviour:
   gridX: 8
   gridZ: 0
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &655667849
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7887,10 +7887,10 @@ MonoBehaviour:
   gridX: 7
   gridZ: 4
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &685965640
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8017,10 +8017,10 @@ MonoBehaviour:
   gridX: 3
   gridZ: 7
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 1
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &690362032
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8146,10 +8146,10 @@ MonoBehaviour:
   gridX: 3
   gridZ: 0
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &694137339
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8361,10 +8361,10 @@ MonoBehaviour:
   gridX: 9
   gridZ: 2
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &711239180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8490,10 +8490,10 @@ MonoBehaviour:
   gridX: 9
   gridZ: 9
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &713170435
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8964,10 +8964,10 @@ MonoBehaviour:
   gridX: 1
   gridZ: 0
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &749295443
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9267,10 +9267,10 @@ MonoBehaviour:
   gridX: 9
   gridZ: 5
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &804937104
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9483,10 +9483,10 @@ MonoBehaviour:
   gridX: 5
   gridZ: 6
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 1
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &827004472
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9612,10 +9612,10 @@ MonoBehaviour:
   gridX: 4
   gridZ: 5
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &833303191
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10001,10 +10001,10 @@ MonoBehaviour:
   gridX: 5
   gridZ: 0
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &868741928
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10130,10 +10130,10 @@ MonoBehaviour:
   gridX: 3
   gridZ: 5
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &884781705
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10777,10 +10777,10 @@ MonoBehaviour:
   gridX: 1
   gridZ: 1
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &954141776
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11167,10 +11167,10 @@ MonoBehaviour:
   gridX: 3
   gridZ: 6
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1004114055
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11296,10 +11296,10 @@ MonoBehaviour:
   gridX: 5
   gridZ: 3
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1018227774
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11425,10 +11425,10 @@ MonoBehaviour:
   gridX: 3
   gridZ: 2
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1035330275
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11640,10 +11640,10 @@ MonoBehaviour:
   gridX: 9
   gridZ: 0
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1064697489
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11769,10 +11769,10 @@ MonoBehaviour:
   gridX: 6
   gridZ: 8
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1070583398
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11847,6 +11847,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1070583395}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1071365254 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8835552494460582545, guid: bbb0dfcb7da090948bdd3bc6506769ce, type: 3}
+  m_PrefabInstance: {fileID: 304794610}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c47ed7927a72c43a9f78c74679687e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1076823529
 GameObject:
   m_ObjectHideFlags: 0
@@ -11985,10 +11996,10 @@ MonoBehaviour:
   gridX: 9
   gridZ: 1
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1078357730
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12287,10 +12298,10 @@ MonoBehaviour:
   gridX: 1
   gridZ: 7
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1111144221
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12676,10 +12687,10 @@ MonoBehaviour:
   gridX: 8
   gridZ: 4
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1125310058
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12891,10 +12902,10 @@ MonoBehaviour:
   gridX: 1
   gridZ: 6
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1151235940
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13107,10 +13118,10 @@ MonoBehaviour:
   gridX: 0
   gridZ: 8
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1157165142
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13323,10 +13334,10 @@ MonoBehaviour:
   gridX: 2
   gridZ: 0
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1193251658
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13538,10 +13549,10 @@ MonoBehaviour:
   gridX: 8
   gridZ: 9
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1199837484
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13928,10 +13939,10 @@ MonoBehaviour:
   gridX: 8
   gridZ: 5
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1238434122
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14111,6 +14122,10 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 5724605463541135584, guid: 312f3a2d89d7d4e4ba8077a5edceceff, type: 3}
+      propertyPath: AP
+      value: 
+      objectReference: {fileID: 1071365254}
     - target: {fileID: 6729750462100638682, guid: 312f3a2d89d7d4e4ba8077a5edceceff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -14276,10 +14291,10 @@ MonoBehaviour:
   gridX: 4
   gridZ: 7
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 1
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1263604901
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14405,10 +14420,10 @@ MonoBehaviour:
   gridX: 0
   gridZ: 3
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1285458401
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14620,10 +14635,10 @@ MonoBehaviour:
   gridX: 4
   gridZ: 4
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1288219055
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14749,10 +14764,10 @@ MonoBehaviour:
   gridX: 5
   gridZ: 9
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1315030666
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15000,10 +15015,10 @@ MonoBehaviour:
   gridX: 1
   gridZ: 5
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 1
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1319757899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15468,10 +15483,10 @@ MonoBehaviour:
   gridX: 5
   gridZ: 5
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1353728144
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15597,10 +15612,10 @@ MonoBehaviour:
   gridX: 0
   gridZ: 1
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1365004088
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15726,10 +15741,10 @@ MonoBehaviour:
   gridX: 3
   gridZ: 1
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1380070166
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16100,6 +16115,7 @@ MonoBehaviour:
   cellGapZ: 0.05
   currentLevel: {fileID: 11400000, guid: 2596af67e154a42499fcdb5b89d86357, type: 2}
   plainTilePrefab: {fileID: 4292240228651150138, guid: bac202e1bbed3d940b0aba847dd0339e, type: 3}
+  gameplayDatabase: {fileID: 0}
 --- !u!4 &1405747466
 Transform:
   m_ObjectHideFlags: 0
@@ -16267,10 +16283,10 @@ MonoBehaviour:
   gridX: 8
   gridZ: 7
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 1
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1406184164
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16915,10 +16931,10 @@ MonoBehaviour:
   gridX: 4
   gridZ: 1
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1475639295
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17044,10 +17060,10 @@ MonoBehaviour:
   gridX: 2
   gridZ: 8
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1477229155
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17260,10 +17276,10 @@ MonoBehaviour:
   gridX: 8
   gridZ: 2
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1486468905
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17389,10 +17405,10 @@ MonoBehaviour:
   gridX: 7
   gridZ: 3
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1498385982
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17605,10 +17621,10 @@ MonoBehaviour:
   gridX: 6
   gridZ: 7
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 1
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1542362089
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17957,10 +17973,10 @@ MonoBehaviour:
   gridX: 7
   gridZ: 6
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1587726868
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18086,10 +18102,10 @@ MonoBehaviour:
   gridX: 0
   gridZ: 9
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 2
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1588202141
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18302,10 +18318,10 @@ MonoBehaviour:
   gridX: 6
   gridZ: 9
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1615426889
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18432,10 +18448,10 @@ MonoBehaviour:
   gridX: 0
   gridZ: 5
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 1
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1635010359
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18994,10 +19010,10 @@ MonoBehaviour:
   gridX: 2
   gridZ: 3
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 1
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1697887596
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19124,10 +19140,10 @@ MonoBehaviour:
   gridX: 9
   gridZ: 3
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 1
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1701441428
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19340,10 +19356,10 @@ MonoBehaviour:
   gridX: 7
   gridZ: 9
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1704594317
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19641,10 +19657,10 @@ MonoBehaviour:
   gridX: 5
   gridZ: 4
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1724472111
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19857,10 +19873,10 @@ MonoBehaviour:
   gridX: 2
   gridZ: 4
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1743113418
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20073,10 +20089,10 @@ MonoBehaviour:
   gridX: 8
   gridZ: 3
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1760243524
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20202,10 +20218,10 @@ MonoBehaviour:
   gridX: 6
   gridZ: 3
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1765307832
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20332,10 +20348,10 @@ MonoBehaviour:
   gridX: 7
   gridZ: 7
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 1
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1772748966
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20461,10 +20477,10 @@ MonoBehaviour:
   gridX: 4
   gridZ: 8
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1785874105
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20935,10 +20951,10 @@ MonoBehaviour:
   gridX: 2
   gridZ: 2
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1827038221
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21064,10 +21080,10 @@ MonoBehaviour:
   gridX: 1
   gridZ: 8
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1834190457
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21172,7 +21188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c47ed7927a72c43a9f78c74679687e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentActionPoint: 10
   actionPointRegenTime: 6
   actionPointSlider: {fileID: 108897681}
   firefighterPrefab: {fileID: 2628466661712276602, guid: aef696a1284b13246a2de7bcc9c9074a, type: 3}
@@ -21342,10 +21357,10 @@ MonoBehaviour:
   gridX: 9
   gridZ: 6
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1894474639
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21557,10 +21572,10 @@ MonoBehaviour:
   gridX: 2
   gridZ: 9
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1941176582
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21686,10 +21701,10 @@ MonoBehaviour:
   gridX: 6
   gridZ: 6
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1947233193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22161,10 +22176,10 @@ MonoBehaviour:
   gridX: 0
   gridZ: 6
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1992302668
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22290,10 +22305,10 @@ MonoBehaviour:
   gridX: 0
   gridZ: 4
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &1995274945
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22593,10 +22608,10 @@ MonoBehaviour:
   gridX: 1
   gridZ: 9
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 0
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &2027749515
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22722,10 +22737,10 @@ MonoBehaviour:
   gridX: 6
   gridZ: 0
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &2030310312
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22938,10 +22953,10 @@ MonoBehaviour:
   gridX: 5
   gridZ: 1
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &2038196110
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23068,10 +23083,10 @@ MonoBehaviour:
   gridX: 4
   gridZ: 3
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 1
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &2059745094
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23284,10 +23299,10 @@ MonoBehaviour:
   gridX: 4
   gridZ: 0
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &2064724739
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23500,10 +23515,10 @@ MonoBehaviour:
   gridX: 6
   gridZ: 4
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &2091237551
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23802,10 +23817,10 @@ MonoBehaviour:
   gridX: 0
   gridZ: 0
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 3
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &2121509591
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23932,10 +23947,10 @@ MonoBehaviour:
   gridX: 1
   gridZ: 3
   cellSize: 2.56
-  isWalkable: 1
-  hasTower: 0
+  definition: {fileID: 0}
   type: 1
   highlightMaterial: {fileID: -5283888208800200948, guid: 7e24530b168ff6943984e98b778346bb, type: 3}
+  isWalkable: 1
 --- !u!65 &2131239233
 BoxCollider:
   m_ObjectHideFlags: 0
