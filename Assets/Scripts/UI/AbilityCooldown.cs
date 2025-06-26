@@ -4,34 +4,44 @@ using TMPro;
 using System.Collections;
 public class AbilityCooldown : MonoBehaviour
 {
-    [SerializeField] private Button abilityButton; 
+    [SerializeField] private ActionPoint AP;
+    [SerializeField] private Button abilityButton;
     [SerializeField] private Image cooldownImage;
+    [SerializeField] private int abilityCost = 0;
     private bool onCooldown = false;
-    private float globalCooldown = 2.0f; 
+    private float globalCooldown = 2.0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        cooldownImage.fillAmount = 0.0f; 
+        cooldownImage.fillAmount = 0.0f;
     }
 
-    public void ActivateAbility(int APCost) 
+    public void ActivateAbility(int APCost)
     {
         onCooldown = true;
-        StartCoroutine(GlobalCooldown()); 
+        StartCoroutine(GlobalCooldown());
         //Convert later to a virtual function for different abilities(?) 
-    } 
+    }
 
     IEnumerator GlobalCooldown()
     {
         abilityButton.enabled = false;
-        abilityButton.image.color = Color.gray; 
+        abilityButton.image.color = Color.gray;
         yield return new WaitForSeconds(globalCooldown);
-        abilityButton.enabled = true; 
+        abilityButton.enabled = true;
     }
-    private void PutOnCooldown()
+    private void CooldownWheel()
     {
-        //This functions like clash royale, so 'cooldown' is fake. 
-        //Cooldown image's fill should be based on the AP cost of the ability & current AP
-    }    
+        if(AP.currentActionPoint/abilityCost < 1)
+        {
+            cooldownImage.fillAmount = AP.actionPointSlider.value / abilityCost; 
+        }
+    }
+
+    private void Update()
+    {
+        CooldownWheel(); 
+    }
+
 }

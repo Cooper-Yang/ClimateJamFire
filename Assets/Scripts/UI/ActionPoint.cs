@@ -14,11 +14,25 @@ public class ActionPoint : MonoBehaviour
     private float timer = 0.0f;
     public int currentPhase = 1;
 
+    /*
+    public int currentActionPoint
+    {
+        get
+        {
+            return Mathf.FloorToInt(actionPointSlider.value); 
+        }
+        set
+        {
+
+        }
+    } */
+
     private void Start()
     {
-        actionPointSlider.value = currentActionPoint; 
+        
     }
 
+    
     public void SpendActionPoint(int actionPointValue)
     {
         if(currentActionPoint >= 0.0f && currentActionPoint >= actionPointValue)
@@ -45,19 +59,18 @@ public class ActionPoint : MonoBehaviour
         regenActive = true;
     }
 
+    public void IncrementBar()
+    {
+        actionPointSlider.value += (1 / actionPointRegenTime) * Time.deltaTime;
+        currentActionPoint = Mathf.FloorToInt(actionPointSlider.value); 
+    }
     private void Update()
     {
         if(regenActive)
         {
-            timer += Time.deltaTime; 
-            if(timer >= actionPointRegenTime)
+            if(currentActionPoint < 10)
             {
-                if(currentActionPoint < 10)
-                {
-                    timer = timer - actionPointRegenTime;
-                    currentActionPoint++;
-                    actionPointSlider.value = currentActionPoint; 
-                }
+                IncrementBar();
             }
         }
     }
