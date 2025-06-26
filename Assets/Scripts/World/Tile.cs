@@ -14,7 +14,7 @@ public class Tile : MonoBehaviour
     private Material originalMaterial;
     public Material highlightMaterial;
     private Renderer tileRenderer;
-
+    public bool isWalkable;
     
 
     private void Start()
