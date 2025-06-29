@@ -49,10 +49,10 @@ public class Firefighter : MonoBehaviour
 
         foreach (Tile tile in FindObjectsOfType<Tile>())
         {
-            if (tile.type == TileType.Tree)
+            if (tile.IsTileType(TileType.Tree) )
             {
                 List<Tile> neighbors = gm.GetAdjacentTiles(tile);
-                bool hasPlainNeighbor = neighbors.Exists(n => n.type == TileType.Plain);
+                bool hasPlainNeighbor = neighbors.Exists(n => n.IsTileType(TileType.Plain));
 
                 if (hasPlainNeighbor && Pathfinding.Exists(fireStation, tile)) 
                 {

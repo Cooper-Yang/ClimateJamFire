@@ -122,9 +122,6 @@ public class GridManager : MonoBehaviour
             tile.gridX = x;
             tile.gridZ = z;
             tile.cellSize = cellSize;
-
-
-            // NEW: Assign gameplay definition based on tile type
             tile.definition = gameplayDatabase.GetGameplayDefinition(tileData);
         }
 
@@ -174,6 +171,7 @@ public class GridManager : MonoBehaviour
                     tile.gridX = x;
                     tile.gridZ = z;
                     tile.cellSize = cellSize;
+                    tile.definition = gameplayDatabase.GetGameplayDefinition(TileType.Plain);
                 }
 
                 tiles[x, z] = tile;
@@ -237,7 +235,7 @@ public class GridManager : MonoBehaviour
 
     public void ReplaceTileWithPlain(Tile treeTile)
     {
-        if (treeTile == null || treeTile.type != TileType.Tree)
+        if (treeTile == null || !treeTile.IsTileType(TileType.Tree) )
         {
             Debug.LogWarning("ReplaceTileWithPlain called on invalid tile.");
             return;
@@ -257,8 +255,7 @@ public class GridManager : MonoBehaviour
         {
             newTile.gridX = x;
             newTile.gridZ = z;
-            newTile.type = TileType.Plain;
-            newTile.isWalkable = true;
+            newTile.definition = gameplayDatabase.GetGameplayDefinition(TileType.Plain);
             newTile.cellSize = GridManager.cellSize;
             tiles[x, z] = newTile;
         }

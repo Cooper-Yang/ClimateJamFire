@@ -9,14 +9,10 @@ public class Tile : MonoBehaviour
     public int gridZ;
     public float cellSize;
     public GameplayTileDefinition definition;
-
-    public TileType type;
     private Material originalMaterial;
     public Material highlightMaterial;
     private Renderer tileRenderer;
-    public bool isWalkable;
     
-
     private void Start()
     {
         tileRenderer = GetComponent<Renderer>();
@@ -47,10 +43,20 @@ public class Tile : MonoBehaviour
         Debug.Log($"Tile clicked: ({gridX}, {gridZ})");
         // You can call PlaceTower() here for testing
         
-        Debug.Log($"Tile clicked: ({gridX}, {gridZ}) � Type: {type}");
+        Debug.Log($"Tile clicked: ({gridX}, {gridZ}) � Type: {definition.tileType}");
         if (TileClickManager.Instance != null)
         {
             TileClickManager.Instance.OnTileClicked(this);
         }
+    }
+
+    public bool IsWalkable()
+    {
+        return definition.isWalkable;
+    }
+
+    public bool IsTileType(TileType type)
+    {
+        return definition.tileType == type;
     }
 }

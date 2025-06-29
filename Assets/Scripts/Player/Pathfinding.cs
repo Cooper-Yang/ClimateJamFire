@@ -37,7 +37,7 @@ public class Pathfinding : MonoBehaviour
 
             foreach (Tile neighbor in GetNeighbors(current))
             {
-                if (!neighbor.isWalkable || closedSet.Contains(neighbor))
+                if (!neighbor.definition.isWalkable || closedSet.Contains(neighbor))
                     continue;
 
                 float tentativeG = gScore[current] + 1;

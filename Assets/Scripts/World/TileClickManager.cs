@@ -24,7 +24,7 @@ public class TileClickManager : MonoBehaviour
     public void OnTileClicked(Tile tile)
     {
         Debug.Log($"TileClickManager received click on ({tile.gridX}, {tile.gridZ})");
-        if (tile.type == TileType.Tree && tile.isWalkable && activeFirefighter != null)
+        if (tile.IsTileType(TileType.Tree) && tile.IsWalkable() && activeFirefighter != null)
         {
             Debug.Log("Sending firefighter to tree!");
             activeFirefighter.MoveToAndCut(tile);
