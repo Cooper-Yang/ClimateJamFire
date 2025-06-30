@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc4f40d5f55fdc4492e8dd27e77ffc8, type: 3}
   m_Name: SmokeTile
   m_EditorClassIdentifier: 
-  tileType: 2
+  tileType: 5
   canBurn: 0
   burnDuration: 5
   isWalkable: 0

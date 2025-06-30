@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SmokeTile
   m_EditorClassIdentifier: 
   character: 83
-  tileType: 2
+  tileType: 5
   prefab: {fileID: 4292240228651150138, guid: 493e24868b99e1d4cac610433fc1498f, type: 3}
   editorColor: {r: 1, g: 0, b: 0.9046192, a: 1}
   description: 

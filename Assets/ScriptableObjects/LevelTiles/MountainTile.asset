@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: MountainTile
   m_EditorClassIdentifier: 
   character: 77
-  tileName: Mountain
+  tileType: 3
   prefab: {fileID: 4292240228651150138, guid: 84daafae268608244976412e19f38828, type: 3}
-  canRotate: 1
   editorColor: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
   description: 

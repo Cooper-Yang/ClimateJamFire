@@ -12,22 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc4f40d5f55fdc4492e8dd27e77ffc8, type: 3}
   m_Name: PlainsTile
   m_EditorClassIdentifier: 
-  tileType: 3
+  tileType: 0
   canBurn: 0
   burnDuration: 5
-  burnedState:
-    character: 0
-    prefab: {fileID: 0}
-    tileType: 0
-    tileName: 
   isWalkable: 1
   movementSpeedMultiplier: 1
   canBeCutDown: 0
-  cutDownState:
-    character: 0
-    prefab: {fileID: 0}
-    tileType: 0
-    tileName: 
   isSpawnPoint: 0
   isFireSource: 0
   blocksMovementWhenBurning: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlainTile
   m_EditorClassIdentifier: 
   character: 46
-  tileType: 3
+  tileType: 0
   prefab: {fileID: 4292240228651150138, guid: bac202e1bbed3d940b0aba847dd0339e, type: 3}
   editorColor: {r: 0.5471698, g: 0.24345283, b: 0, a: 1}
   description: 

@@ -28,16 +28,6 @@ public class Tile : MonoBehaviour
         }
         tileRenderer.material = active ? highlightMaterial : originalMaterial;
     }
-//     public void PlaceTower(GameObject towerPrefab)
-//     {
-//         if (hasTower)
-//         {
-//             return;
-//         }
-//         //Instantiate(towerPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
-//         hasTower = true;
-//     }
-
 
     private void OnMouseDown()
     {
@@ -53,11 +43,21 @@ public class Tile : MonoBehaviour
 
     public bool IsWalkable()
     {
+        if (definition == null)
+        {
+
+            return false;
+        }
         return definition.isWalkable;
     }
 
     public bool IsTileType(TileType type)
     {
+        if (definition == null)
+        {
+
+            return false;
+        }
         return definition.tileType == type;
     }
 

@@ -275,4 +275,16 @@ public class GridManager : MonoBehaviour
             Debug.LogError("New Plain tile prefab missing Tile component.");
         }
     }
+
+    public Tile GetFireStationTile()
+    {
+        foreach (Tile tile in tiles)
+        {
+            if (tile.IsTileType(TileType.FireStation))
+            {
+                return tile;
+            }
+        }
+        return null;
+    }
 }

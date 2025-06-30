@@ -13,21 +13,11 @@ MonoBehaviour:
   m_Name: TreeTile
   m_EditorClassIdentifier: 
   tileType: 1
-  canBurn: 0
+  canBurn: 1
   burnDuration: 5
-  burnedState:
-    character: 0
-    prefab: {fileID: 0}
-    tileType: 0
-    tileName: 
   isWalkable: 1
-  movementSpeedMultiplier: 1
+  movementSpeedMultiplier: 0.5
   canBeCutDown: 0
-  cutDownState:
-    character: 0
-    prefab: {fileID: 0}
-    tileType: 0
-    tileName: 
   isSpawnPoint: 0
   isFireSource: 0
   blocksMovementWhenBurning: 1

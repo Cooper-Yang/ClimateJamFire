@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FireStation
   m_EditorClassIdentifier: 
   character: 70
-  tileType: 5
+  tileType: 2
   prefab: {fileID: 4292240228651150138, guid: 3b3b02413743ebb4da150ca70615e73b, type: 3}
   editorColor: {r: 1, g: 1, b: 1, a: 1}
   description: 
