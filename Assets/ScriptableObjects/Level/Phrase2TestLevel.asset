@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf7739391f903244a2c9cc979a58ca3, type: 3}
+  m_Name: Phrase2TestLevel
+  m_EditorClassIdentifier: 
+  levelName: TestLevelEditor
+  width: 10
+  height: 10
+  tileDatabase: {fileID: 11400000, guid: ed0b8039f75d76e42a4c5db8cdc2b7e2, type: 2}
+  levelLayout: 'MMMMMMMMMM
+
+    MTTTMMMTMM
+
+    MTSTMMTSTM
+
+    T.T.MMTT.M
+
+    .TTTMMT.TS
+
+    .TT.TTTTTT
+
+    .....T..T.
+
+    ..F.....T.
+
+    .HHHHHH.TT
+
+    .HHHHHH...'

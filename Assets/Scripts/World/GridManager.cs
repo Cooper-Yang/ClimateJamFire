@@ -5,14 +5,25 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 #endif
 
+public enum GameState
+{
+    Preparation,
+    Action,
+    Results
+};
+
+
 public class GridManager : MonoBehaviour
 {
-    public GameObject tilePrefab;
+
+    public GameObject defaultTilePrefab;
     public int width = 10;
     public int height = 10;
     public const float cellSize = 2.56f;
     public float cellGapX = 0.1f;
     public float cellGapZ = 0.1f;
+    public GameState state = GameState.Preparation;
+
     private Tile[,] tiles;
 
 
@@ -155,7 +166,7 @@ public class GridManager : MonoBehaviour
                     0,
                     z * (cellSize + cellGapZ));
 
-                GameObject tileGO = Instantiate(tilePrefab, transform);
+                GameObject tileGO = Instantiate(defaultTilePrefab, transform);
                 tileGO.transform.localPosition = localPos;
                 tileGO.name = $"Tile ({x},{z})";
                 tileGO.transform.localScale = new Vector3(cellSize, 1f, cellSize);

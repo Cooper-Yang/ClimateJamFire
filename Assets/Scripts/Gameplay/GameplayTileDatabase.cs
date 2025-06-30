@@ -10,11 +10,12 @@ public class GameplayTileDatabase : ScriptableObject
 //    [Header("Gameplay Definitions")]
 //    public List<GameplayTileDefinition> gameplayDefinitions = new List<GameplayTileDefinition>();
 
-    [Header("Type to Gameplay Mapping")]
-    public List<TileTypeMapping> typeMappings = new List<TileTypeMapping>();
+    [Header("Gameplay Definitions")]
+    public List<GameplayTileDefinition> definitions = new List<GameplayTileDefinition>();
 
- //   private Dictionary<char, TileDefinition> visualDict;
-    private Dictionary<TileType, GameplayTileDefinition> gameplayDict;
+    //   private Dictionary<char, TileDefinition> visualDict;
+    [Header("Type to Gameplay Mapping")]
+    public Dictionary<TileType, GameplayTileDefinition> gameplayDict;
 
     void OnEnable()
     {
@@ -35,11 +36,11 @@ public class GameplayTileDatabase : ScriptableObject
 
         // Gameplay dictionary (new)
         gameplayDict = new Dictionary<TileType, GameplayTileDefinition>();
-        foreach (var mapping in typeMappings)
+        foreach (var definition in definitions)
         {
-            if (mapping.gameplayDefinition != null && !gameplayDict.ContainsKey(mapping.tileType))
+            if (definition != null && !gameplayDict.ContainsKey(definition.tileType))
             {
-                gameplayDict[mapping.tileType] = mapping.gameplayDefinition;
+                gameplayDict[definition.tileType] = definition;
             }
         }
     }

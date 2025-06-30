@@ -1,18 +1,19 @@
 using UnityEngine;
 
-public enum TileType { Plain, Tree, FireStation, Mountain, House, Smoke }
+public enum TileType { Plain, Tree, FireStation, Mountain, House, Smoke, River }
 
 
 public class Tile : MonoBehaviour
 {
     public int gridX;
     public int gridZ;
-    public float cellSize;
+    internal float cellSize;
     public GameplayTileDefinition definition;
     private Material originalMaterial;
     public Material highlightMaterial;
     private Renderer tileRenderer;
-    
+    public bool isBurning = false;
+
     private void Start()
     {
         tileRenderer = GetComponent<Renderer>();
@@ -58,5 +59,10 @@ public class Tile : MonoBehaviour
     public bool IsTileType(TileType type)
     {
         return definition.tileType == type;
+    }
+
+    public bool IsBurnable()
+    {
+        return definition.canBurn;
     }
 }
