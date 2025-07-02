@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class FireManager : MonoBehaviour
 {
+    
     private GridManager gridManager;
-
+    private Tile[] smokeTiles;
     private void Awake()
     {
         gridManager = GetComponent<GridManager>();

@@ -9,10 +9,10 @@ public class ActionPoint : MonoBehaviour
 {
     //AP Max should always be 10
     //[SerializeField] public int currentActionPoint = 10;
-    [SerializeField] public float actionPointRegenTime = 6.0f;
-    [SerializeField] public Slider actionPointSlider;
-    [SerializeField] public GameObject firefighterPrefab;
-    [SerializeField] GridManager gridManager;
+    public float actionPointRegenTime = 6.0f;
+    public Slider actionPointSlider;
+    public GameObject firefighterPrefab;
+    GridManager gridManager;
     private Transform fireStationTransform;
 
 
