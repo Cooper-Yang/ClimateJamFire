@@ -12,7 +12,7 @@ public class ActionPoint : MonoBehaviour
     public float actionPointRegenTime = 6.0f;
     public Slider actionPointSlider;
     public GameObject firefighterPrefab;
-    GridManager gridManager;
+    public GridManager gridManager;
     private Transform fireStationTransform;
 
 
