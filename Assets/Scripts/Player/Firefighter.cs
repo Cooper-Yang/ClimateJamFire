@@ -83,7 +83,8 @@ public class Firefighter : MonoBehaviour
         //target.type = TileType.Plain;
         //target.Highlight(false);
         gmm.ReplaceTileWithPlain(target);
-
+        gmm.numberOfTreesCutDownToPlains++;
+        gmm.numberOfRemainingTree--;
         Destroy(gameObject);
     }
 }

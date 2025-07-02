@@ -430,8 +430,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 9
   gridZ: 3
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &19548766
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -556,8 +557,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 4
   gridZ: 1
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &21387217
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -682,8 +684,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 7
   gridZ: 0
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &24633314
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5694,8 +5697,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 0
   gridZ: 0
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &44195508
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6165,8 +6169,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 6
   gridZ: 0
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &82061628
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6639,8 +6644,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 0
   gridZ: 8
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &142071937
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6765,8 +6771,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 9
   gridZ: 1
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &142542268
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7321,8 +7328,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 4
   gridZ: 0
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &201271658
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7708,8 +7716,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 6
   gridZ: 8
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 6bff515988852d24cad65dad2c12172b, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &220329581
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8092,8 +8101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 0
   gridZ: 3
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &239986311
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8477,8 +8487,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 3
   gridZ: 2
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &271269755
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8606,8 +8617,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 2
   gridZ: 7
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &272933592
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8820,8 +8832,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 2
   gridZ: 5
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &281642531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8949,8 +8962,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 8
   gridZ: 3
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &286266933
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9164,8 +9178,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 5
   gridZ: 5
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &309019614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9377,8 +9392,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 7
   gridZ: 1
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &327395958
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9504,8 +9520,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 8
   gridZ: 9
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 6bff515988852d24cad65dad2c12172b, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &336081381
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9806,8 +9823,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 3
   gridZ: 7
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &347671227
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9932,8 +9950,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 3
   gridZ: 1
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &348987901
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15033,8 +15052,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 5
   gridZ: 7
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &361609046
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15246,8 +15266,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 3
   gridZ: 3
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &382505957
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15375,8 +15396,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 5
   gridZ: 6
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &387149853
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15763,8 +15785,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 1
   gridZ: 2
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &397119728
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15976,8 +15999,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 6
   gridZ: 1
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &421778860
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16191,8 +16215,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 0
   gridZ: 7
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &428751790
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16318,8 +16343,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 4
   gridZ: 9
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 6bff515988852d24cad65dad2c12172b, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &428980730
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21334,8 +21360,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 6
   gridZ: 5
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &438291653
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21721,8 +21748,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 8
   gridZ: 5
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &464159542
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21848,8 +21876,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 1
   gridZ: 6
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &476177136
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22062,8 +22091,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 7
   gridZ: 7
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 537de13baa95cbd44a4db180a7c5b1b5, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &504346723
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22189,8 +22219,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 3
   gridZ: 8
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 6bff515988852d24cad65dad2c12172b, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &506840078
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22405,8 +22436,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 1
   gridZ: 3
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &508014882
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22795,8 +22827,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 6
   gridZ: 3
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &555515048
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23007,8 +23040,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 5
   gridZ: 2
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &564140694
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23395,8 +23429,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 9
   gridZ: 6
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &617873768
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23780,8 +23815,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 3
   gridZ: 0
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &659327214
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24599,8 +24635,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 2
   gridZ: 6
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &754232761
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24726,8 +24763,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 8
   gridZ: 4
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &770204266
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24938,8 +24976,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 0
   gridZ: 2
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &775999733
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25240,8 +25279,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 2
   gridZ: 4
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &787592459
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26209,8 +26249,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 3
   gridZ: 5
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &867929158
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26941,8 +26982,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 1
   gridZ: 7
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &938574581
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27586,8 +27628,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 6
   gridZ: 2
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &995167921
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34159,8 +34202,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 6
   gridZ: 6
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1090372287
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34635,8 +34679,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 8
   gridZ: 6
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1101839723
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34936,8 +34981,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 9
   gridZ: 9
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1126451716
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35235,8 +35281,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 5
   gridZ: 1
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1135910006
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35362,8 +35409,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 7
   gridZ: 5
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1137556721
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35488,8 +35536,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 2
   gridZ: 0
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1137724990
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35615,8 +35664,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 2
   gridZ: 1
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1140822537
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35827,8 +35877,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 5
   gridZ: 0
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1144252110
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36389,8 +36440,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 8
   gridZ: 0
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1177285391
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36775,8 +36827,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 8
   gridZ: 1
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1202959898
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36902,8 +36955,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 4
   gridZ: 6
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1213817720
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37725,8 +37779,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 7
   gridZ: 2
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 31bcdf8d60815fb4c92d7b0642343c8c, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1261094368
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38026,8 +38081,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 5
   gridZ: 3
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1265423312
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38239,8 +38295,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 3
   gridZ: 9
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 6bff515988852d24cad65dad2c12172b, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1290940780
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38366,8 +38423,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 1
   gridZ: 4
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1300553059
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39219,8 +39277,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 1
   gridZ: 0
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1361772895
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39345,8 +39404,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 4
   gridZ: 3
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1367821372
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39474,8 +39534,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 9
   gridZ: 5
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1378828089
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39601,8 +39662,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 2
   gridZ: 3
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1392336416
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39793,12 +39855,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a58ccf31a2b37a42bdb776a73b984b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilePrefab: {fileID: 4292240228651150138, guid: bac202e1bbed3d940b0aba847dd0339e, type: 3}
+  defaultTilePrefab: {fileID: 4292240228651150138, guid: bac202e1bbed3d940b0aba847dd0339e, type: 3}
   width: 10
   height: 10
   cellGapX: 0.05
   cellGapZ: 0.05
+  state: 0
   currentLevel: {fileID: 11400000, guid: 2596af67e154a42499fcdb5b89d86357, type: 2}
+  plainTilePrefab: {fileID: 4292240228651150138, guid: bac202e1bbed3d940b0aba847dd0339e, type: 3}
   gameplayDatabase: {fileID: 11400000, guid: b771dfedb6567cb4b9c6901b69f3f2ed, type: 2}
 --- !u!4 &1405747466
 Transform:
@@ -40575,8 +40639,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 2
   gridZ: 8
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1427570543
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40701,8 +40766,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 5
   gridZ: 4
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1431940366
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40830,8 +40896,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 9
   gridZ: 7
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1433326749
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40957,8 +41024,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 6
   gridZ: 4
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1444088030
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41173,8 +41241,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 9
   gridZ: 8
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1448506581
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41733,8 +41802,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 4
   gridZ: 2
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1520194329
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41860,8 +41930,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 8
   gridZ: 2
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1525923155
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42247,8 +42318,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 0
   gridZ: 4
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 31bcdf8d60815fb4c92d7b0642343c8c, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1546647969
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43117,8 +43189,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 8
   gridZ: 8
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 6bff515988852d24cad65dad2c12172b, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1605200426
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43244,8 +43317,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 4
   gridZ: 8
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 6bff515988852d24cad65dad2c12172b, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1626213486
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43629,8 +43703,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 5
   gridZ: 8
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 6bff515988852d24cad65dad2c12172b, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1654269868
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44193,8 +44268,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 4
   gridZ: 7
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1685449593
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44319,8 +44395,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 4
   gridZ: 4
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1686862572
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44532,8 +44609,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 9
   gridZ: 2
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1690276081
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45094,8 +45172,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 3
   gridZ: 6
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1719706652
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45396,8 +45475,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 2
   gridZ: 2
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 31bcdf8d60815fb4c92d7b0642343c8c, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1738738508
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45696,8 +45776,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 4
   gridZ: 5
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1748939133
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45822,8 +45903,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 9
   gridZ: 0
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1750736423
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46208,8 +46290,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 7
   gridZ: 4
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1786672492
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51483,8 +51566,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 7
   gridZ: 6
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1820969756
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51610,8 +51694,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 7
   gridZ: 3
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1823296623
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52773,8 +52858,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 5
   gridZ: 9
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 6bff515988852d24cad65dad2c12172b, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1889059968
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58049,8 +58135,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 0
   gridZ: 9
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1934777013
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58436,8 +58523,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 7
   gridZ: 9
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 6bff515988852d24cad65dad2c12172b, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1972422423
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58563,8 +58651,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 3
   gridZ: 4
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1975809804
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59038,8 +59127,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 7
   gridZ: 8
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 6bff515988852d24cad65dad2c12172b, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &1982626843
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59424,8 +59514,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 1
   gridZ: 1
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &2004705366
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59637,8 +59728,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 1
   gridZ: 5
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &2007667304
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59766,8 +59858,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 8
   gridZ: 7
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &2015416426
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60152,8 +60245,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 0
   gridZ: 5
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &2025527768
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60541,8 +60635,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 0
   gridZ: 6
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &2069708230
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60667,8 +60762,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 0
   gridZ: 1
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &2086359215
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61144,8 +61240,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 1
   gridZ: 9
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &2098502146
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61271,8 +61368,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 6
   gridZ: 9
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 6bff515988852d24cad65dad2c12172b, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &2101556279
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61399,8 +61497,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 6
   gridZ: 7
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 537de13baa95cbd44a4db180a7c5b1b5, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &2101801936
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61526,8 +61625,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 1
   gridZ: 8
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &2108195033
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61655,8 +61755,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 9
   gridZ: 4
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &2112320317
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61784,8 +61885,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 2
   gridZ: 9
-  cellSize: 2.56
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
+  highlightMaterial: {fileID: 0}
+  isBurning: 0
 --- !u!65 &2114838905
 BoxCollider:
   m_ObjectHideFlags: 0

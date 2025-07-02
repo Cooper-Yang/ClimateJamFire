@@ -23,7 +23,9 @@ public class GridManager : MonoBehaviour
     public float cellGapX = 0.1f;
     public float cellGapZ = 0.1f;
     public GameState state = GameState.Preparation;
-
+    public int numberOfRemainingTree = 0; 
+    public int numberOfTreesCutDownToPlains = 0;
+    public int numberOfHouses = 0;
     private Tile[,] tiles;
 
 
@@ -71,7 +73,13 @@ public class GridManager : MonoBehaviour
         Destroy(child.gameObject);
     }
 #endif
-    }public void GenerateGrid()
+        numberOfRemainingTree = 0;
+        numberOfTreesCutDownToPlains = 0;
+        numberOfHouses = 0;
+
+    }
+    
+    public void GenerateGrid()
     {
         if (currentLevel != null)
         {
@@ -114,14 +122,14 @@ public class GridManager : MonoBehaviour
                 }
             }
         }
-    }      
+    }
     private void CreateTile(int x, int z, TileData tileData)
 
     {
         Vector3 localPos = new Vector3(
             x * (cellSize + cellGapX),
             0,
-            z * (cellSize + cellGapZ));        
+            z * (cellSize + cellGapZ));
         GameObject tileGO = Instantiate(tileData.prefab, transform);
         tileGO.transform.localPosition = localPos;
         tileGO.name = $"{tileData.tileName} ({x},{z})";
@@ -137,10 +145,17 @@ public class GridManager : MonoBehaviour
         }
 
         tiles[x, z] = tile;
-        
+        if (tile.IsTileType(TileType.House))
+        {
+            numberOfHouses++;
+        }
+        else if (tile.IsTileType(TileType.Tree))
+        {
+            numberOfRemainingTree++;
+        }
 #if UNITY_EDITOR
-        // Register the created tile for undo operations
-        Undo.RegisterCreatedObjectUndo(tileGO, "Create Tile");
+            // Register the created tile for undo operations
+            Undo.RegisterCreatedObjectUndo(tileGO, "Create Tile");
 #endif
     }
 
@@ -228,6 +243,9 @@ public class GridManager : MonoBehaviour
 
     public void RebuildTileMapFromScene()
     {
+        numberOfRemainingTree = 0;
+        numberOfTreesCutDownToPlains = 0;
+        numberOfHouses = 0;
         tiles = new Tile[width, height];
         Tile[] allTiles = GetComponentsInChildren<Tile>();
 
@@ -236,6 +254,14 @@ public class GridManager : MonoBehaviour
             if (tile.gridX >= 0 && tile.gridX < width && tile.gridZ >= 0 && tile.gridZ < height)
             {
                 tiles[tile.gridX, tile.gridZ] = tile;
+                if (tile.IsTileType(TileType.House))
+                {
+                    numberOfHouses++;
+                }
+                else if (tile.IsTileType(TileType.Tree))
+                {
+                    numberOfRemainingTree++;
+                }
             }
             else
             {
