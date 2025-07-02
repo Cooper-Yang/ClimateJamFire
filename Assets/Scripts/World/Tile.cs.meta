@@ -6,6 +6,7 @@ MonoImporter:
   defaultReferences:
   - definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
   - highlightMaterial: {instanceID: 0}
+  - firePrefab: {fileID: 1632659334546840, guid: bbd1860d44f6c7546aad605f3666475f, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

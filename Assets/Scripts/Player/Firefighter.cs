@@ -78,13 +78,20 @@ public class Firefighter : MonoBehaviour
             yield return new WaitForSeconds(moveTimePerTile);
         }
 
-        yield return new WaitForSeconds(cutTime); 
+        yield return new WaitForSeconds(cutTime);
 
         //target.type = TileType.Plain;
         //target.Highlight(false);
-        gmm.ReplaceTileWithPlain(target);
-        gmm.numberOfTreesCutDownToPlains++;
-        gmm.numberOfRemainingTree--;
-        Destroy(gameObject);
+        if (!target.IsTileType(TileType.Tree))
+        {
+            Debug.LogWarning("ReplaceTileWithPlain called on invalid tile.");
+        }
+        else
+        {
+            gmm.ReplaceTileWithPlain(target);
+            gmm.numberOfTreesCutDownToPlains++;
+            gmm.numberOfRemainingTree--;
+            Destroy(gameObject);
+        }
     }
 }

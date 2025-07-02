@@ -13,6 +13,7 @@ public class Tile : MonoBehaviour
     public Material highlightMaterial;
     private Renderer tileRenderer;
     public bool isBurning = false;
+    private GameObject fireObject;
 
     private void Start()
     {
@@ -31,7 +32,7 @@ public class Tile : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log($"Tile clicked: ({gridX}, {gridZ})");
+        //Debug.Log($"Tile clicked: ({gridX}, {gridZ})");
         // You can call PlaceTower() here for testing
         
         Debug.Log($"Tile clicked: ({gridX}, {gridZ}) � Type: {definition.tileType}");
@@ -39,6 +40,17 @@ public class Tile : MonoBehaviour
         {
             TileClickManager.Instance.OnTileClicked(this);
         }
+    }
+
+    public void OnFire(GameObject firePrefab)
+    {
+        if (!definition.canBurn)
+        {
+            Debug.Log("Burn a unburnable tile :  ({gridX},{gridZ})");
+            return;
+        }
+        isBurning = true;
+        fireObject = Instantiate(firePrefab, transform);
     }
 
     public bool IsWalkable()
