@@ -65,4 +65,9 @@ public class Tile : MonoBehaviour
     {
         return definition.canBurn;
     }
+
+    public bool IsBurning()
+    {
+        return isBurning;
+    }
 }
