@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -15,6 +16,12 @@ public class ActionPoint : MonoBehaviour
     public GridManager gridManager;
     private Transform fireStationTransform;
 
+    // Speed Boost Ability Variables
+    [Header("Speed Boost Ability")]
+    public int speedBoostCost = 3;
+    public float speedBoostDuration = 10.0f;
+    public float speedBoostMultiplier = 0.5f; // 50% speed increase
+    private bool speedBoostActive = false;
 
     private bool regenActive = true;
     private float timer = 0.0f;
@@ -69,7 +76,7 @@ public class ActionPoint : MonoBehaviour
         if (currentActionPoint >= 1 && currentPhase == 1)
         {
             GameObject ff = Instantiate(firefighterPrefab, fireStationTransform.position, Quaternion.identity);
-            ff.GetComponent<Firefighter>().Init(FindObjectOfType<GridManager>());
+            ff.GetComponent<Firefighter>().Init(gridManager);
             SpendActionPoint(1);
             //currentActionPoint--;
             //StartCoroutine(StartRegen()); 
@@ -95,6 +102,64 @@ public class ActionPoint : MonoBehaviour
                 IncrementBar();
             }
         }
+    }
+
+    // Speed Boost Ability
+    public void ActivateSpeedBoost()
+    {
+        if (currentActionPoint >= speedBoostCost && !speedBoostActive)
+        {
+            SpendActionPoint(speedBoostCost);
+            speedBoostActive = true;
+            
+            // Apply speed boost to all active firefighters
+            Firefighter[] allFirefighters = FindObjectsByType<Firefighter>(FindObjectsSortMode.None);
+            foreach (Firefighter firefighter in allFirefighters)
+            {
+                firefighter.ApplySpeedBoost(speedBoostMultiplier);
+            }
+            
+            StartCoroutine(SpeedBoostCoroutine());
+            Debug.Log($"Speed Boost activated for {speedBoostDuration} seconds!");
+        }
+        else if (speedBoostActive)
+        {
+            Debug.Log("Speed Boost is already active!");
+        }
+        else
+        {
+            Debug.Log($"Not enough action points! Need {speedBoostCost}, have {currentActionPoint}");
+        }
+    }
+
+    private IEnumerator SpeedBoostCoroutine()
+    {
+        yield return new WaitForSeconds(speedBoostDuration);
+        
+        // Reset speed for all firefighters
+        Firefighter[] allFirefighters = FindObjectsByType<Firefighter>(FindObjectsSortMode.None);
+        foreach (Firefighter firefighter in allFirefighters)
+        {
+            if (firefighter != null) // Check if firefighter still exists
+            {
+                firefighter.ResetSpeed();
+            }
+        }
+        
+        speedBoostActive = false;
+        Debug.Log("Speed Boost effect has ended.");
+    }
+
+    // Public method to check if speed boost is active (for UI purposes)
+    public bool IsSpeedBoostActive()
+    {
+        return speedBoostActive;
+    }
+
+    // Public method to get speed boost cost (for UI purposes)
+    public int GetSpeedBoostCost()
+    {
+        return speedBoostCost;
     }
 
 
