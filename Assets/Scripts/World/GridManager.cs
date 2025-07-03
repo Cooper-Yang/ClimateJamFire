@@ -17,6 +17,8 @@ public class GridManager : MonoBehaviour
 {
 
     public GameObject defaultTilePrefab;
+    public GameObject smokeTilePrefab;
+    public GameObject treeTilePrefab;
     public int width = 10;
     public int height = 10;
     public const float cellSize = 2.56f;
@@ -306,6 +308,75 @@ public class GridManager : MonoBehaviour
         }
     }
 
+    public void ReplaceTileWithSmoke(Tile tile)
+    {
+        if (tile == null)
+        {
+            Debug.LogWarning("ReplaceTileWithSmoke called on null tile.");
+            return;
+        }
+
+        int x = tile.gridX;
+        int z = tile.gridZ;
+        Vector3 pos = tile.transform.position;
+
+        Destroy(tile.gameObject);
+
+        GameObject newTileGO = Instantiate(smokeTilePrefab, pos, Quaternion.identity, transform);
+        newTileGO.transform.localScale = new Vector3(cellSize, 1f, cellSize);
+
+        Tile newTile = newTileGO.GetComponent<Tile>();
+        if (newTile != null)
+        {
+            newTile.gridX = x;
+            newTile.gridZ = z;
+            newTile.definition = gameplayDatabase.GetGameplayDefinition(TileType.Smoke);
+            newTile.cellSize = cellSize;
+            newTile.gridManager = this;
+            tiles[x, z] = newTile;
+
+            newTile.OnFire(firePrefab: FindObjectOfType<FireManager>().firePrefab);
+        }
+        else
+        {
+            Debug.LogError("New Smoke tile prefab missing Tile component.");
+        }
+    }
+
+    public void ReplaceTileWithTree(Tile tile)
+    {
+        if (tile == null)
+        {
+            Debug.LogWarning("ReplaceTileWithTree called on invalid tile.");
+            return;
+        }
+
+        int x = tile.gridX;
+        int z = tile.gridZ;
+        Vector3 pos = tile.transform.position;
+
+        Destroy(tile.gameObject);
+
+        GameObject newTileGO = Instantiate(treeTilePrefab, pos, Quaternion.identity, transform);
+        newTileGO.transform.localScale = new Vector3(cellSize, 1f, cellSize);
+
+        Tile newTile = newTileGO.GetComponent<Tile>();
+        if (newTile != null)
+        {
+            newTile.gridX = x;
+            newTile.gridZ = z;
+            newTile.definition = gameplayDatabase.GetGameplayDefinition(TileType.Tree);
+            newTile.cellSize = cellSize;
+            newTile.gridManager = this;
+            tiles[x, z] = newTile;
+            numberOfRemainingTree++;
+        }
+        else
+        {
+            Debug.LogError("New Tree tile prefab missing Tile component.");
+        }
+    }
+
     public Tile GetFireStationTile()
     {
         foreach (Tile tile in tiles)
@@ -331,4 +402,17 @@ public class GridManager : MonoBehaviour
         return smokeTiles;
     }
 
+    public List<Tile> GetTilesInSquare(int centerX, int centerZ, int size)
+    {
+        List<Tile> tiles = new List<Tile>();
+        for (int dx = 0; dx < size; dx++)
+        {
+            for (int dz = 0; dz < size; dz++)
+            {
+                Tile t = GetTileAt(centerX + dx, centerZ + dz);
+                if (t != null) tiles.Add(t);
+            }
+        }
+        return tiles;
+    }
 }

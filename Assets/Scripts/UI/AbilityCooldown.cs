@@ -8,7 +8,7 @@ public class AbilityCooldown : MonoBehaviour
     [SerializeField] private ActionPoint AP;
     [SerializeField] private Button abilityButton;
     [SerializeField] private Image cooldownImage;
-    [SerializeField] private Ability ability; 
+    //[SerializeField] private Ability ability; 
     private bool onCooldown = false;
     private float globalCooldown = 2.0f;
     private int abilityCost;
@@ -17,7 +17,7 @@ public class AbilityCooldown : MonoBehaviour
     void Start()
     {
         cooldownImage.fillAmount = 0.0f;
-        abilityCost = ability.abilityCost;
+        //abilityCost = ability.abilityCost;
         abilityCostText.text = abilityCost.ToString(); 
     }
 
@@ -35,7 +35,7 @@ public class AbilityCooldown : MonoBehaviour
         yield return new WaitForSeconds(globalCooldown);
         abilityButton.enabled = true;
     }
-    private void CooldownWheel()
+    /*private void CooldownWheel()
     {
         if(AP.currentActionPoint/abilityCost < 1)
         {
@@ -46,6 +46,6 @@ public class AbilityCooldown : MonoBehaviour
     private void Update()
     {
         CooldownWheel(); 
-    }
+    }*/
 
 }

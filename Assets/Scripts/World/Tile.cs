@@ -52,6 +52,11 @@ public class Tile : MonoBehaviour
             return;
         }
         isBurning = true;
+        if (definition.tileType == TileType.Tree)
+        {
+            gridManager.ReplaceTileWithSmoke(this);
+            return;
+        }
         fireObject = Instantiate(firePrefab, transform);
         StartCoroutine(SpreadFireAfterDelay(firePrefab));
         StartCoroutine(FireTurnTileToPlain());
