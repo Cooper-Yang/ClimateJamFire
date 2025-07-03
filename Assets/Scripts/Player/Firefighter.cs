@@ -6,6 +6,7 @@ using static DG.Tweening.DOTweenAnimation;
 public class Firefighter : MonoBehaviour
 {
     public float moveTimePerTile = 1.5f;
+    private float baseMoveTimePerTile; // Store original speed
     private Tile currentTile;
     private GridManager gmm;
     public float cutTime = 2.5f; // Time to cut a tree
@@ -28,6 +29,7 @@ public class Firefighter : MonoBehaviour
     */
     public void Init(GridManager gridManager)
     {
+        baseMoveTimePerTile = moveTimePerTile; // Store original speed
         currentTile = gridManager.GetTileAtCoord(transform.position);
         gmm = gridManager;
 
@@ -44,10 +46,10 @@ public class Firefighter : MonoBehaviour
     private void HighlightCuttableTrees()
     {
         Debug.Log("HighlightCuttableTrees called");
-        GridManager gm = FindObjectOfType<GridManager>();
+        GridManager gm = FindAnyObjectByType<GridManager>();
         Tile fireStation = currentTile;
 
-        foreach (Tile tile in FindObjectsOfType<Tile>())
+        foreach (Tile tile in FindObjectsByType<Tile>(FindObjectsSortMode.None))
         {
             if (tile.IsTileType(TileType.Tree) )
             {
@@ -93,5 +95,18 @@ public class Firefighter : MonoBehaviour
             gmm.numberOfRemainingTree--;
             Destroy(gameObject);
         }
+    }
+
+    // Speed Boost Methods
+    public void ApplySpeedBoost(float speedMultiplier)
+    {
+        moveTimePerTile = baseMoveTimePerTile / (1 + speedMultiplier);
+        Debug.Log($"Speed boost applied! Move time reduced from {baseMoveTimePerTile} to {moveTimePerTile}");
+    }
+
+    public void ResetSpeed()
+    {
+        moveTimePerTile = baseMoveTimePerTile;
+        Debug.Log($"Speed reset to normal: {moveTimePerTile}");
     }
 }
