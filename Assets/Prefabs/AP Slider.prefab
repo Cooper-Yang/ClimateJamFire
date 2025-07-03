@@ -120,7 +120,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2940523878348418644}
   - component: {fileID: 7258908411521131659}
-  - component: {fileID: 8835552494460582545}
   m_Layer: 5
   m_Name: AP Slider
   m_TagString: Untagged
@@ -201,20 +200,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8835552494460582545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5124146471284475937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94c47ed7927a72c43a9f78c74679687e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionPointRegenTime: 6
-  actionPointSlider: {fileID: 7258908411521131659}
 --- !u!1 &7470687086551240462
 GameObject:
   m_ObjectHideFlags: 0

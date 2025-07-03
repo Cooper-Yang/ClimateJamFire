@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -28,16 +30,25 @@ public class ActionPoint : MonoBehaviour
     public int breakLineCost = 8;
     private bool breakLineActive = false;
 
+    [Header("Flame Retardant Ability")]
+    public int flameRetardantCost = 4;
+    public float flameRetardantDuration = 10f;
+    private bool flameRetardantActive = false;
+
+    [Header("Water Tanker Ability")]
+    public int waterTankerCost = 6;
+    private bool waterTankerActive = false;
+
     private bool regenActive = true;
     private float timer = 0.0f;
     public int currentPhase = 1;
 
-    
+
     public int currentActionPoint
     {
         get
         {
-            return Mathf.FloorToInt(actionPointSlider.value); 
+            return Mathf.FloorToInt(actionPointSlider.value);
         }
         set
         {
@@ -69,7 +80,7 @@ public class ActionPoint : MonoBehaviour
 
     public void SpendActionPoint(int actionPointValue)
     {
-        if(currentActionPoint >= 0.0f && currentActionPoint >= actionPointValue)
+        if (currentActionPoint >= 0.0f && currentActionPoint >= actionPointValue)
         {
             currentActionPoint -= actionPointValue;
             actionPointSlider.value = currentActionPoint;
@@ -78,13 +89,21 @@ public class ActionPoint : MonoBehaviour
 
     public void SpawnFirefighter()
     {
-        if (currentActionPoint >= 1 && currentPhase == 1)
+        if (currentActionPoint >= 1)
         {
             GameObject ff = Instantiate(firefighterPrefab, fireStationTransform.position, Quaternion.identity);
-            ff.GetComponent<Firefighter>().Init(gridManager);
+            Firefighter firefighter = ff.GetComponent<Firefighter>();
+            firefighter.Init(gridManager, currentPhase);
             SpendActionPoint(1);
-            //currentActionPoint--;
-            //StartCoroutine(StartRegen()); 
+
+            if (currentPhase == 1)
+            {
+                TileClickManager.Instance.SetActiveFirefighter(firefighter);
+            }
+            else if (currentPhase == 2)
+            {
+                firefighter.BeginFirefightingMode();
+            }
         }
     }
 
@@ -96,13 +115,13 @@ public class ActionPoint : MonoBehaviour
     public void IncrementBar()
     {
         actionPointSlider.value += (1 / actionPointRegenTime) * Time.deltaTime;
-        currentActionPoint = Mathf.FloorToInt(actionPointSlider.value); 
+        currentActionPoint = Mathf.FloorToInt(actionPointSlider.value);
     }
     private void Update()
     {
-        if(regenActive)
+        if (regenActive)
         {
-            if(currentActionPoint < 10)
+            if (currentActionPoint < 10)
             {
                 IncrementBar();
             }
@@ -116,14 +135,14 @@ public class ActionPoint : MonoBehaviour
         {
             SpendActionPoint(speedBoostCost);
             speedBoostActive = true;
-            
+
             // Apply speed boost to all active firefighters
             Firefighter[] allFirefighters = FindObjectsByType<Firefighter>(FindObjectsSortMode.None);
             foreach (Firefighter firefighter in allFirefighters)
             {
                 firefighter.ApplySpeedBoost(speedBoostMultiplier);
             }
-            
+
             StartCoroutine(SpeedBoostCoroutine());
             Debug.Log($"Speed Boost activated for {speedBoostDuration} seconds!");
         }
@@ -140,7 +159,7 @@ public class ActionPoint : MonoBehaviour
     private IEnumerator SpeedBoostCoroutine()
     {
         yield return new WaitForSeconds(speedBoostDuration);
-        
+
         // Reset speed for all firefighters
         Firefighter[] allFirefighters = FindObjectsByType<Firefighter>(FindObjectsSortMode.None);
         foreach (Firefighter firefighter in allFirefighters)
@@ -150,7 +169,7 @@ public class ActionPoint : MonoBehaviour
                 firefighter.ResetSpeed();
             }
         }
-        
+
         speedBoostActive = false;
         Debug.Log("Speed Boost effect has ended.");
     }
@@ -174,7 +193,7 @@ public class ActionPoint : MonoBehaviour
         {
             breakLineActive = true;
             Debug.Log("Break Line ability activated! Click on any tile to clear that entire column of trees.");
-            
+
             // Enable column selection mode
             EnableColumnSelection();
         }
@@ -203,17 +222,17 @@ public class ActionPoint : MonoBehaviour
         {
             // Spend action points
             SpendActionPoint(breakLineCost);
-            
+
             // Clear all non-burning trees in the selected column
             ClearTreesInColumn(columnX);
-            
+
             // Deactivate break line mode
             breakLineActive = false;
             if (TileClickManager.Instance != null)
             {
                 TileClickManager.Instance.OnColumnSelectionMode(false, null);
             }
-            
+
             Debug.Log($"Break Line used on column {columnX}!");
         }
     }
@@ -265,5 +284,78 @@ public class ActionPoint : MonoBehaviour
         }
     }
 
+    public void ActivateFlameRetardant()
+    {
+        if (currentActionPoint >= flameRetardantCost && !flameRetardantActive)
+        {
+            SpendActionPoint(flameRetardantCost);
+            flameRetardantActive = true;
 
+            Firefighter[] allFirefighters = FindObjectsByType<Firefighter>(FindObjectsSortMode.None);
+            foreach (Firefighter ff in allFirefighters)
+            {
+                ff.hasFlameRetardantBuff = true;
+            }
+
+            StartCoroutine(FlameRetardantDuration());
+            Debug.Log("Flame Retardant activated!");
+        }
+        else
+        {
+            Debug.Log("Not enough AP or already active!");
+        }
+    }
+
+    private IEnumerator FlameRetardantDuration()
+    {
+        yield return new WaitForSeconds(flameRetardantDuration);
+
+        Firefighter[] allFirefighters = FindObjectsByType<Firefighter>(FindObjectsSortMode.None);
+        foreach (Firefighter ff in allFirefighters)
+        {
+            ff.hasFlameRetardantBuff = false;
+        }
+
+        flameRetardantActive = false;
+        Debug.Log("Flame Retardant expired.");
+    }
+
+    public void ActivateWaterTanker()
+    {
+        if (currentActionPoint >= waterTankerCost && !waterTankerActive)
+        {
+            waterTankerActive = true;
+            Debug.Log("Water Tanker activated! Select center of 2x2 area.");
+            TileClickManager.Instance.OnTileSelectionMode(true, OnWaterTankerTargetSelected);
+        }
+        else
+        {
+            Debug.Log("Not enough AP or already active.");
+        }
+    }
+
+    private void OnWaterTankerTargetSelected(Tile centerTile)
+    {
+        SpendActionPoint(waterTankerCost);
+        waterTankerActive = false;
+        TileClickManager.Instance.OnTileSelectionMode(false, null);
+
+        StartCoroutine(DropWaterBombAfterDelay(centerTile, 3f));
+    }
+
+    private IEnumerator DropWaterBombAfterDelay(Tile center, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        List<Tile> targetTiles = gridManager.GetTilesInSquare(center.gridX, center.gridZ, 2);
+        foreach (Tile t in targetTiles)
+        {
+            if (t != null && t.IsBurning())
+            {
+                gridManager.ReplaceTileWithTree(t);
+            }
+        }
+
+        Debug.Log("Water bomb dropped!");
+    }
 }

@@ -9,6 +9,9 @@ public class TileClickManager : MonoBehaviour
     private bool columnSelectionMode = false;
     private System.Action<int> onColumnSelectedCallback;
 
+    private bool tileSelectionMode = false;
+    private System.Action<Tile> onTileSelectedCallback;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -28,19 +31,21 @@ public class TileClickManager : MonoBehaviour
     public void OnTileClicked(Tile tile)
     {
         Debug.Log($"TileClickManager received click on ({tile.gridX}, {tile.gridZ})");
-        
-        // Check if we're in column selection mode
+
         if (columnSelectionMode)
         {
-            Debug.Log($"Column {tile.gridX} selected for Break Line ability!");
             onColumnSelectedCallback?.Invoke(tile.gridX);
             return;
         }
-        
-        // Normal firefighter movement logic
+
+        if (tileSelectionMode)
+        {
+            onTileSelectedCallback?.Invoke(tile);
+            return;
+        }
+
         if (tile.IsTileType(TileType.Tree) && tile.IsWalkable() && activeFirefighter != null)
         {
-            Debug.Log("Sending firefighter to tree!");
             activeFirefighter.MoveToAndCut(tile);
             ClearAllHighlights();
             activeFirefighter = null;
@@ -76,6 +81,31 @@ public class TileClickManager : MonoBehaviour
     private void HighlightAllColumns()
     {
         // Highlight all tiles to indicate they're selectable for column selection
+        foreach (Tile t in FindObjectsByType<Tile>(FindObjectsSortMode.None))
+        {
+            t.Highlight(true);
+        }
+    }
+
+    public void OnTileSelectionMode(bool enabled, System.Action<Tile> callback)
+    {
+        tileSelectionMode = enabled;
+        onTileSelectedCallback = callback;
+
+        if (enabled)
+        {
+            Debug.Log("Tile selection mode enabled. Click on a tile to confirm target.");
+            HighlightAllTiles();
+        }
+        else
+        {
+            Debug.Log("Tile selection mode disabled.");
+            ClearAllHighlights();
+        }
+    }
+
+    private void HighlightAllTiles()
+    {
         foreach (Tile t in FindObjectsByType<Tile>(FindObjectsSortMode.None))
         {
             t.Highlight(true);
