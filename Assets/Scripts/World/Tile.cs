@@ -1,5 +1,6 @@
 using UnityEngine;
-
+using System.Collections;
+using System.Collections.Generic;
 public enum TileType { Plain, Tree, FireStation, Mountain, House, Smoke, River }
 
 
@@ -14,6 +15,7 @@ public class Tile : MonoBehaviour
     private Renderer tileRenderer;
     public bool isBurning = false;
     private GameObject fireObject;
+    internal GridManager gridManager;
 
     private void Start()
     {
@@ -51,6 +53,22 @@ public class Tile : MonoBehaviour
         }
         isBurning = true;
         fireObject = Instantiate(firePrefab, transform);
+        StartCoroutine(SpreadFireAfterDelay(firePrefab));
+    }
+
+    private IEnumerator SpreadFireAfterDelay(GameObject firePrefab)
+    {
+        yield return new WaitForSeconds(10f); // Wait 10 seconds
+
+        List<Tile> neighbors = gridManager.GetAdjacentTiles(this);
+
+        foreach (Tile neighbor in neighbors)
+        {
+            if (neighbor.IsBurnable() && !neighbor.isBurning)
+            {
+                neighbor.OnFire(firePrefab);
+            }
+        }
     }
 
     public bool IsWalkable()
@@ -77,4 +95,5 @@ public class Tile : MonoBehaviour
     {
         return definition.canBurn;
     }
+
 }

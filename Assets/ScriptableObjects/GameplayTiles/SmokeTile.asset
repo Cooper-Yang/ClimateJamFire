@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SmokeTile
   m_EditorClassIdentifier: 
   tileType: 5
-  canBurn: 0
+  canBurn: 1
   burnDuration: 5
   isWalkable: 0
   movementSpeedMultiplier: 1
