@@ -54,19 +54,33 @@ public class Tile : MonoBehaviour
         isBurning = true;
         fireObject = Instantiate(firePrefab, transform);
         StartCoroutine(SpreadFireAfterDelay(firePrefab));
+        StartCoroutine(FireTurnTileToPlain());
+    }
+
+    private IEnumerator FireTurnTileToPlain()
+    {
+        yield return new WaitForSeconds(15f); // Wait 15 seconds
+        if (fireObject != null)
+        {
+            DestroyImmediate(fireObject);
+            gridManager.ReplaceTileWithPlain(this);
+        }
     }
 
     private IEnumerator SpreadFireAfterDelay(GameObject firePrefab)
     {
         yield return new WaitForSeconds(10f); // Wait 10 seconds
 
-        List<Tile> neighbors = gridManager.GetAdjacentTiles(this);
-
-        foreach (Tile neighbor in neighbors)
+        if (isBurning)
         {
-            if (neighbor.IsBurnable() && !neighbor.isBurning)
+            List<Tile> neighbors = gridManager.GetAdjacentTiles(this);
+
+            foreach (Tile neighbor in neighbors)
             {
-                neighbor.OnFire(firePrefab);
+                if (neighbor.IsBurnable() && !neighbor.isBurning)
+                {
+                    neighbor.OnFire(firePrefab);
+                }
             }
         }
     }
