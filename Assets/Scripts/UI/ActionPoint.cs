@@ -23,6 +23,11 @@ public class ActionPoint : MonoBehaviour
     public float speedBoostMultiplier = 0.5f; // 50% speed increase
     private bool speedBoostActive = false;
 
+    // Break Line Ability Variables
+    [Header("Break Line Ability")]
+    public int breakLineCost = 8;
+    private bool breakLineActive = false;
+
     private bool regenActive = true;
     private float timer = 0.0f;
     public int currentPhase = 1;
@@ -160,6 +165,104 @@ public class ActionPoint : MonoBehaviour
     public int GetSpeedBoostCost()
     {
         return speedBoostCost;
+    }
+
+    // Break Line Ability
+    public void ActivateBreakLine()
+    {
+        if (currentActionPoint >= breakLineCost && !breakLineActive)
+        {
+            breakLineActive = true;
+            Debug.Log("Break Line ability activated! Click on any tile to clear that entire column of trees.");
+            
+            // Enable column selection mode
+            EnableColumnSelection();
+        }
+        else if (breakLineActive)
+        {
+            Debug.Log("Break Line is already active! Click on any tile to clear that column.");
+        }
+        else
+        {
+            Debug.Log($"Not enough action points! Need {breakLineCost}, have {currentActionPoint}");
+        }
+    }
+
+    private void EnableColumnSelection()
+    {
+        // Subscribe to tile click events to detect column selection
+        if (TileClickManager.Instance != null)
+        {
+            TileClickManager.Instance.OnColumnSelectionMode(true, OnColumnSelected);
+        }
+    }
+
+    private void OnColumnSelected(int columnX)
+    {
+        if (breakLineActive)
+        {
+            // Spend action points
+            SpendActionPoint(breakLineCost);
+            
+            // Clear all non-burning trees in the selected column
+            ClearTreesInColumn(columnX);
+            
+            // Deactivate break line mode
+            breakLineActive = false;
+            if (TileClickManager.Instance != null)
+            {
+                TileClickManager.Instance.OnColumnSelectionMode(false, null);
+            }
+            
+            Debug.Log($"Break Line used on column {columnX}!");
+        }
+    }
+
+    private void ClearTreesInColumn(int columnX)
+    {
+        Tile[] allTiles = FindObjectsByType<Tile>(FindObjectsSortMode.None);
+        int treesCleared = 0;
+
+        foreach (Tile tile in allTiles)
+        {
+            // Check if tile is in the selected column and is a non-burning tree
+            if (tile.gridX == columnX && tile.IsTileType(TileType.Tree) && !tile.IsBurning())
+            {
+                // Convert tree to plain
+                gridManager.ReplaceTileWithPlain(tile);
+                gridManager.numberOfTreesCutDownToPlains++;
+                gridManager.numberOfRemainingTree--;
+                treesCleared++;
+            }
+        }
+
+        Debug.Log($"Cleared {treesCleared} trees from column {columnX}");
+    }
+
+    // Public method to check if break line is active (for UI purposes)
+    public bool IsBreakLineActive()
+    {
+        return breakLineActive;
+    }
+
+    // Public method to get break line cost (for UI purposes)
+    public int GetBreakLineCost()
+    {
+        return breakLineCost;
+    }
+
+    // Public method to cancel break line selection
+    public void CancelBreakLine()
+    {
+        if (breakLineActive)
+        {
+            breakLineActive = false;
+            if (TileClickManager.Instance != null)
+            {
+                TileClickManager.Instance.OnColumnSelectionMode(false, null);
+            }
+            Debug.Log("Break Line ability cancelled.");
+        }
     }
 
 
