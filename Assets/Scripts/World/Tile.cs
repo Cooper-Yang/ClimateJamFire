@@ -1,5 +1,6 @@
 using UnityEngine;
-
+using System.Collections;
+using System.Collections.Generic;
 public enum TileType { Plain, Tree, FireStation, Mountain, House, Smoke, River }
 
 
@@ -13,6 +14,8 @@ public class Tile : MonoBehaviour
     public Material highlightMaterial;
     private Renderer tileRenderer;
     public bool isBurning = false;
+    private GameObject fireObject;
+    internal GridManager gridManager;
 
     private void Start()
     {
@@ -31,13 +34,54 @@ public class Tile : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log($"Tile clicked: ({gridX}, {gridZ})");
+        //Debug.Log($"Tile clicked: ({gridX}, {gridZ})");
         // You can call PlaceTower() here for testing
         
         Debug.Log($"Tile clicked: ({gridX}, {gridZ}) � Type: {definition.tileType}");
         if (TileClickManager.Instance != null)
         {
             TileClickManager.Instance.OnTileClicked(this);
+        }
+    }
+
+    public void OnFire(GameObject firePrefab)
+    {
+        if (!definition.canBurn)
+        {
+            Debug.Log("Burn a unburnable tile :  ({gridX},{gridZ})");
+            return;
+        }
+        isBurning = true;
+        fireObject = Instantiate(firePrefab, transform);
+        StartCoroutine(SpreadFireAfterDelay(firePrefab));
+        StartCoroutine(FireTurnTileToPlain());
+    }
+
+    private IEnumerator FireTurnTileToPlain()
+    {
+        yield return new WaitForSeconds(15f); // Wait 15 seconds
+        if (fireObject != null)
+        {
+            DestroyImmediate(fireObject);
+            gridManager.ReplaceTileWithPlain(this);
+        }
+    }
+
+    private IEnumerator SpreadFireAfterDelay(GameObject firePrefab)
+    {
+        yield return new WaitForSeconds(10f); // Wait 10 seconds
+
+        if (isBurning)
+        {
+            List<Tile> neighbors = gridManager.GetAdjacentTiles(this);
+
+            foreach (Tile neighbor in neighbors)
+            {
+                if (neighbor.IsBurnable() && !neighbor.isBurning)
+                {
+                    neighbor.OnFire(firePrefab);
+                }
+            }
         }
     }
 
@@ -65,4 +109,5 @@ public class Tile : MonoBehaviour
     {
         return definition.canBurn;
     }
+
 }

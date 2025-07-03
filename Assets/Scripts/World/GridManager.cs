@@ -142,6 +142,7 @@ public class GridManager : MonoBehaviour
             tile.gridZ = z;
             tile.cellSize = cellSize;
             tile.definition = gameplayDatabase.GetGameplayDefinition(tileData);
+            tile.gridManager = this;
         }
 
         tiles[x, z] = tile;
@@ -197,6 +198,7 @@ public class GridManager : MonoBehaviour
                     tile.gridX = x;
                     tile.gridZ = z;
                     tile.cellSize = cellSize;
+                    tile.gridManager = this;
                     tile.definition = gameplayDatabase.GetGameplayDefinition(TileType.Plain);
                 }
 
@@ -253,6 +255,7 @@ public class GridManager : MonoBehaviour
         {
             if (tile.gridX >= 0 && tile.gridX < width && tile.gridZ >= 0 && tile.gridZ < height)
             {
+                tile.gridManager = this;
                 tiles[tile.gridX, tile.gridZ] = tile;
                 if (tile.IsTileType(TileType.House))
                 {
@@ -270,19 +273,19 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    public void ReplaceTileWithPlain(Tile treeTile)
+    public void ReplaceTileWithPlain(Tile tile)
     {
-        if (treeTile == null || !treeTile.IsTileType(TileType.Tree) )
+        if (tile == null)
         {
             Debug.LogWarning("ReplaceTileWithPlain called on invalid tile.");
             return;
         }
 
-        int x = treeTile.gridX;
-        int z = treeTile.gridZ;
-        Vector3 pos = treeTile.transform.position;
+        int x = tile.gridX;
+        int z = tile.gridZ;
+        Vector3 pos = tile.transform.position;
 
-        Destroy(treeTile.gameObject);
+        Destroy(tile.gameObject);
 
         GameObject newTileGO = Instantiate(plainTilePrefab, pos, Quaternion.identity, transform);
         newTileGO.transform.localScale = new Vector3(GridManager.cellSize, 1f, GridManager.cellSize);
@@ -294,6 +297,7 @@ public class GridManager : MonoBehaviour
             newTile.gridZ = z;
             newTile.definition = gameplayDatabase.GetGameplayDefinition(TileType.Plain);
             newTile.cellSize = GridManager.cellSize;
+            newTile.gridManager = this;
             tiles[x, z] = newTile;
         }
         else
@@ -313,4 +317,18 @@ public class GridManager : MonoBehaviour
         }
         return null;
     }
+
+    public List<Tile> GetSmokeTiles()
+    {
+        List<Tile> smokeTiles = new List<Tile>();
+        foreach (Tile tile in tiles)
+        {
+            if (tile.IsTileType(TileType.Smoke))
+            {
+                smokeTiles.Add(tile);
+            }
+        }
+        return smokeTiles;
+    }
+
 }
