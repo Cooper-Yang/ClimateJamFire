@@ -36629,7 +36629,7 @@ MonoBehaviour:
   maxTime: 60
   warningTime: 15
   timerText: {fileID: 1235044841}
-  phaseManager: {fileID: 0}
+  phaseManager: {fileID: 1865300937}
 --- !u!1 &1237060533
 GameObject:
   m_ObjectHideFlags: 0
