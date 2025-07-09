@@ -11,6 +11,8 @@ public class Timer : MonoBehaviour
     [SerializeField] private float warningTime = 15.0f; //Time when the timer goes red
     [SerializeField] private TextMeshProUGUI timerText; 
     private float currentTime = 0.0f;
+
+    [SerializeField] private PhaseManager phaseManager; 
     private void Start()
     {
         currentTime = maxTime; 
@@ -33,8 +35,8 @@ public class Timer : MonoBehaviour
         if(currentTime <= 0.0f)
         {
             timerOn = false;
-            TimerObject.SetActive(false); 
-            //CODE FOR PHASE TRANSITION GOES HERE
+            TimerObject.SetActive(false);
+            phaseManager.TransitionToAction(); 
         }
     }
 }

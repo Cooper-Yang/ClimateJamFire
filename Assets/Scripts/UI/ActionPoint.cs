@@ -12,8 +12,10 @@ public class ActionPoint : MonoBehaviour
 {
     //AP Max should always be 10
     //[SerializeField] public int currentActionPoint = 10;
+    [Header("Action Point Variables")]
     public float actionPointRegenTime = 6.0f;
     public Slider actionPointSlider;
+    private bool regenActive = true;
     public GameObject firefighterPrefab;
     public GridManager gridManager;
     private Transform fireStationTransform;
@@ -39,10 +41,9 @@ public class ActionPoint : MonoBehaviour
     public int waterTankerCost = 6;
     private bool waterTankerActive = false;
 
-    private bool regenActive = true;
-    private float timer = 0.0f;
-    public int currentPhase = 1;
-
+    [Header("Phase Transition")]
+    public int currentPhase; 
+    [SerializeField] public PhaseManager phaseManager; 
 
     public int currentActionPoint
     {
@@ -75,6 +76,7 @@ public class ActionPoint : MonoBehaviour
         }
 #endif
         fireStationTransform = fireStationTile.transform;
+
     }
 
 
@@ -125,6 +127,15 @@ public class ActionPoint : MonoBehaviour
             {
                 IncrementBar();
             }
+        }
+
+        if(phaseManager.currentPhase == PhaseManager.phase.PREP)
+        {
+            currentPhase = 1; 
+        }
+        else if(phaseManager.currentPhase == PhaseManager.phase.ACTION)
+        {
+            currentPhase = 2; 
         }
     }
 
