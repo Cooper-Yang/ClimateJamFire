@@ -38,7 +38,7 @@ public class FireManager : MonoBehaviour
         }
     }
 
-    private void StartFireSpread()
+    public void StartFireSpread()
     {
         smokeTiles = gridManager.GetSmokeTiles();
         for (int i = smokeTiles.Count - 1; i > 0; i--)
@@ -56,7 +56,7 @@ public class FireManager : MonoBehaviour
 
     private void Update()
     {
-        if (!gameEnded)
+        if (!gameEnded && phaseManager.currentPhase == Phase.ACTION)
         {
             CheckWinLoseConditions();
         }
@@ -113,7 +113,7 @@ public class FireManager : MonoBehaviour
 
     private bool AreAllHousesBurnt()
     {
-        Tile[,] tiles = GetAllTiles();
+        Tile[,] tiles = gridManager.tiles;
         if (tiles == null) return false;
 
         for (int x = 0; x < gridManager.width; x++)
@@ -202,13 +202,6 @@ public class FireManager : MonoBehaviour
                 }
             }
         }
-    }
-
-    private Tile[,] GetAllTiles()
-    {
-        // Helper method to access the tiles array from GridManager
-        // This assumes GridManager has a way to access its tiles
-        return null; // GridManager would need to expose its tiles array
     }
 
     // Public methods for external access

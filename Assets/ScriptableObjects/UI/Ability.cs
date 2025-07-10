@@ -5,5 +5,6 @@ public class Ability : ScriptableObject
 {
     public string abilityName;
     public string abilityDescription;
-    public int abilityCost; 
+    public int abilityCost;
+    public float abilityCooldown = 2f;
 }
