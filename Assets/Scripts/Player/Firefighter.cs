@@ -29,7 +29,7 @@ public class Firefighter : MonoBehaviour
         }
     }
     */
-    public void Init(GridManager gridManager, int phase = 1)
+    public void Init(GridManager gridManager, Phase phase = Phase.PREP)
     {
         baseMoveTimePerTile = moveTimePerTile;
         currentTile = gridManager.GetTileAtCoord(transform.position);
@@ -41,7 +41,7 @@ public class Firefighter : MonoBehaviour
             return;
         }
 
-        if (phase == 1)
+        if (phase == Phase.PREP)
         {
             HighlightCuttableTrees();
         }

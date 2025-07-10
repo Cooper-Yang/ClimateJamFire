@@ -49214,7 +49214,6 @@ MonoBehaviour:
   height: 10
   cellGapX: 0.05
   cellGapZ: 0.05
-  state: 1
   numberOfRemainingTree: 30
   numberOfTreesCutDownToPlains: 0
   numberOfHouses: 12
@@ -49349,7 +49348,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireTiles: []
-  firePrefab: {fileID: 1632659334546840, guid: bbd1860d44f6c7546aad605f3666475f, type: 3}
+  firePrefab: {fileID: 1273710762483042, guid: c219e4dcb49b5844691b241cd5fca2f1, type: 3}
+  phaseManager: {fileID: 1865300937}
 --- !u!1 &1409763558
 GameObject:
   m_ObjectHideFlags: 0
@@ -56882,6 +56882,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841743888}
   m_Mesh: {fileID: -7652750728706062491, guid: 749b1ce2381e02044bd8d1e0e297a195, type: 3}
+--- !u!114 &1849195239 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5352576021478736324, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
+  m_PrefabInstance: {fileID: 47138773}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1856518919
 GameObject:
   m_ObjectHideFlags: 0
@@ -57257,7 +57268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionPointRegenTime: 1
-  actionPointSlider: {fileID: 0}
+  actionPointSlider: {fileID: 1849195239}
   firefighterPrefab: {fileID: 2628466661712276602, guid: aef696a1284b13246a2de7bcc9c9074a, type: 3}
   gridManager: {fileID: 1405747465}
   speedBoostCost: 3

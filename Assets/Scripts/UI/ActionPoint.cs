@@ -42,7 +42,6 @@ public class ActionPoint : MonoBehaviour
     private bool waterTankerActive = false;
 
     [Header("Phase Transition")]
-    public int currentPhase; 
     [SerializeField] public PhaseManager phaseManager; 
 
     public int currentActionPoint
@@ -95,14 +94,14 @@ public class ActionPoint : MonoBehaviour
         {
             GameObject ff = Instantiate(firefighterPrefab, fireStationTransform.position, Quaternion.identity);
             Firefighter firefighter = ff.GetComponent<Firefighter>();
-            firefighter.Init(gridManager, currentPhase);
+            firefighter.Init(gridManager, phaseManager.currentPhase);
             SpendActionPoint(1);
 
-            if (currentPhase == 1)
+            if (phaseManager.currentPhase == Phase.PREP)
             {
                 TileClickManager.Instance.SetActiveFirefighter(firefighter);
             }
-            else if (currentPhase == 2)
+            else if (phaseManager.currentPhase == Phase.ACTION)
             {
                 firefighter.BeginFirefightingMode();
             }
@@ -127,15 +126,6 @@ public class ActionPoint : MonoBehaviour
             {
                 IncrementBar();
             }
-        }
-
-        if(phaseManager.currentPhase == PhaseManager.phase.PREP)
-        {
-            currentPhase = 1; 
-        }
-        else if(phaseManager.currentPhase == PhaseManager.phase.ACTION)
-        {
-            currentPhase = 2; 
         }
     }
 

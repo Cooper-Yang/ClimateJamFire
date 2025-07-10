@@ -8,6 +8,7 @@ public class FireManager : MonoBehaviour
     private List<Tile> smokeTiles;
     public List<Tile> fireTiles;
     public GameObject firePrefab;
+    public PhaseManager phaseManager;
     private void Awake()
     {
         gridManager = GetComponent<GridManager>();
@@ -15,7 +16,7 @@ public class FireManager : MonoBehaviour
 
     private void Start()
     {
-        if (gridManager.state == GameState.Action)
+        if (phaseManager.currentPhase == Phase.ACTION)
         {
             StartFireSpread();
         }
@@ -37,8 +38,4 @@ public class FireManager : MonoBehaviour
         fireTiles.Add(smokeTiles[1]);
     }
 
-    private void Update()
-    {
-        
-    }
 }
