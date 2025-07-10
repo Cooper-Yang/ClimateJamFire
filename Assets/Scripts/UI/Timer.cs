@@ -6,8 +6,8 @@ public class Timer : MonoBehaviour
     [SerializeField] private bool timerOn = true;
     private bool warning = false; 
     [SerializeField] private Image timerFillImage;
-    [SerializeField] private float maxTime = 60.0f; //Max time 
-    [SerializeField] private float warningTime = 15.0f; //Time when the timer goes red
+    private float maxTime = 15.0f; //Max time 
+    private float warningTime = 5.0f; //Time when the timer goes red
     [SerializeField] private TextMeshProUGUI timerText; 
     private float currentTime = 0.0f;
     [SerializeField] private PhaseManager phaseManager; 

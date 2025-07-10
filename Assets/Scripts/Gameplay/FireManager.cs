@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 using UnityEngine.Analytics;
+using System.Collections;
 
 public class FireManager : MonoBehaviour
 {
@@ -54,12 +55,22 @@ public class FireManager : MonoBehaviour
         fireTiles.Add(smokeTiles[1]);
     }
 
+    private bool isCheckingConditions = false; // Flag to control delayed checks
+
     private void Update()
     {
-        if (!gameEnded && phaseManager.currentPhase == Phase.ACTION)
+        if (!gameEnded && phaseManager.currentPhase == Phase.ACTION && !isCheckingConditions)
         {
-            CheckWinLoseConditions();
+            StartCoroutine(DelayedConditionCheck());
         }
+    }
+
+    private IEnumerator DelayedConditionCheck()
+    {
+        isCheckingConditions = true; // Prevent multiple coroutines from starting
+        yield return new WaitForSeconds(2f); // Add a 2-second delay (adjust as needed)
+        CheckWinLoseConditions();
+        isCheckingConditions = false; // Reset flag after check
     }
 
     private void CheckWinLoseConditions()
