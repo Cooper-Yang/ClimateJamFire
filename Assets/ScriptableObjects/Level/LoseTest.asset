@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebf7739391f903244a2c9cc979a58ca3, type: 3}
-  m_Name: Phrase2TestLevel
+  m_Name: LoseTest
   m_EditorClassIdentifier: 
   levelName: TestLevelEditor
   width: 10
@@ -18,20 +18,20 @@ MonoBehaviour:
   tileDatabase: {fileID: 11400000, guid: ed0b8039f75d76e42a4c5db8cdc2b7e2, type: 2}
   levelLayout: 'MMMMMMMMMM
 
-    MTTTMMMTMM
+    M...MMMSMM
 
-    MTSTMMTSTM
+    M...MMTTTM
 
-    T.T.MMTT.M
+    ....MMTTTM
 
-    MMTTMMT.TS
+    ....MMHHH.
 
-    MTT.TMTTTT
+    .......F..
 
-    TT..TT..T.
+    ..........
 
-    .TF..TTTT.
+    ..........
 
-    MTHHHH..TT
+    MM........
 
-    MMM.....MM'
+    MMM.......'

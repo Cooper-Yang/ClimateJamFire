@@ -274,6 +274,25 @@ public class GridManager : MonoBehaviour
             return;
         }
 
+        // Debug logging for house destruction
+        if (tile.IsTileType(TileType.House))
+        {
+            numberOfHouses--;
+            Debug.Log($"HOUSE DESTROYED! Houses remaining: {numberOfHouses}. Tile at ({tile.gridX}, {tile.gridZ}) was a house.");
+            
+            // Notify FireManager that a house was destroyed
+            FireManager fireManager = FindFirstObjectByType<FireManager>();
+            if (fireManager != null)
+            {
+                fireManager.OnHouseDestroyed();
+            }
+        }
+        else if (tile.IsTileType(TileType.Tree))
+        {
+            numberOfRemainingTree--;
+            numberOfTreesCutDownToPlains++;
+        }
+
         int x = tile.gridX;
         int z = tile.gridZ;
         Vector3 pos = tile.transform.position;
