@@ -20,41 +20,33 @@ public class ActionPoint : MonoBehaviour
     public GridManager gridManager;
     private Transform fireStationTransform;
 
-    // Speed Boost Ability Variables
+    [Header("Fire Fighter Ability")]
+    public Ability fireFighterAbility;
+
     [Header("Speed Boost Ability")]
-    public int speedBoostCost = 3;
+    public Ability speedBoostAbility;
     public float speedBoostDuration = 10.0f;
     public float speedBoostMultiplier = 0.5f; // 50% speed increase
     private bool speedBoostActive = false;
 
     // Break Line Ability Variables
     [Header("Break Line Ability")]
-    public int breakLineCost = 8;
+    public Ability breakLineAbility;
     private bool breakLineActive = false;
 
     [Header("Flame Retardant Ability")]
-    public int flameRetardantCost = 4;
+    public Ability flameRetardantAbility;
     public float flameRetardantDuration = 10f;
     private bool flameRetardantActive = false;
 
     [Header("Water Tanker Ability")]
-    public int waterTankerCost = 6;
+    public Ability waterTankerAbility;
     private bool waterTankerActive = false;
 
     [Header("Phase Transition")]
-    [SerializeField] public PhaseManager phaseManager; 
+    [SerializeField] public PhaseManager phaseManager;
 
-    public int currentActionPoint
-    {
-        get
-        {
-            return Mathf.FloorToInt(actionPointSlider.value);
-        }
-        set
-        {
-
-        }
-    }
+    public float currentActionPoint = 10;
 
     private void Start()
     {
@@ -84,18 +76,17 @@ public class ActionPoint : MonoBehaviour
         if (currentActionPoint >= 0.0f && currentActionPoint >= actionPointValue)
         {
             currentActionPoint -= actionPointValue;
-            actionPointSlider.value = currentActionPoint;
         }
     }
 
     public void SpawnFirefighter()
     {
-        if (currentActionPoint >= 1)
+        if (currentActionPoint >= fireFighterAbility.abilityCost)
         {
             GameObject ff = Instantiate(firefighterPrefab, fireStationTransform.position, Quaternion.identity);
             Firefighter firefighter = ff.GetComponent<Firefighter>();
             firefighter.Init(gridManager, phaseManager.currentPhase);
-            SpendActionPoint(1);
+            SpendActionPoint(fireFighterAbility.abilityCost);
 
             if (phaseManager.currentPhase == Phase.PREP)
             {
@@ -115,27 +106,28 @@ public class ActionPoint : MonoBehaviour
 
     public void IncrementBar()
     {
-        actionPointSlider.value += (1 / actionPointRegenTime) * Time.deltaTime;
-        currentActionPoint = Mathf.FloorToInt(actionPointSlider.value);
+        currentActionPoint += (1f / actionPointRegenTime) * Time.deltaTime;
     }
 
     private void Update()
     {
-        if (regenActive)
+        if (regenActive && phaseManager.currentPhase == Phase.ACTION)
         {
             if (currentActionPoint < 10)
             {
                 IncrementBar();
             }
         }
+        currentActionPoint = Mathf.Min(10, currentActionPoint);
+        actionPointSlider.value = currentActionPoint;
     }
 
     // Speed Boost Ability
     public void ActivateSpeedBoost()
     {
-        if (currentActionPoint >= speedBoostCost && !speedBoostActive)
+        if (currentActionPoint >= speedBoostAbility.abilityCost && !speedBoostActive)
         {
-            SpendActionPoint(speedBoostCost);
+            SpendActionPoint(speedBoostAbility.abilityCost);
             speedBoostActive = true;
 
             // Apply speed boost to all active firefighters
@@ -154,7 +146,7 @@ public class ActionPoint : MonoBehaviour
         }
         else
         {
-            Debug.Log($"Not enough action points! Need {speedBoostCost}, have {currentActionPoint}");
+            Debug.Log($"Not enough action points! Need {speedBoostAbility.abilityCost}, have {currentActionPoint}");
         }
     }
 
@@ -183,15 +175,15 @@ public class ActionPoint : MonoBehaviour
     }
 
     // Public method to get speed boost cost (for UI purposes)
-    public int GetSpeedBoostCost()
+    public int GetSpeedBoostAbilityCost()
     {
-        return speedBoostCost;
+        return speedBoostAbility.abilityCost;
     }
 
     // Break Line Ability
     public void ActivateBreakLine()
     {
-        if (currentActionPoint >= breakLineCost && !breakLineActive)
+        if (currentActionPoint >= breakLineAbility.abilityCost && !breakLineActive)
         {
             breakLineActive = true;
             Debug.Log("Break Line ability activated! Click on any tile to clear that entire column of trees.");
@@ -205,7 +197,7 @@ public class ActionPoint : MonoBehaviour
         }
         else
         {
-            Debug.Log($"Not enough action points! Need {breakLineCost}, have {currentActionPoint}");
+            Debug.Log($"Not enough action points! Need {breakLineAbility.abilityCost}, have {currentActionPoint}");
         }
     }
 
@@ -223,7 +215,7 @@ public class ActionPoint : MonoBehaviour
         if (breakLineActive)
         {
             // Spend action points
-            SpendActionPoint(breakLineCost);
+            SpendActionPoint(breakLineAbility.abilityCost);
 
             // Clear all non-burning trees in the selected column
             ClearTreesInColumn(columnX);
@@ -269,7 +261,7 @@ public class ActionPoint : MonoBehaviour
     // Public method to get break line cost (for UI purposes)
     public int GetBreakLineCost()
     {
-        return breakLineCost;
+        return breakLineAbility.abilityCost;
     }
 
     // Public method to cancel break line selection
@@ -288,9 +280,9 @@ public class ActionPoint : MonoBehaviour
 
     public void ActivateFlameRetardant()
     {
-        if (currentActionPoint >= flameRetardantCost && !flameRetardantActive)
+        if (currentActionPoint >= flameRetardantAbility.abilityCost && !flameRetardantActive)
         {
-            SpendActionPoint(flameRetardantCost);
+            SpendActionPoint(flameRetardantAbility.abilityCost);
             flameRetardantActive = true;
 
             Firefighter[] allFirefighters = FindObjectsByType<Firefighter>(FindObjectsSortMode.None);
@@ -324,7 +316,7 @@ public class ActionPoint : MonoBehaviour
 
     public void ActivateWaterTanker()
     {
-        if (currentActionPoint >= waterTankerCost && !waterTankerActive)
+        if (currentActionPoint >= waterTankerAbility.abilityCost && !waterTankerActive)
         {
             waterTankerActive = true;
             Debug.Log("Water Tanker activated! Select center of 2x2 area.");
@@ -338,7 +330,7 @@ public class ActionPoint : MonoBehaviour
 
     private void OnWaterTankerTargetSelected(Tile centerTile)
     {
-        SpendActionPoint(waterTankerCost);
+        SpendActionPoint(waterTankerAbility.abilityCost);
         waterTankerActive = false;
         TileClickManager.Instance.OnTileSelectionMode(false, null);
 
