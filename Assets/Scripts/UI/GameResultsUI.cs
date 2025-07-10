@@ -13,7 +13,8 @@ public class GameResultsUI : MonoBehaviour
     
     [Header("Game Manager Reference")]
     public FireManager fireManager;
-    
+    public PhaseManager phaseManager;
+
     private bool uiShown = false;
     
     private void Start()
@@ -120,11 +121,13 @@ public class GameResultsUI : MonoBehaviour
         }
         
         uiShown = false;
-        
+
+        phaseManager.currentPhase = Phase.PREP;
         // Reload the current scene
         UnityEngine.SceneManagement.SceneManager.LoadScene(
             UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
         );
+
     }
     
     // Public method to manually show results (can be called from other scripts)

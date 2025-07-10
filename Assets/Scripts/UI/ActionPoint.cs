@@ -118,6 +118,7 @@ public class ActionPoint : MonoBehaviour
         actionPointSlider.value += (1 / actionPointRegenTime) * Time.deltaTime;
         currentActionPoint = Mathf.FloorToInt(actionPointSlider.value);
     }
+
     private void Update()
     {
         if (regenActive)
