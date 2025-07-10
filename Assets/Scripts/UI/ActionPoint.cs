@@ -46,7 +46,7 @@ public class ActionPoint : MonoBehaviour
     [Header("Phase Transition")]
     [SerializeField] public PhaseManager phaseManager;
 
-    public float currentActionPoint;
+    public float currentActionPoint = 10;
 
     private void Start()
     {
@@ -111,7 +111,7 @@ public class ActionPoint : MonoBehaviour
 
     private void Update()
     {
-        if (regenActive)
+        if (regenActive && phaseManager.currentPhase == Phase.ACTION)
         {
             if (currentActionPoint < 10)
             {
