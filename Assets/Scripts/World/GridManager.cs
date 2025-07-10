@@ -19,7 +19,7 @@ public class GridManager : MonoBehaviour
     public int numberOfRemainingTree = 0; 
     public int numberOfTreesCutDownToPlains = 0;
     public int numberOfHouses = 0;
-    private Tile[,] tiles;
+    internal Tile[,] tiles;
 
 
     [Header("Level System")]

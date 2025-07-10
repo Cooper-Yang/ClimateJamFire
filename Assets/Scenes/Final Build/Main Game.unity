@@ -1076,6 +1076,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 630890067827764228, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
+      propertyPath: phaseManager
+      value: 
+      objectReference: {fileID: 1865300937}
     - target: {fileID: 710428228358591408, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1573,9 +1577,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2107689884030195831, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 47138780}
-    - targetCorrespondingSourceObject: {fileID: 8153779712677122689, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1235044845}
   m_SourcePrefab: {fileID: 100100000, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
 --- !u!1 &47138774 stripped
 GameObject:
@@ -36686,52 +36687,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223874643}
   m_Mesh: {fileID: -7652750728706062491, guid: 749b1ce2381e02044bd8d1e0e297a195, type: 3}
---- !u!114 &1235044841 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8088587872767050490, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
-  m_PrefabInstance: {fileID: 47138773}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1235044842 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3111461552927733876, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
-  m_PrefabInstance: {fileID: 47138773}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1235044843 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8153779712677122689, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
   m_PrefabInstance: {fileID: 47138773}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1235044845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1235044843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f88590be1ec46f247a8c169119f7e8fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TimerObject: {fileID: 1235044843}
-  timerOn: 0
-  timerFillImage: {fileID: 1235044842}
-  maxTime: 60
-  warningTime: 15
-  timerText: {fileID: 1235044841}
-  phaseManager: {fileID: 1865300937}
 --- !u!1 &1237060533
 GameObject:
   m_ObjectHideFlags: 0
@@ -49452,6 +49412,9 @@ MonoBehaviour:
   fireTiles: []
   firePrefab: {fileID: 1273710762483042, guid: c219e4dcb49b5844691b241cd5fca2f1, type: 3}
   phaseManager: {fileID: 1865300937}
+  hasWon: 0
+  hasLost: 0
+  finalScore: 0
 --- !u!1 &1409763558
 GameObject:
   m_ObjectHideFlags: 0
@@ -57455,7 +57418,6 @@ MonoBehaviour:
   flameRetardantCost: 4
   flameRetardantDuration: 10
   waterTankerCost: 6
-  currentPhase: 2
   phaseManager: {fileID: 1865300937}
 --- !u!4 &1865300935
 Transform:

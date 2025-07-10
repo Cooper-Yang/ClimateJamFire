@@ -5,7 +5,7 @@ using TMPro;
 public class TooltipHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private GameObject tooltipObject;
-    [SerializeField] private Ability ability; 
+    [SerializeField] public Ability ability; 
     [SerializeField] private TextMeshProUGUI abilityTitle;
     [SerializeField] private TextMeshProUGUI abilityDescription;
 
