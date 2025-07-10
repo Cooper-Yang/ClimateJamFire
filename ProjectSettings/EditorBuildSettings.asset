@@ -8,9 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototype/Firefighter_Prototype_Alex.unity
     guid: 18c87c595d595e940906d823ad536aac
+  - enabled: 1
+    path: Assets/Scenes/Final Build/Start Menu.unity
+    guid: 5f5a4e2ce43e5b14ea45493117a57cc9
+  - enabled: 1
+    path: Assets/Scenes/Final Build/Main Game.unity
+    guid: 8b381715e691c9246a445e71f32965d9
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
