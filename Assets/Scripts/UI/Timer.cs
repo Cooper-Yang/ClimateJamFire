@@ -28,13 +28,13 @@ public class Timer : MonoBehaviour
         {
             currentTime -= Time.deltaTime;
             timerFillImage.fillAmount = currentTime / maxTime;
-            timerText.text = "<color=white>"+Mathf.FloorToInt(currentTime).ToString();
+            timerText.text = Mathf.CeilToInt(currentTime).ToString();
         }
 
         if(currentTime <= warningTime && !warning)
         {
             warning = true; 
-            timerFillImage.color = Color.red; 
+            timerFillImage.color = Color.red;
         }
 
         if(currentTime <= 0.0f)

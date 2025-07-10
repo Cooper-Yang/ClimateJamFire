@@ -24,7 +24,6 @@ public class AbilityCooldown : MonoBehaviour
 
     public void ActivateAbility(int APCost)
     {
-        
         StartCoroutine(OnAbilityCooldown());
         //Convert later to a virtual function for different abilities(?) 
     }
