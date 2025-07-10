@@ -1,15 +1,16 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using UnityEngine.Analytics;
 
 public class FireManager : MonoBehaviour
 {
-    
+
     private GridManager gridManager;
     private List<Tile> smokeTiles;
     public List<Tile> fireTiles;
     public GameObject firePrefab;
-    
+    public PhaseManager phaseManager;
     // Win/Lose and Score System
     private bool gameEnded = false;
     public bool hasWon = false;
@@ -17,10 +18,10 @@ public class FireManager : MonoBehaviour
     public int finalScore = 0;
     private int initialHouseCount = 0;
     private float lastHouseDestroyedTime = -1f;
-    
+
     // Events for UI
     public static event Action<bool, int> OnGameEnded; // bool = hasWon, int = finalScore
-    
+
     private void Awake()
     {
         gridManager = GetComponent<GridManager>();
@@ -30,8 +31,8 @@ public class FireManager : MonoBehaviour
     {
         // Store initial house count for lose condition checking
         initialHouseCount = gridManager.numberOfHouses;
-        
-        if (gridManager.state == GameState.Action)
+
+        if (phaseManager.currentPhase == Phase.ACTION)
         {
             StartFireSpread();
         }
@@ -60,15 +61,15 @@ public class FireManager : MonoBehaviour
             CheckWinLoseConditions();
         }
     }
-    
+
     private void CheckWinLoseConditions()
     {
         // Debug current state
         int currentHouses = CountCurrentHouses();
         bool anyFires = !AreNoFireTilesRemaining();
-        
+
         Debug.Log($"Win/Lose Check - Initial Houses: {initialHouseCount}, Current Houses: {currentHouses}, Fires Active: {anyFires}");
-        
+
         // Check lose condition first: all houses are burnt down (if there were houses initially)
         if (initialHouseCount > 0 && currentHouses == 0)
         {
@@ -76,7 +77,7 @@ public class FireManager : MonoBehaviour
             TriggerLoseState();
             return;
         }
-        
+
         // Check win condition: no fire tiles remaining, but wait a frame after last house destroyed to avoid timing conflicts
         if (AreNoFireTilesRemaining())
         {
@@ -86,13 +87,13 @@ public class FireManager : MonoBehaviour
                 Debug.Log("Delaying win check - house was just destroyed");
                 return;
             }
-            
+
             Debug.Log("WIN CONDITION MET: No fires remaining!");
             TriggerWinState();
             return;
         }
     }
-    
+
     private int CountCurrentHouses()
     {
         int houseCount = 0;
@@ -109,12 +110,12 @@ public class FireManager : MonoBehaviour
         }
         return houseCount;
     }
-    
+
     private bool AreAllHousesBurnt()
     {
         Tile[,] tiles = GetAllTiles();
         if (tiles == null) return false;
-        
+
         for (int x = 0; x < gridManager.width; x++)
         {
             for (int z = 0; z < gridManager.height; z++)
@@ -128,7 +129,7 @@ public class FireManager : MonoBehaviour
         }
         return true; // No houses found, all burnt
     }
-    
+
     private bool AreNoFireTilesRemaining()
     {
         for (int x = 0; x < gridManager.width; x++)
@@ -144,43 +145,43 @@ public class FireManager : MonoBehaviour
         }
         return true; // No fire found
     }
-    
+
     private void TriggerWinState()
     {
         if (gameEnded) return;
-        
+
         gameEnded = true;
         hasWon = true;
         hasLost = false;
-        
+
         CalculateFinalScore();
-        
+
         Debug.Log($"You Won! Final Score: {finalScore}");
-        
+
         // Fire event for UI
         OnGameEnded?.Invoke(true, finalScore);
     }
-    
+
     private void TriggerLoseState()
     {
         if (gameEnded) return;
-        
+
         gameEnded = true;
         hasWon = false;
         hasLost = true;
-        
+
         CalculateFinalScore();
-        
+
         Debug.Log($"You Lost! Final Score: {finalScore}");
-        
+
         // Fire event for UI
         OnGameEnded?.Invoke(false, finalScore);
     }
-    
+
     private void CalculateFinalScore()
     {
         finalScore = 0;
-        
+
         for (int x = 0; x < gridManager.width; x++)
         {
             for (int z = 0; z < gridManager.height; z++)
@@ -202,35 +203,35 @@ public class FireManager : MonoBehaviour
             }
         }
     }
-    
+
     private Tile[,] GetAllTiles()
     {
         // Helper method to access the tiles array from GridManager
         // This assumes GridManager has a way to access its tiles
         return null; // GridManager would need to expose its tiles array
     }
-    
+
     // Public methods for external access
     public bool IsGameEnded()
     {
         return gameEnded;
     }
-    
+
     public bool HasPlayerWon()
     {
         return hasWon;
     }
-    
+
     public bool HasPlayerLost()
     {
         return hasLost;
     }
-    
+
     public int GetFinalScore()
     {
         return finalScore;
     }
-    
+
     // Method to be called when a house is destroyed
     public void OnHouseDestroyed()
     {

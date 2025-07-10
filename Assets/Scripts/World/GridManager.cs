@@ -5,14 +5,6 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 #endif
 
-public enum GameState
-{
-    Preparation,
-    Action,
-    Results
-};
-
-
 public class GridManager : MonoBehaviour
 {
 
@@ -24,7 +16,6 @@ public class GridManager : MonoBehaviour
     public const float cellSize = 2.56f;
     public float cellGapX = 0.1f;
     public float cellGapZ = 0.1f;
-    public GameState state = GameState.Preparation;
     public int numberOfRemainingTree = 0; 
     public int numberOfTreesCutDownToPlains = 0;
     public int numberOfHouses = 0;

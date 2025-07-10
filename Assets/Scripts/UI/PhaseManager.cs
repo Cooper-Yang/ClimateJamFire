@@ -1,11 +1,12 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; 
+using TMPro;
+public enum Phase { PREP, ACTION, SCORE };
 public class PhaseManager : MonoBehaviour
 {
-    public enum phase { PREP, ACTION, SCORE};
-    [SerializeField] public phase currentPhase;
+
+    [SerializeField] public Phase currentPhase;
 
     //UI Elements to activate/deactivate: phase panel, fire progress bar, timer, ability buttons, final score panel
     [SerializeField] private GameObject phasePanel, fireProgressBar, timer, finalScorePanel;
@@ -17,9 +18,10 @@ public class PhaseManager : MonoBehaviour
     {
         StartPrep(); 
     }
+
     public void StartPrep()
     {
-        currentPhase = phase.PREP;
+        currentPhase = Phase.PREP;
         fireProgressBar.SetActive(false);
         timer.SetActive(true);
         finalScorePanel.SetActive(false); 
@@ -35,12 +37,12 @@ public class PhaseManager : MonoBehaviour
     IEnumerator DisplayPhasePanel()
     {
         phasePanel.SetActive(true); 
-        if(currentPhase == phase.PREP)
+        if(currentPhase == Phase.PREP)
         {
             phaseText.text = "Prep Phase";
             phasePanelWarningObjects.SetActive(false); 
         }
-        else if(currentPhase == phase.ACTION) 
+        else if(currentPhase == Phase.ACTION) 
         {
             phaseText.text = "Action Phase"; 
             phasePanelWarningObjects.SetActive(true);
@@ -55,7 +57,7 @@ public class PhaseManager : MonoBehaviour
     }
     public void TransitionToAction()
     {
-        currentPhase = phase.ACTION;
+        currentPhase = Phase.ACTION;
         fireProgressBar.SetActive(true);
         timer.SetActive(false);
         finalScorePanel.SetActive(false);
@@ -69,7 +71,7 @@ public class PhaseManager : MonoBehaviour
 
     public void TransitionToScore()
     {
-        currentPhase = phase.SCORE;
+        currentPhase = Phase.SCORE;
         fireProgressBar.SetActive(false); 
         timer.SetActive(false);
         finalScorePanel.SetActive(true);
