@@ -38,7 +38,7 @@ public class FireManager : MonoBehaviour
         }
     }
 
-    private void StartFireSpread()
+    public void StartFireSpread()
     {
         smokeTiles = gridManager.GetSmokeTiles();
         for (int i = smokeTiles.Count - 1; i > 0; i--)

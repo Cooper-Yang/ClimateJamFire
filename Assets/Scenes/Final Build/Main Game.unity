@@ -1252,6 +1252,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2745004173752322949, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
+      propertyPath: fireManager
+      value: 
+      objectReference: {fileID: 1405747467}
+    - target: {fileID: 2745004173752322949, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
+      propertyPath: gridManager
+      value: 
+      objectReference: {fileID: 1405747465}
     - target: {fileID: 2819870074710000864, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -57433,6 +57441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPhase: 0
+  fireManager: {fileID: 1405747467}
   phasePanel: {fileID: 1795052660}
   fireProgressBar: {fileID: 806794390}
   timer: {fileID: 1177497826}

@@ -7,7 +7,7 @@ public class PhaseManager : MonoBehaviour
 {
 
     [SerializeField] public Phase currentPhase;
-
+    [SerializeField] private FireManager fireManager;
     //UI Elements to activate/deactivate: phase panel, fire progress bar, timer, ability buttons, final score panel
     [SerializeField] private GameObject phasePanel, fireProgressBar, timer, finalScorePanel;
     [SerializeField] private TextMeshProUGUI phaseText;
@@ -66,6 +66,7 @@ public class PhaseManager : MonoBehaviour
         else if (currentPhase == Phase.ACTION)
         {
             fireProgressBar.SetActive(true);
+            fireManager.StartFireSpread();
         }
         else
         {
