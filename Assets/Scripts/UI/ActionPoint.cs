@@ -88,6 +88,12 @@ public class ActionPoint : MonoBehaviour
             firefighter.Init(gridManager, phaseManager.currentPhase);
             SpendActionPoint(fireFighterAbility.abilityCost);
 
+            // Play firefighter spawn sound
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayFirefighterSpawnSound();
+            }
+
             if (phaseManager.currentPhase == Phase.PREP)
             {
                 TileClickManager.Instance.SetActiveFirefighter(firefighter);
@@ -135,6 +141,12 @@ public class ActionPoint : MonoBehaviour
             foreach (Firefighter firefighter in allFirefighters)
             {
                 firefighter.ApplySpeedBoost(speedBoostMultiplier);
+            }
+
+            // Play speed boost sound
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlaySpeedBoostSound();
             }
 
             StartCoroutine(SpeedBoostCoroutine());
@@ -220,6 +232,12 @@ public class ActionPoint : MonoBehaviour
             // Clear all non-burning trees in the selected column
             ClearTreesInColumn(columnX);
 
+            // Play break line sound
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayBreakLineSound();
+            }
+
             // Deactivate break line mode
             breakLineActive = false;
             if (TileClickManager.Instance != null)
@@ -291,6 +309,12 @@ public class ActionPoint : MonoBehaviour
                 ff.hasFlameRetardantBuff = true;
             }
 
+            // Play fire retardant sound
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayFireRetardantSound();
+            }
+
             StartCoroutine(FlameRetardantDuration());
             Debug.Log("Flame Retardant activated!");
         }
@@ -334,7 +358,13 @@ public class ActionPoint : MonoBehaviour
         waterTankerActive = false;
         TileClickManager.Instance.OnTileSelectionMode(false, null);
 
-        StartCoroutine(DropWaterBombAfterDelay(centerTile, 3f));
+        // Play water tanker sound
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayWaterTankerSound();
+        }
+
+        StartCoroutine(DropWaterBombAfterDelay(centerTile, 1.5f));
     }
 
     private IEnumerator DropWaterBombAfterDelay(Tile center, float delay)

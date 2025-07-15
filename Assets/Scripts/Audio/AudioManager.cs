@@ -17,6 +17,12 @@ public class AudioManager : MonoBehaviour
     public AudioClip fireRetardantSound;
     public AudioClip waterTankerSound;
     public AudioClip breakLineSound;
+    [Header("Other Sounds")]
+    public AudioClip DespawnSound;
+    
+    public AudioClip ExtinguishSound;
+    public AudioClip FireBurnLoopSound;
+    public AudioClip TreeChopSound;
     
     [Header("Audio Settings")]
     [Range(0f, 1f)]
@@ -83,7 +89,47 @@ public class AudioManager : MonoBehaviour
         if (breakLineSound != null)
             sfxSource.PlayOneShot(breakLineSound);
     }
-    
+
+    // Other Sound Functions
+    public void PlayDespawnSound()
+    {
+        if (DespawnSound != null)
+            sfxSource.PlayOneShot(DespawnSound);
+    }
+
+    public void PlayExtinguishSound()
+    {
+        if (ExtinguishSound != null)
+            sfxSource.PlayOneShot(ExtinguishSound);
+    }
+
+    public void PlayTreeChopSound()
+    {
+        if (TreeChopSound != null)
+            sfxSource.PlayOneShot(TreeChopSound);
+    }
+
+    // For looping fire burn sound
+    public void PlayFireBurnLoopSound()
+    {
+        if (FireBurnLoopSound != null && !sfxSource.isPlaying)
+        {
+            sfxSource.clip = FireBurnLoopSound;
+            sfxSource.loop = true;
+            sfxSource.Play();
+        }
+    }
+
+    public void StopFireBurnLoopSound()
+    {
+        if (sfxSource.clip == FireBurnLoopSound)
+        {
+            sfxSource.Stop();
+            sfxSource.loop = false;
+            sfxSource.clip = null;
+        }
+    }
+
     // Simple controls
     public void SetMusicVolume(float volume)
     {

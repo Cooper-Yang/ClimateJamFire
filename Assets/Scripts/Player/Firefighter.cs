@@ -84,10 +84,14 @@ public class Firefighter : MonoBehaviour
             yield return new WaitForSeconds(moveTimePerTile);
         }
 
+        // Play tree chop sound when firefighter starts chopping
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayTreeChopSound();
+        }
+
         yield return new WaitForSeconds(cutTime);
 
-        //target.type = TileType.Plain;
-        //target.Highlight(false);
         if (!target.IsTileType(TileType.Tree))
         {
             Debug.LogWarning("ReplaceTileWithPlain called on invalid tile.");
@@ -97,6 +101,13 @@ public class Firefighter : MonoBehaviour
             gmm.ReplaceTileWithPlain(target);
             gmm.numberOfTreesCutDownToPlains++;
             gmm.numberOfRemainingTree--;
+
+            // Play despawn sound
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayDespawnSound();
+            }
+            
             Destroy(gameObject);
         }
     }
@@ -124,6 +135,13 @@ public class Firefighter : MonoBehaviour
         else
         {
             Debug.Log("No smoke tile found for firefighter to move to.");
+            
+            // Play despawn sound
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayDespawnSound();
+            }
+            
             Destroy(gameObject);
         }
     }
@@ -167,7 +185,14 @@ public class Firefighter : MonoBehaviour
         {
             if (step == null || step.gameObject == null)
             {
-                Debug.LogWarning("Firefighter path interrupted — step destroyed.");
+                Debug.LogWarning("Firefighter path interrupted â€“ step destroyed.");
+                
+                // Play despawn sound
+                if (AudioManager.Instance != null)
+                {
+                    AudioManager.Instance.PlayDespawnSound();
+                }
+                
                 Destroy(gameObject);
                 yield break;
             }
@@ -177,6 +202,12 @@ public class Firefighter : MonoBehaviour
             yield return new WaitForSeconds(moveTimePerTile);
         }
 
+        // Play extinguish sound when firefighter starts extinguishing
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayExtinguishSound();
+        }
+
         if (hasFlameRetardantBuff) usesFastExtinguish = true;
         float extinguishTime = usesFastExtinguish ? 5f : 10f;
         yield return new WaitForSeconds(extinguishTime);
@@ -184,12 +215,26 @@ public class Firefighter : MonoBehaviour
         if (target == null || targetTransform == null || targetTransform.gameObject == null)
         {
             Debug.LogWarning("Firefighter's target was destroyed mid-extinguish.");
+            
+            // Play despawn sound
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayDespawnSound();
+            }
+            
             Destroy(gameObject);
             yield break;
         }
+        
         if (target.IsBurning())
         {
             gmm.ReplaceTileWithTree(target);
+        }
+
+        // Play despawn sound
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayDespawnSound();
         }
 
         Destroy(gameObject);
