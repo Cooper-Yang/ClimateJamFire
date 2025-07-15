@@ -345,7 +345,7 @@ public class GridManager : MonoBehaviour
             newTile.gridManager = this;
             tiles[x, z] = newTile;
 
-            newTile.OnFire(firePrefab: FindObjectOfType<FireManager>().firePrefab);
+            newTile.OnFire(firePrefab: FindFirstObjectByType<FireManager>().firePrefab);
         }
         else
         {

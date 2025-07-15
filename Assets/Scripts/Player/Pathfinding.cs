@@ -83,7 +83,7 @@ public class Pathfinding : MonoBehaviour
     private static List<Tile> GetNeighbors(Tile tile)
     {
         List<Tile> neighbors = new List<Tile>();
-        GridManager gm = FindObjectOfType<GridManager>();
+        GridManager gm = FindFirstObjectByType<GridManager>();
 
         int[,] directions = new int[,] { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } };
 
