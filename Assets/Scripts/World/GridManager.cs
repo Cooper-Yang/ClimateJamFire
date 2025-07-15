@@ -13,7 +13,7 @@ public class GridManager : MonoBehaviour
     public GameObject treeTilePrefab;
     public int width = 10;
     public int height = 10;
-    public const float cellSize = 2.56f;
+    public const float cellSize = 1f;
     public float cellGapX = 0.1f;
     public float cellGapZ = 0.1f;
     public int numberOfRemainingTree = 0; 
