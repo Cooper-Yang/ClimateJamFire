@@ -46043,6 +46043,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9142434389188859039, guid: d36a8a533588dfe43af93b39ad7f339b, type: 3}
+      propertyPath: UI_PauseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b3e07471283af6e40874544be6fa8eef, type: 3}
+    - target: {fileID: 9142434389188859039, guid: d36a8a533588dfe43af93b39ad7f339b, type: 3}
+      propertyPath: UI_WarningFiveSecsSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 38718e5f4d578df45869add0ada90b56, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

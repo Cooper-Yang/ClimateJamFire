@@ -32,6 +32,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] UI_NewPhaseSounds; 
     public AudioClip UI_StartSound;
     public AudioClip UI_WarningFiveSecsSound;
+    public AudioClip UI_PauseSound; 
 
     [Header("Audio Settings")]
     [Range(0f, 1f)]
@@ -196,6 +197,12 @@ public class AudioManager : MonoBehaviour
     {
         if (UI_WarningFiveSecsSound != null)
             sfxSource.PlayOneShot(UI_WarningFiveSecsSound);
+    }
+
+    public void PlayUIPauseSound()
+    {
+        if (UI_PauseSound != null)
+            sfxSource.PlayOneShot(UI_PauseSound); 
     }
 
     // Simple controls

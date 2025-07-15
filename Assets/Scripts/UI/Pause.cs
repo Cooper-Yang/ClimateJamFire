@@ -2,18 +2,28 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
-    [SerializeField] private GameObject PausePanel; 
-
+    [SerializeField] private GameObject PausePanel;
+    private float OriginalVol; 
     public void PauseGame()
     {
         PausePanel.SetActive(true);
-        Time.timeScale = 0f; 
+        Time.timeScale = 0f;
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayUIPauseSound();
+            // Store original volume
+            OriginalVol = AudioManager.Instance.sfxSource.volume;
+            // Set volume to half
+            AudioManager.Instance.sfxSource.volume = OriginalVol * 0.5f;
+        }
     }
 
     public void ResumeGame()
     {
         PausePanel.SetActive(false);
         Time.timeScale = 1f;
+        // Restore original volume
+        AudioManager.Instance.sfxSource.volume = OriginalVol;
     }
 
     public void QuitGame()
