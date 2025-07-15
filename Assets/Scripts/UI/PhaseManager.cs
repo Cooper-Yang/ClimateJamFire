@@ -42,6 +42,13 @@ public class PhaseManager : MonoBehaviour
     IEnumerator DisplayPhasePanel()
     {
         phasePanel.SetActive(true);
+        
+        // Play new phase sound when entering any phase
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayUINewPhaseSound();
+        }
+        
         if (currentPhase == Phase.PREP)
         {
             phaseText.text = "Prep Phase";
@@ -57,8 +64,10 @@ public class PhaseManager : MonoBehaviour
             phaseText.text = "Final Results";
             phasePanelWarningObjects.SetActive(false);
         }
+        
         yield return new WaitForSecondsRealtime(2.0f);
         phasePanel.SetActive(false);
+        
         if (currentPhase == Phase.PREP)
         {
             timer.SetActive(true);

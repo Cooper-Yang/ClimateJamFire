@@ -111,6 +111,14 @@ public class ActionPoint : MonoBehaviour
                 firefighter.BeginFirefightingMode();
             }
         }
+        else
+        {
+            // Play deny sound when not enough AP
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayUIDenySound();
+            }
+        }
     }
 
     public void StartRegen()
@@ -163,10 +171,20 @@ public class ActionPoint : MonoBehaviour
         else if (speedBoostActive)
         {
             Debug.Log("Speed Boost is already active!");
+            // Play deny sound when already active
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayUIDenySound();
+            }
         }
         else
         {
             Debug.Log($"Not enough action points! Need {speedBoostAbility.abilityCost}, have {currentActionPoint}");
+            // Play deny sound when not enough AP
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayUIDenySound();
+            }
         }
     }
 
@@ -214,10 +232,20 @@ public class ActionPoint : MonoBehaviour
         else if (breakLineActive)
         {
             Debug.Log("Break Line is already active! Click on any tile to clear that column.");
+            // Play deny sound when already active
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayUIDenySound();
+            }
         }
         else
         {
             Debug.Log($"Not enough action points! Need {breakLineAbility.abilityCost}, have {currentActionPoint}");
+            // Play deny sound when not enough AP
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayUIDenySound();
+            }
         }
     }
 
@@ -330,6 +358,11 @@ public class ActionPoint : MonoBehaviour
         else
         {
             Debug.Log("Not enough AP or already active!");
+            // Play deny sound when not enough AP or already active
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayUIDenySound();
+            }
         }
     }
 
@@ -360,6 +393,11 @@ public class ActionPoint : MonoBehaviour
         else
         {
             Debug.Log("Not enough AP or already active.");
+            // Play deny sound when not enough AP or already active
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayUIDenySound();
+            }
         }
     }
 

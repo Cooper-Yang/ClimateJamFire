@@ -24,6 +24,15 @@ public class AudioManager : MonoBehaviour
     public AudioClip FireBurnLoopSound;
     public AudioClip TreeChopSound;
     
+    [Header("UI Sounds")]
+    public AudioClip[] UI_ClickSounds; 
+    public AudioClip[] UI_ClockTickSounds; 
+    public AudioClip UI_DenySound;
+    public AudioClip[] UI_HoverSounds; 
+    public AudioClip[] UI_NewPhaseSounds; 
+    public AudioClip UI_StartSound;
+    public AudioClip UI_WarningFiveSecsSound;
+
     [Header("Audio Settings")]
     [Range(0f, 1f)]
     public float musicVolume = 0.5f;
@@ -128,6 +137,65 @@ public class AudioManager : MonoBehaviour
             sfxSource.loop = false;
             sfxSource.clip = null;
         }
+    }
+
+    // UI Sound Functions
+    public void PlayUIClickSound()
+    {
+        if (UI_ClickSounds != null && UI_ClickSounds.Length > 0)
+        {
+            AudioClip randomClip = UI_ClickSounds[Random.Range(0, UI_ClickSounds.Length)];
+            if (randomClip != null)
+                sfxSource.PlayOneShot(randomClip);
+        }
+    }
+
+    public void PlayUIClockTickSound()
+    {
+        if (UI_ClockTickSounds != null && UI_ClockTickSounds.Length > 0)
+        {
+            AudioClip randomClip = UI_ClockTickSounds[Random.Range(0, UI_ClockTickSounds.Length)];
+            if (randomClip != null)
+                sfxSource.PlayOneShot(randomClip);
+        }
+    }
+
+    public void PlayUIDenySound()
+    {
+        if (UI_DenySound != null)
+            sfxSource.PlayOneShot(UI_DenySound);
+    }
+
+    public void PlayUIHoverSound()
+    {
+        if (UI_HoverSounds != null && UI_HoverSounds.Length > 0)
+        {
+            AudioClip randomClip = UI_HoverSounds[Random.Range(0, UI_HoverSounds.Length)];
+            if (randomClip != null)
+                sfxSource.PlayOneShot(randomClip);
+        }
+    }
+
+    public void PlayUINewPhaseSound()
+    {
+        if (UI_NewPhaseSounds != null && UI_NewPhaseSounds.Length > 0)
+        {
+            AudioClip randomClip = UI_NewPhaseSounds[Random.Range(0, UI_NewPhaseSounds.Length)];
+            if (randomClip != null)
+                sfxSource.PlayOneShot(randomClip);
+        }
+    }
+
+    public void PlayUIStartSound()
+    {
+        if (UI_StartSound != null)
+            sfxSource.PlayOneShot(UI_StartSound);
+    }
+
+    public void PlayUIWarningFiveSecsSound()
+    {
+        if (UI_WarningFiveSecsSound != null)
+            sfxSource.PlayOneShot(UI_WarningFiveSecsSound);
     }
 
     // Simple controls
