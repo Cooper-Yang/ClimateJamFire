@@ -31,7 +31,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.56, y: 2.56, z: 2.56}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1226971459858448273}
   - {fileID: 1276529012679655132}
@@ -125,11 +125,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 0
   gridZ: 0
-  cellSize: 0
   definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
-  type: 1
   highlightMaterial: {fileID: -5283888208800200948, guid: 3cb0f2ca11eafae45b0ac6d8f8678a07, type: 3}
-  isWalkable: 1
+  isBurning: 0
 --- !u!1001 &1602609815341586743
 PrefabInstance:
   m_ObjectHideFlags: 0
