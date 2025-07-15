@@ -306,11 +306,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 8398823202928703205}
   sfxSource: {fileID: 1454660399156507218}
-  backgroundMusic: {fileID: 0}
-  firefighterSpawnSound: {fileID: 0}
-  speedBoostSound: {fileID: 0}
-  fireRetardantSound: {fileID: 0}
-  waterTankerSound: {fileID: 0}
-  breakLineSound: {fileID: 0}
+  backgroundMusic: {fileID: 8300000, guid: fab829451b68add478b65288f2305f05, type: 3}
+  firefighterSpawnSound: {fileID: 8300000, guid: c381f56bf5bd0fe49895ea50041f1fad, type: 3}
+  speedBoostSound: {fileID: 8300000, guid: 14ac5c28b9a87454690cde061c5e2993, type: 3}
+  fireRetardantSound: {fileID: 8300000, guid: 86a6615b9f9cfe743bea77ec1baa3d50, type: 3}
+  waterTankerSound: {fileID: 8300000, guid: faa5bbf9b4cd29a4788e87a61d0f1ca1, type: 3}
+  breakLineSound: {fileID: 8300000, guid: 457798a1a5b95ce49ac1d85bcc02da92, type: 3}
+  DespawnSound: {fileID: 8300000, guid: 72056e0519611214e80b9535ce9976f9, type: 3}
+  ExtinguishSound: {fileID: 8300000, guid: de809e174c6fd474e8995a540bfa1cf5, type: 3}
+  FireBurnLoopSound: {fileID: 8300000, guid: 05b7f272da9f72140827b91cb9c1d844, type: 3}
+  TreeChopSound: {fileID: 8300000, guid: c48b69fb718163e429e24386ef12515e, type: 3}
   musicVolume: 0.5
   sfxVolume: 0.8
