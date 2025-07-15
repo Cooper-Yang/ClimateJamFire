@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: 83
   tileType: 5
-  prefab: {fileID: 4292240228651150138, guid: 493e24868b99e1d4cac610433fc1498f, type: 3}
+  prefab: {fileID: 5069355273941743042, guid: c598d08fd3e614541abd3bab25246242, type: 3}
   editorColor: {r: 1, g: 0, b: 0.9046192, a: 1}
   description: 
