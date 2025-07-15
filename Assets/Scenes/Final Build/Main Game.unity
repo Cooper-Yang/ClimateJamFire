@@ -40909,9 +40909,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a58ccf31a2b37a42bdb776a73b984b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultTilePrefab: {fileID: 6905445088601705378, guid: da02dc8988a5d1e4e816cb0ef72c39a9, type: 3}
-  smokeTilePrefab: {fileID: 5069355273941743042, guid: c598d08fd3e614541abd3bab25246242, type: 3}
-  treeTilePrefab: {fileID: 5069355273941743042, guid: 3f19a151b04b6c24da64fd73b6f413b3, type: 3}
   width: 10
   height: 10
   cellGapX: 1.5
@@ -40921,6 +40918,11 @@ MonoBehaviour:
   numberOfHouses: 4
   currentLevel: {fileID: 11400000, guid: 5881505f6f8f1b140b05cb23c79f34a4, type: 2}
   plainTilePrefab: {fileID: 8343126782851180408, guid: 7639952889f582c4cb77865dad8854f0, type: 3}
+  smokeTilePrefab: {fileID: 5069355273941743042, guid: c598d08fd3e614541abd3bab25246242, type: 3}
+  treeTilePrefab: {fileID: 5069355273941743042, guid: 3f19a151b04b6c24da64fd73b6f413b3, type: 3}
+  burnedTilePrefab: {fileID: 0}
+  choppedTilePrefab: {fileID: 0}
+  grassTilePrefab: {fileID: 0}
   gameplayDatabase: {fileID: 11400000, guid: b771dfedb6567cb4b9c6901b69f3f2ed, type: 2}
 --- !u!4 &1405747466
 Transform:
@@ -50326,6 +50328,7 @@ MonoBehaviour:
   firefighterPrefab: {fileID: 3544417587253528783, guid: e73b1dd38102dfe4090780b527e9c4fe, type: 3}
   gridManager: {fileID: 1405747465}
   fireFighterAbility: {fileID: 11400000, guid: cda96218edcdc7b479cde6bfe3665c17, type: 2}
+  fireFighterPositionOffset: {x: 0, y: 1, z: 0}
   speedBoostAbility: {fileID: 11400000, guid: 405af523114ec69459fb636f8be9664d, type: 2}
   speedBoostDuration: 10
   speedBoostMultiplier: 0.5

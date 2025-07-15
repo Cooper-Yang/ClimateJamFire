@@ -24,6 +24,7 @@ public class ActionPoint : MonoBehaviour
 
     [Header("Fire Fighter Ability")]
     public Ability fireFighterAbility;
+    public Vector3 fireFighterPositionOffset;
 
     [Header("Speed Boost Ability")]
     public Ability speedBoostAbility;
@@ -90,9 +91,9 @@ public class ActionPoint : MonoBehaviour
     {
         if (currentActionPoint >= fireFighterAbility.abilityCost)
         {
-            GameObject ff = Instantiate(firefighterPrefab, fireStationTransform.position, Quaternion.identity);
+            GameObject ff = Instantiate(firefighterPrefab, fireStationTransform.position + fireFighterPositionOffset, Quaternion.identity);
             Firefighter firefighter = ff.GetComponent<Firefighter>();
-            firefighter.Init(gridManager, phaseManager.currentPhase);
+            firefighter.Init(gridManager, fireFighterPositionOffset, phaseManager.currentPhase);
             SpendActionPoint(fireFighterAbility.abilityCost);
 
             // Play firefighter spawn sound
@@ -238,7 +239,7 @@ public class ActionPoint : MonoBehaviour
             SpendActionPoint(breakLineAbility.abilityCost);
             Cursor.SetCursor(defualtCursor, GetTextureCenter(defualtCursor), UnityEngine.CursorMode.Auto);
             // Clear all non-burning trees in the selected column
-            ClearTreesInColumn(columnX);
+            ChopTreesInColumn(columnX);
 
             // Play break line sound
             if (AudioManager.Instance != null)
@@ -257,7 +258,7 @@ public class ActionPoint : MonoBehaviour
         }
     }
 
-    private void ClearTreesInColumn(int columnX)
+    private void ChopTreesInColumn(int columnX)
     {
         Tile[] allTiles = FindObjectsByType<Tile>(FindObjectsSortMode.None);
         int treesCleared = 0;
@@ -268,7 +269,7 @@ public class ActionPoint : MonoBehaviour
             if (tile.gridX == columnX && tile.IsTileType(TileType.Tree) && !tile.IsBurning())
             {
                 // Convert tree to plain
-                gridManager.ReplaceTileWithPlain(tile);
+                gridManager.ReplaceTileWithPlain(tile, gridManager.choppedTilePrefab);
                 gridManager.numberOfTreesCutDownToPlains++;
                 gridManager.numberOfRemainingTree--;
                 treesCleared++;

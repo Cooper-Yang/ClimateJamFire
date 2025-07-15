@@ -12,7 +12,7 @@ public class Firefighter : MonoBehaviour
     public float cutTime = 2.5f; // Time to cut a tree
     public bool hasFlameRetardantBuff = false;
     public bool usesFastExtinguish = false;
-
+    internal Vector3 positionOffset;
     /*private void Start()
     {
         GridManager gm = FindObjectOfType<GridManager>();
@@ -29,11 +29,12 @@ public class Firefighter : MonoBehaviour
         }
     }
     */
-    public void Init(GridManager gridManager, Phase phase = Phase.PREP)
+    public void Init(GridManager gridManager, Vector3 defaultPositionOffset, Phase phase = Phase.PREP)
     {
         baseMoveTimePerTile = moveTimePerTile;
         currentTile = gridManager.GetTileAtCoord(transform.position);
         gmm = gridManager;
+        positionOffset = defaultPositionOffset;
 
         if (currentTile == null)
         {
@@ -80,7 +81,7 @@ public class Firefighter : MonoBehaviour
 
         foreach (Tile step in path)
         {
-            transform.position = step.transform.position;
+            transform.position = step.gameObject.transform.position + positionOffset;
             yield return new WaitForSeconds(moveTimePerTile);
         }
 
@@ -98,7 +99,7 @@ public class Firefighter : MonoBehaviour
         }
         else
         {
-            gmm.ReplaceTileWithPlain(target);
+            gmm.ReplaceTileWithPlain(target, gmm.choppedTilePrefab);
             gmm.numberOfTreesCutDownToPlains++;
             gmm.numberOfRemainingTree--;
 

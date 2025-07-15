@@ -68,7 +68,18 @@ public class Tile : MonoBehaviour
         if (fireObject != null)
         {
             DestroyImmediate(fireObject);
-            gridManager.ReplaceTileWithPlain(this);
+            if (definition.tileType == TileType.Tree)
+            {
+                gridManager.ReplaceTileWithPlain(this, gridManager.burnedTilePrefab);
+            }
+            else if (definition.tileType == TileType.House)
+            {
+                gridManager.ReplaceTileWithPlain(this, gridManager.grassTilePrefab);
+            }
+            else
+            {
+                gridManager.ReplaceTileWithPlain(this, gridManager.plainTilePrefab);
+            }
         }
     }
 

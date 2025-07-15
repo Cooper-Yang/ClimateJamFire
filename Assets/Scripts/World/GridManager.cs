@@ -8,9 +8,7 @@ using UnityEditor.SceneManagement;
 public class GridManager : MonoBehaviour
 {
 
-    public GameObject defaultTilePrefab;
-    public GameObject smokeTilePrefab;
-    public GameObject treeTilePrefab;
+
     public int width = 10;
     public int height = 10;
     public const float cellSize = 1f;
@@ -26,6 +24,12 @@ public class GridManager : MonoBehaviour
     public LevelData currentLevel;
     [Header("Tile Replacement Prefabs")]
     public GameObject plainTilePrefab;
+    public GameObject smokeTilePrefab;
+    public GameObject treeTilePrefab;
+    public GameObject burnedTilePrefab;
+    public GameObject choppedTilePrefab;
+    public GameObject grassTilePrefab;
+
     [Header("Gameplay Data System")]
     public GameplayTileDatabase gameplayDatabase;   
 
@@ -175,7 +179,7 @@ public class GridManager : MonoBehaviour
                     0,
                     z * (cellSize + cellGapZ));
 
-                GameObject tileGO = Instantiate(defaultTilePrefab, transform);
+                GameObject tileGO = Instantiate(plainTilePrefab, transform);
                 tileGO.transform.localPosition = localPos;
                 tileGO.name = $"Tile ({x},{z})";
                 tileGO.transform.localScale = new Vector3(cellSize, 1f, cellSize);
@@ -266,7 +270,7 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    public void ReplaceTileWithPlain(Tile tile)
+    public void ReplaceTileWithPlain(Tile tile, GameObject tilePrefab)
     {
         if (tile == null)
         {
@@ -299,7 +303,7 @@ public class GridManager : MonoBehaviour
 
         Destroy(tile.gameObject);
 
-        GameObject newTileGO = Instantiate(plainTilePrefab, pos, Quaternion.identity, transform);
+        GameObject newTileGO = Instantiate(tilePrefab, pos, Quaternion.identity, transform);
         newTileGO.transform.localScale = new Vector3(GridManager.cellSize, 1f, GridManager.cellSize);
 
         Tile newTile = newTileGO.GetComponent<Tile>();
