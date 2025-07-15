@@ -185,7 +185,7 @@ MonoBehaviour:
   gridX: 0
   gridZ: 0
   definition: {fileID: 11400000, guid: 26e114160777c6f429a869ac07957d09, type: 2}
-  highlightMaterial: {fileID: 0}
+  highlightMaterial: {fileID: -5283888208800200948, guid: 3cb0f2ca11eafae45b0ac6d8f8678a07, type: 3}
   isBurning: 0
 --- !u!4 &8683904587164564930 stripped
 Transform:

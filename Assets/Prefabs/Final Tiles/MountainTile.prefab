@@ -206,5 +206,5 @@ MonoBehaviour:
   gridX: 0
   gridZ: 0
   definition: {fileID: 11400000, guid: 85c4be38cf1f94a4b8bf62d3300681f2, type: 2}
-  highlightMaterial: {fileID: 0}
+  highlightMaterial: {fileID: -5283888208800200948, guid: 3cb0f2ca11eafae45b0ac6d8f8678a07, type: 3}
   isBurning: 0

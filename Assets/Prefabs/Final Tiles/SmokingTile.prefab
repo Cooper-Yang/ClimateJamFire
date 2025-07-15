@@ -547,8 +547,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 0
   gridZ: 0
-  definition: {fileID: 11400000, guid: 798ce9a7ed0c5fc4aa1eaf0ad5ff2596, type: 2}
-  highlightMaterial: {fileID: 0}
+  definition: {fileID: 11400000, guid: 31bcdf8d60815fb4c92d7b0642343c8c, type: 2}
+  highlightMaterial: {fileID: -5283888208800200948, guid: 3cb0f2ca11eafae45b0ac6d8f8678a07, type: 3}
   isBurning: 0
 --- !u!4 &5553544651639402360 stripped
 Transform:
