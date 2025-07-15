@@ -82,9 +82,15 @@ public class PhaseManager : MonoBehaviour
         fireRetardantButton.gameObject.SetActive(true);
         waterTankerButton.gameObject.SetActive(true);
 
-
         timer.SetActive(false);
         finalScorePanel.SetActive(false);
+
+        // Play fire burn loop sound when entering action phase
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayFireBurnLoopSound();
+        }
+
         IEnumerator displayCoroutine = DisplayPhasePanel();
         StartCoroutine(displayCoroutine);
     }
@@ -94,6 +100,13 @@ public class PhaseManager : MonoBehaviour
         currentPhase = Phase.SCORE;
         fireProgressBar.SetActive(false); 
         timer.SetActive(false);
+
+        // Stop fire burn loop sound when exiting action phase
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.StopFireBurnLoopSound();
+        }
+
         IEnumerator displayCoroutine = DisplayPhasePanel();
         StartCoroutine(displayCoroutine);
     }

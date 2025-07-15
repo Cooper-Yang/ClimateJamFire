@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using static UnityEngine.InputSystem.UI.VirtualMouseInput;
+
 
 
 #if UNITY_EDITOR
@@ -48,6 +50,11 @@ public class ActionPoint : MonoBehaviour
 
     public float currentActionPoint = 10;
 
+    [Header("Cursor Textures")]
+    [SerializeField] private Texture2D defualtCursor;
+    [SerializeField] private Texture2D waterTankerCursor;
+    [SerializeField] private Texture2D cutTreeCursor;
+
     private void Start()
     {
 #if UNITY_EDITOR
@@ -87,6 +94,12 @@ public class ActionPoint : MonoBehaviour
             Firefighter firefighter = ff.GetComponent<Firefighter>();
             firefighter.Init(gridManager, phaseManager.currentPhase);
             SpendActionPoint(fireFighterAbility.abilityCost);
+
+            // Play firefighter spawn sound
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayFirefighterSpawnSound();
+            }
 
             if (phaseManager.currentPhase == Phase.PREP)
             {
@@ -135,6 +148,12 @@ public class ActionPoint : MonoBehaviour
             foreach (Firefighter firefighter in allFirefighters)
             {
                 firefighter.ApplySpeedBoost(speedBoostMultiplier);
+            }
+
+            // Play speed boost sound
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlaySpeedBoostSound();
             }
 
             StartCoroutine(SpeedBoostCoroutine());
@@ -206,6 +225,7 @@ public class ActionPoint : MonoBehaviour
         // Subscribe to tile click events to detect column selection
         if (TileClickManager.Instance != null)
         {
+            Cursor.SetCursor(cutTreeCursor, GetTextureCenter(cutTreeCursor), UnityEngine.CursorMode.Auto);
             TileClickManager.Instance.OnColumnSelectionMode(true, OnColumnSelected);
         }
     }
@@ -216,9 +236,15 @@ public class ActionPoint : MonoBehaviour
         {
             // Spend action points
             SpendActionPoint(breakLineAbility.abilityCost);
-
+            Cursor.SetCursor(defualtCursor, GetTextureCenter(defualtCursor), UnityEngine.CursorMode.Auto);
             // Clear all non-burning trees in the selected column
             ClearTreesInColumn(columnX);
+
+            // Play break line sound
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayBreakLineSound();
+            }
 
             // Deactivate break line mode
             breakLineActive = false;
@@ -291,6 +317,12 @@ public class ActionPoint : MonoBehaviour
                 ff.hasFlameRetardantBuff = true;
             }
 
+            // Play fire retardant sound
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayFireRetardantSound();
+            }
+
             StartCoroutine(FlameRetardantDuration());
             Debug.Log("Flame Retardant activated!");
         }
@@ -314,10 +346,12 @@ public class ActionPoint : MonoBehaviour
         Debug.Log("Flame Retardant expired.");
     }
 
+
     public void ActivateWaterTanker()
     {
         if (currentActionPoint >= waterTankerAbility.abilityCost && !waterTankerActive)
         {
+            Cursor.SetCursor(waterTankerCursor, GetTextureCenter(waterTankerCursor), UnityEngine.CursorMode.Auto);
             waterTankerActive = true;
             Debug.Log("Water Tanker activated! Select center of 2x2 area.");
             TileClickManager.Instance.OnTileSelectionMode(true, OnWaterTankerTargetSelected);
@@ -330,11 +364,18 @@ public class ActionPoint : MonoBehaviour
 
     private void OnWaterTankerTargetSelected(Tile centerTile)
     {
+        Cursor.SetCursor(defualtCursor, GetTextureCenter(defualtCursor), UnityEngine.CursorMode.Auto);
         SpendActionPoint(waterTankerAbility.abilityCost);
         waterTankerActive = false;
         TileClickManager.Instance.OnTileSelectionMode(false, null);
 
-        StartCoroutine(DropWaterBombAfterDelay(centerTile, 3f));
+        // Play water tanker sound
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayWaterTankerSound();
+        }
+
+        StartCoroutine(DropWaterBombAfterDelay(centerTile, 1.5f));
     }
 
     private IEnumerator DropWaterBombAfterDelay(Tile center, float delay)
@@ -351,5 +392,15 @@ public class ActionPoint : MonoBehaviour
         }
 
         Debug.Log("Water bomb dropped!");
+    }
+
+    private Vector2 GetTextureCenter(Texture2D texture)
+    {
+        if (texture == null) return Vector2.zero;
+
+        float centerX = texture.width / 2f;
+        float centerY = texture.height / 2f;
+
+        return new Vector2(centerX, centerY);
     }
 }

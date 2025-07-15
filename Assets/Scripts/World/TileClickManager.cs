@@ -4,7 +4,7 @@ public class TileClickManager : MonoBehaviour
 {
     public static TileClickManager Instance { get; private set; }
     private Firefighter activeFirefighter;
-    
+
     // Column selection mode for Break Line ability
     private bool columnSelectionMode = false;
     private System.Action<int> onColumnSelectedCallback;
@@ -47,6 +47,12 @@ public class TileClickManager : MonoBehaviour
         if (tile.IsTileType(TileType.Tree) && tile.IsWalkable() && activeFirefighter != null)
         {
             activeFirefighter.MoveToAndCut(tile);
+
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayFirefighterSpawnSound();
+            }
+
             ClearAllHighlights();
             activeFirefighter = null;
         }
@@ -65,7 +71,7 @@ public class TileClickManager : MonoBehaviour
     {
         columnSelectionMode = enabled;
         onColumnSelectedCallback = callback;
-        
+
         if (enabled)
         {
             Debug.Log("Column selection mode enabled. Click on any tile in the column you want to clear.");
