@@ -51,12 +51,21 @@ public class Tile : MonoBehaviour
             Debug.Log("Burn a unburnable tile :  ({gridX},{gridZ})");
             return;
         }
+        
         isBurning = true;
+        
+        // Play fire burst sound when tile catches fire
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayFireBurstSound();
+        }
+        
         if (definition.tileType == TileType.Tree)
         {
             gridManager.ReplaceTileWithSmoke(this);
             return;
         }
+        
         fireObject = Instantiate(firePrefab, transform);
         StartCoroutine(SpreadFireAfterDelay(firePrefab));
         StartCoroutine(FireTurnTileToPlain());

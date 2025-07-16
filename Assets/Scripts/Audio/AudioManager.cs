@@ -19,9 +19,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip breakLineSound;
     [Header("Other Sounds")]
     public AudioClip DespawnSound;
-    
+
     public AudioClip ExtinguishSound;
     public AudioClip FireBurnLoopSound;
+    public AudioClip FireBurstSound;
     public AudioClip TreeChopSound;
     
     [Header("UI Sounds")]
@@ -113,6 +114,12 @@ public class AudioManager : MonoBehaviour
             sfxSource.PlayOneShot(ExtinguishSound);
     }
 
+    public void PlayFireBurstSound()
+    {
+        if (FireBurstSound != null)
+            sfxSource.PlayOneShot(FireBurstSound);
+    }
+
     public void PlayTreeChopSound()
     {
         if (TreeChopSound != null)
@@ -164,7 +171,19 @@ public class AudioManager : MonoBehaviour
     public void PlayUIDenySound()
     {
         if (UI_DenySound != null)
-            sfxSource.PlayOneShot(UI_DenySound);
+    {
+        // Store original volume
+        float originalVolume = sfxSource.volume;
+        
+        // Set volume to half
+        sfxSource.volume = originalVolume * 0.5f;
+        
+        // Play deny sound
+        sfxSource.PlayOneShot(UI_DenySound);
+        
+        // Restore original volume
+        sfxSource.volume = originalVolume;
+    }
     }
 
     public void PlayUIHoverSound()
