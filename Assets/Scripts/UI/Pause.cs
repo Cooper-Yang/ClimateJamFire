@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement; 
 public class Pause : MonoBehaviour
 {
     [SerializeField] private GameObject PausePanel;
@@ -29,6 +29,11 @@ public class Pause : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit(); 
+    }
+
+    public void BackToMain()
+    {
+        SceneManager.LoadSceneAsync("Main Game"); 
     }
 
     private void Update()

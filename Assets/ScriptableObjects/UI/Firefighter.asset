@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Firefighter
   m_EditorClassIdentifier: 
   abilityName: Spawn Firefighter
-  abilityDescription: 'Spawn a firefighter from base. It will walk over to the nearest
-    fire to extinguish it. '
+  abilityDescription: Spawn a firefighter from base. Firefighters will cut down trees
+    during prep phase and extinguish fires during action phase.
   abilityCost: 1
+  abilityCooldown: 2
