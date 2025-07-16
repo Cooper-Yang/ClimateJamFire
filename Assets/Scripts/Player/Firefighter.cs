@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using static DG.Tweening.DOTweenAnimation;
 
 public class Firefighter : MonoBehaviour
@@ -13,6 +14,11 @@ public class Firefighter : MonoBehaviour
     public bool hasFlameRetardantBuff = false;
     public bool usesFastExtinguish = false;
     internal Vector3 positionOffset;
+
+    public GameObject progressBarPrefab;
+    private Slider progressSlider;
+    private GameObject progressBarInstance;
+
     /*private void Start()
     {
         GridManager gm = FindObjectOfType<GridManager>();
@@ -29,12 +35,14 @@ public class Firefighter : MonoBehaviour
         }
     }
     */
+
     public void Init(GridManager gridManager, Vector3 defaultPositionOffset, Phase phase = Phase.PREP)
     {
         baseMoveTimePerTile = moveTimePerTile;
         currentTile = gridManager.GetTileAtCoord(transform.position);
         gmm = gridManager;
         positionOffset = defaultPositionOffset;
+        SetupProgressBar();
 
         if (currentTile == null)
         {
@@ -91,7 +99,7 @@ public class Firefighter : MonoBehaviour
             AudioManager.Instance.PlayTreeChopSound();
         }
 
-        yield return new WaitForSeconds(cutTime);
+        yield return ShowProgressBar(cutTime);
 
         if (!target.IsTileType(TileType.Tree))
         {
@@ -211,7 +219,7 @@ public class Firefighter : MonoBehaviour
 
         if (hasFlameRetardantBuff) usesFastExtinguish = true;
         float extinguishTime = usesFastExtinguish ? 5f : 10f;
-        yield return new WaitForSeconds(extinguishTime);
+        yield return ShowProgressBar(extinguishTime);
 
         if (target == null || targetTransform == null || targetTransform.gameObject == null)
         {
@@ -239,5 +247,46 @@ public class Firefighter : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    private void SetupProgressBar()
+    {
+        if (progressBarPrefab != null)
+        {
+            Canvas canvas = FindObjectOfType<Canvas>();
+            if (canvas == null)
+            {
+                Debug.LogError("No Canvas found in scene.");
+                return;
+            }
+
+            progressBarInstance = Instantiate(progressBarPrefab, canvas.transform);
+
+            Billboard billboard = progressBarInstance.GetComponent<Billboard>();
+            if (billboard != null)
+            {
+                billboard.targetWorldObject = this.transform;
+            }
+
+            progressSlider = progressBarInstance.GetComponentInChildren<Slider>();
+            progressBarInstance.SetActive(false);
+        }
+    }
+
+    private IEnumerator ShowProgressBar(float duration)
+    {
+        if (progressBarInstance == null || progressSlider == null) yield break;
+
+        progressBarInstance.SetActive(true);
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            progressSlider.value = elapsed / duration;
+            yield return null;
+        }
+
+        progressSlider.value = 1f;
+        progressBarInstance.SetActive(false);
     }
 }
