@@ -206,7 +206,7 @@ public class Firefighter : MonoBehaviour
                 yield break;
             }
 
-            transform.position = step.transform.position;
+            transform.position = step.transform.position + positionOffset;
             currentTile = step;
             yield return new WaitForSeconds(moveTimePerTile);
         }
