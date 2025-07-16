@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 public class Pause : MonoBehaviour
 {
     [SerializeField] private GameObject PausePanel;
+    [SerializeField] private GameObject tutorialPanel;
     private float OriginalVol; 
     public void PauseGame()
     {
@@ -21,6 +22,7 @@ public class Pause : MonoBehaviour
     public void ResumeGame()
     {
         PausePanel.SetActive(false);
+        tutorialPanel.SetActive(false);
         Time.timeScale = 1f;
         // Restore original volume
         AudioManager.Instance.sfxSource.volume = OriginalVol;

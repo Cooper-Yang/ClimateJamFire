@@ -10,7 +10,7 @@ public class Tile : MonoBehaviour
     public int gridZ;
     internal float cellSize;
     public GameplayTileDefinition definition;
-    private Material originalMaterial;
+    private Material[] originalMaterials;
     public Material highlightMaterial;
     private Renderer tileRenderer;
     public bool isBurning = false;
@@ -20,7 +20,7 @@ public class Tile : MonoBehaviour
     private void Start()
     {
         tileRenderer = GetComponent<Renderer>();
-        originalMaterial = tileRenderer.material;
+        originalMaterials = tileRenderer.materials;
     }
 
     public void Highlight(bool active)
@@ -29,7 +29,20 @@ public class Tile : MonoBehaviour
         {
             tileRenderer = GetComponent<Renderer>();
         }
-        tileRenderer.material = active ? highlightMaterial : originalMaterial;
+
+        if (active)
+        {
+            Material[] highlightMats = new Material[tileRenderer.materials.Length];
+            for (int i = 0; i < highlightMats.Length; i++)
+            {
+                highlightMats[i] = highlightMaterial;
+            }
+            tileRenderer.materials = highlightMats;
+        }
+        else
+        {
+            tileRenderer.materials = originalMaterials;
+        }
     }
 
     private void OnMouseDown()
