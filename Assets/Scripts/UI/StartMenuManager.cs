@@ -6,6 +6,13 @@ public class StartMenuManager : MonoBehaviour
     [SerializeField] private string gameSceneName; 
     public void StartGame()
     {
+        // Play UI start sound
+        if (AudioManager.Instance != null)
+        {
+            // Start crossfade to game music
+            AudioManager.Instance.CrossfadeToGameMusic();
+        }
+        
         SceneManager.LoadSceneAsync(gameSceneName); 
     }
 

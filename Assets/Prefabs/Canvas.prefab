@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PausePanel: {fileID: 4226317990379054238}
+  tutorialPanel: {fileID: 0}
 --- !u!1 &1106868885063220883
 GameObject:
   m_ObjectHideFlags: 0

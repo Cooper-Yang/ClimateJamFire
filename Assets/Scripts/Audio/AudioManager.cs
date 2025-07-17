@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
@@ -7,9 +8,16 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Sources")]
     public AudioSource musicSource;
     public AudioSource sfxSource;
+    public AudioSource musicSource2; // Second music source for crossfading
     
     [Header("Background Music")]
-    public AudioClip backgroundMusic;
+    public AudioClip startSceneMusic;
+    public AudioClip gameSceneMusic;
+    public AudioClip gameSceneMusicAlt; // Alternative version of game music
+    
+    [Header("Crossfade Settings")]
+    [Range(0.1f, 5f)]
+    public float crossfadeDuration = 2f;
     
     [Header("Ability Sounds")]
     public AudioClip firefighterSpawnSound;
@@ -41,6 +49,9 @@ public class AudioManager : MonoBehaviour
     [Range(0f, 1f)]
     public float sfxVolume = 0.8f;
     
+    // Music toggle state
+    private bool useAlternativeGameMusic = false;
+    
     private void Awake()
     {
         if (Instance == null)
@@ -50,9 +61,12 @@ public class AudioManager : MonoBehaviour
             
             if (musicSource == null) musicSource = gameObject.AddComponent<AudioSource>();
             if (sfxSource == null) sfxSource = gameObject.AddComponent<AudioSource>();
+            if (musicSource2 == null) musicSource2 = gameObject.AddComponent<AudioSource>();
             
             musicSource.loop = true;
             musicSource.volume = musicVolume;
+            musicSource2.loop = true;
+            musicSource2.volume = 0f; // Start at 0 for crossfading
             sfxSource.volume = sfxVolume;
         }
         else
@@ -63,10 +77,104 @@ public class AudioManager : MonoBehaviour
     
     private void Start()
     {
-        if (backgroundMusic != null)
+        // Play start scene music initially
+        if (startSceneMusic != null)
         {
-            musicSource.clip = backgroundMusic;
+            musicSource.clip = startSceneMusic;
             musicSource.Play();
+        }
+    }
+    
+    // Get current game music based on toggle state
+    private AudioClip GetCurrentGameMusic()
+    {
+        return useAlternativeGameMusic ? gameSceneMusicAlt : gameSceneMusic;
+    }
+    
+    // Toggle between game music versions (only changes selection, doesn't play)
+    public void ToggleGameMusic()
+    {
+        useAlternativeGameMusic = !useAlternativeGameMusic;
+        
+        // Don't play music here - just change the selection
+        // Music will play when CrossfadeToGameMusic() is called from StartGame()
+    }
+    
+    // Check if we're currently playing game music (either version)
+    private bool IsPlayingGameMusic()
+    {
+        return (musicSource.clip == gameSceneMusic || musicSource.clip == gameSceneMusicAlt) ||
+               (musicSource2.clip == gameSceneMusic || musicSource2.clip == gameSceneMusicAlt);
+    }
+    
+    // Get current toggle state
+    public bool IsUsingAlternativeGameMusic()
+    {
+        return useAlternativeGameMusic;
+    }
+    
+    // Set toggle state directly (only changes selection, doesn't play)
+    public void SetGameMusicToggle(bool useAlternative)
+    {
+        useAlternativeGameMusic = useAlternative;
+        
+        // Don't play music here - just change the selection
+    }
+    
+    // Modified crossfade to game music to use current selection
+    public void CrossfadeToGameMusic()
+    {
+        AudioClip currentGameMusic = GetCurrentGameMusic();
+        if (currentGameMusic != null)
+        {
+            StartCoroutine(CrossfadeMusic(musicSource, musicSource2, currentGameMusic));
+        }
+    }
+    
+    // Crossfade back to start scene music
+    public void CrossfadeToStartMusic()
+    {
+        if (startSceneMusic != null)
+        {
+            StartCoroutine(CrossfadeMusic(musicSource, musicSource2, startSceneMusic));
+        }
+    }
+    
+    private IEnumerator CrossfadeMusic(AudioSource fromSource, AudioSource toSource, AudioClip newClip)
+    {
+        // Set up the new music source
+        toSource.clip = newClip;
+        toSource.volume = 0f;
+        toSource.Play();
+        
+        float timer = 0f;
+        float fromStartVolume = fromSource.volume;
+        
+        // Crossfade
+        while (timer < crossfadeDuration)
+        {
+            timer += Time.unscaledDeltaTime;
+            float progress = timer / crossfadeDuration;
+            
+            fromSource.volume = Mathf.Lerp(fromStartVolume, 0f, progress);
+            toSource.volume = Mathf.Lerp(0f, musicVolume, progress);
+            
+            yield return null;
+        }
+        
+        // Ensure final volumes are set correctly
+        fromSource.volume = 0f;
+        toSource.volume = musicVolume;
+        
+        // Stop the old source and swap references
+        fromSource.Stop();
+        
+        // Swap the sources so musicSource is always the active one
+        if (fromSource == musicSource)
+        {
+            AudioSource temp = musicSource;
+            musicSource = musicSource2;
+            musicSource2 = temp;
         }
     }
     
@@ -229,6 +337,12 @@ public class AudioManager : MonoBehaviour
     {
         musicVolume = volume;
         musicSource.volume = volume;
+        
+        // Also update the second source if it's playing
+        if (musicSource2.isPlaying)
+        {
+            musicSource2.volume = volume;
+        }
     }
     
     public void SetSFXVolume(float volume)

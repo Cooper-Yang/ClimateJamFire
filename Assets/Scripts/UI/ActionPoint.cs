@@ -266,6 +266,10 @@ public class ActionPoint : MonoBehaviour
             // Spend action points
             SpendActionPoint(breakLineAbility.abilityCost);
             Cursor.SetCursor(defualtCursor, GetTextureCenter(defualtCursor), UnityEngine.CursorMode.Auto);
+            
+            // Clear all highlights before chopping
+            TileClickManager.Instance.ClearAllHighlights();
+            
             // Clear all non-burning trees in the selected column
             ChopTreesInColumn(columnX);
 

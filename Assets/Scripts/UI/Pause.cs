@@ -15,7 +15,7 @@ public class Pause : MonoBehaviour
             // Store original volume
             OriginalVol = AudioManager.Instance.sfxSource.volume;
             // Set volume to half
-            AudioManager.Instance.sfxSource.volume = OriginalVol * 0.5f;
+            //AudioManager.Instance.sfxSource.volume = OriginalVol * 0.5f;
         }
     }
 
@@ -25,7 +25,7 @@ public class Pause : MonoBehaviour
         tutorialPanel.SetActive(false);
         Time.timeScale = 1f;
         // Restore original volume
-        AudioManager.Instance.sfxSource.volume = OriginalVol;
+        //AudioManager.Instance.sfxSource.volume = OriginalVol;
     }
 
     public void QuitGame()
