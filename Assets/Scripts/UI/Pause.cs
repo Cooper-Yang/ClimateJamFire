@@ -18,7 +18,12 @@ public class Pause : MonoBehaviour
             //AudioManager.Instance.sfxSource.volume = OriginalVol * 0.5f;
         }
     }
-
+    private void Start()
+    {
+        //Activate tutorial
+        tutorialPanel.SetActive(true);
+        Time.timeScale = 0f; 
+    }
     public void ResumeGame()
     {
         PausePanel.SetActive(false);
