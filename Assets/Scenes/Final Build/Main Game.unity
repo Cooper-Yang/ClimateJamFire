@@ -845,7 +845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 987631114998265078, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1019540262464510277, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1003,6 +1003,10 @@ PrefabInstance:
       propertyPath: AP
       value: 
       objectReference: {fileID: 1865300934}
+    - target: {fileID: 2135004459425449722, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
+      propertyPath: gameSceneName
+      value: Start Menu
+      objectReference: {fileID: 0}
     - target: {fileID: 2135004459425449722, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
       propertyPath: tutorialPanel
       value: 

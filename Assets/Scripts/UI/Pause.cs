@@ -4,6 +4,7 @@ public class Pause : MonoBehaviour
 {
     [SerializeField] private GameObject PausePanel;
     [SerializeField] private GameObject tutorialPanel;
+    //[SerializeField] private string gameSceneName;
     private float OriginalVol; 
     public void PauseGame()
     {
@@ -40,7 +41,8 @@ public class Pause : MonoBehaviour
 
     public void BackToMain()
     {
-        SceneManager.LoadSceneAsync("Start Menu"); 
+        Debug.Log("BackToMain called - loading Start Menu");
+        SceneManager.LoadScene("Start Menu");
     }
 
     private void Update()
