@@ -3,7 +3,8 @@ using UnityEngine.SceneManagement;
 public class StartMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject optionsPanel;
-    [SerializeField] private GameObject creditsPanel; 
+    [SerializeField] private GameObject creditsPanel;
+    [SerializeField] private GameObject MainPanel;
     [SerializeField] private string gameSceneName; 
     public void StartGame()
     {
@@ -25,19 +26,23 @@ public class StartMenuManager : MonoBehaviour
     public void OptionsActive()
     {
         optionsPanel.SetActive(true);
+        MainPanel.SetActive(false);
     }
 
     public void OptionsDeactive()
     {
         optionsPanel.SetActive(false);
+        MainPanel.SetActive(true);
     }
 
     public void CreditsActive()
     {
         creditsPanel.SetActive(true);
+        MainPanel.SetActive(false);
     }
     public void CreditsDeactive()
     {
         creditsPanel.SetActive(false); 
+        MainPanel.SetActive(true);
     }
 }
