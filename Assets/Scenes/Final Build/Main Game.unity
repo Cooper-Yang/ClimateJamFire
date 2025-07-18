@@ -845,7 +845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 987631114998265078, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1019540262464510277, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -56394,7 +56394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionPointRegenTime: 6
   actionPointSlider: {fileID: 1849195239}
-  firefighterPrefab: {fileID: 3544417587253528783, guid: e73b1dd38102dfe4090780b527e9c4fe, type: 3}
+  firefighterPrefab: {fileID: 1373753050906096544, guid: 4311896844205eb4c8d6f379bb563ff5, type: 3}
   gridManager: {fileID: 1405747465}
   fireFighterAbility: {fileID: 11400000, guid: cda96218edcdc7b479cde6bfe3665c17, type: 2}
   fireFighterPositionOffset: {x: 0, y: 1, z: 0}
