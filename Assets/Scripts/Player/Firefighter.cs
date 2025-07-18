@@ -64,12 +64,12 @@ public class Firefighter : MonoBehaviour
 
         foreach (Tile tile in FindObjectsByType<Tile>(FindObjectsSortMode.None))
         {
-            if (tile.IsTileType(TileType.Tree) )
+            if (tile.IsTileType(TileType.Tree))
             {
                 List<Tile> neighbors = gm.GetAdjacentTiles(tile);
                 bool hasPlainNeighbor = neighbors.Exists(n => n.IsTileType(TileType.Plain));
 
-                if (hasPlainNeighbor && Pathfinding.Exists(fireStation, tile)) 
+                if (hasPlainNeighbor && Pathfinding.Exists(fireStation, tile))
                 {
                     tile.Highlight(true);
                 }
@@ -85,12 +85,52 @@ public class Firefighter : MonoBehaviour
     IEnumerator MoveToTreeAndCut(Tile target)
     {
         Debug.Log($"Firefighter moving to tile ({target.gridX}, {target.gridZ})");
-        List<Tile> path = Pathfinding.FindPath(currentTile, target); 
+        List<Tile> path = Pathfinding.FindPath(currentTile, target);
 
         foreach (Tile step in path)
         {
-            transform.position = step.gameObject.transform.position + positionOffset;
-            yield return new WaitForSeconds(moveTimePerTile);
+            // Smooth movement to the target position
+            Vector3 startPos = transform.position;
+            Vector3 targetPos = step.gameObject.transform.position + positionOffset;
+
+            // Calculate movement direction and rotate towards it
+            Vector3 moveDirection = (targetPos - startPos).normalized;
+            if (moveDirection != Vector3.zero)
+            {
+                // Try one of these rotation fixes:
+                // Option 1: Flip the direction
+                Quaternion targetRotation = Quaternion.LookRotation(-moveDirection);
+
+                // Option 2: Add 180 degree rotation
+                // Quaternion targetRotation = Quaternion.LookRotation(moveDirection) * Quaternion.Euler(0, 180, 0);
+
+                // Option 3: Use different axis (if model faces different direction)
+                // Quaternion targetRotation = Quaternion.LookRotation(Vector3.Cross(moveDirection, Vector3.up));
+
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+            }
+
+            float elapsedTime = 0f;
+            while (elapsedTime < moveTimePerTile)
+            {
+                elapsedTime += Time.deltaTime;
+                float t = elapsedTime / moveTimePerTile;
+                transform.position = Vector3.Lerp(startPos, targetPos, t);
+
+                // Continue rotating during movement for smoother turns
+                if (moveDirection != Vector3.zero)
+                {
+                    // Use the same rotation fix here
+                    Quaternion targetRotation = Quaternion.LookRotation(-moveDirection);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 8f);
+                }
+
+                yield return null;
+            }
+
+            // Ensure we end up exactly at the target position
+            transform.position = targetPos;
+            currentTile = step;
         }
 
         // Play tree chop sound when firefighter starts chopping
@@ -116,7 +156,7 @@ public class Firefighter : MonoBehaviour
             {
                 AudioManager.Instance.PlayDespawnSound();
             }
-            
+
             Destroy(gameObject);
         }
     }
@@ -144,13 +184,13 @@ public class Firefighter : MonoBehaviour
         else
         {
             Debug.Log("No smoke tile found for firefighter to move to.");
-            
+
             // Play despawn sound
             if (AudioManager.Instance != null)
             {
                 AudioManager.Instance.PlayDespawnSound();
             }
-            
+
             Destroy(gameObject);
         }
     }
@@ -195,20 +235,49 @@ public class Firefighter : MonoBehaviour
             if (step == null || step.gameObject == null)
             {
                 Debug.LogWarning("Firefighter path interrupted – step destroyed.");
-                
+
                 // Play despawn sound
                 if (AudioManager.Instance != null)
                 {
                     AudioManager.Instance.PlayDespawnSound();
                 }
-                
+
                 Destroy(gameObject);
                 yield break;
             }
 
-            transform.position = step.transform.position + positionOffset;
+            // Smooth movement to the target position
+            Vector3 startPos = transform.position;
+            Vector3 targetPos = step.transform.position + positionOffset;
+
+            // Calculate movement direction and rotate towards it
+            Vector3 moveDirection = (targetPos - startPos).normalized;
+            if (moveDirection != Vector3.zero)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(-moveDirection);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+            }
+
+            float elapsedTime = 0f;
+            while (elapsedTime < moveTimePerTile)
+            {
+                elapsedTime += Time.deltaTime;
+                float t = elapsedTime / moveTimePerTile;
+                transform.position = Vector3.Lerp(startPos, targetPos, t);
+
+                // Continue rotating during movement for smoother turns
+                if (moveDirection != Vector3.zero)
+                {
+                    Quaternion targetRotation = Quaternion.LookRotation(-moveDirection);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 8f);
+                }
+
+                yield return null;
+            }
+
+            // Ensure we end up exactly at the target position
+            transform.position = targetPos;
             currentTile = step;
-            yield return new WaitForSeconds(moveTimePerTile);
         }
 
         // Play extinguish sound when firefighter starts extinguishing
@@ -224,17 +293,17 @@ public class Firefighter : MonoBehaviour
         if (target == null || targetTransform == null || targetTransform.gameObject == null)
         {
             Debug.LogWarning("Firefighter's target was destroyed mid-extinguish.");
-            
+
             // Play despawn sound
             if (AudioManager.Instance != null)
             {
                 AudioManager.Instance.PlayDespawnSound();
             }
-            
+
             Destroy(gameObject);
             yield break;
         }
-        
+
         if (target.IsBurning())
         {
             gmm.ReplaceTileWithTree(target);
