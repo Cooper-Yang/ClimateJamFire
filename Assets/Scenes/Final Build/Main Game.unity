@@ -56399,7 +56399,7 @@ MonoBehaviour:
   fireFighterAbility: {fileID: 11400000, guid: cda96218edcdc7b479cde6bfe3665c17, type: 2}
   fireFighterPositionOffset: {x: 0, y: 1, z: 0}
   speedBoostAbility: {fileID: 11400000, guid: 405af523114ec69459fb636f8be9664d, type: 2}
-  speedBoostDuration: 10
+  speedBoostDuration: 8
   speedBoostMultiplier: 0.5
   breakLineAbility: {fileID: 11400000, guid: 0bcce3e729269c4469b1066b9db44d6c, type: 2}
   flameRetardantAbility: {fileID: 11400000, guid: 02f197794da90d84192b1955fe048d15, type: 2}
@@ -56410,6 +56410,10 @@ MonoBehaviour:
   defualtCursor: {fileID: 2800000, guid: 15f110cd6b8d3aa4c9785f439adeea4a, type: 3}
   waterTankerCursor: {fileID: 2800000, guid: 8f8252b53cda2db42830cfeacb0257cf, type: 3}
   cutTreeCursor: {fileID: 2800000, guid: fd39835706bd1574b860d3d89cd8b0bf, type: 3}
+  waterTankerPlanePrefab: {fileID: 919132149155446097, guid: 44ce7a50cbe5db04498b128655043d23, type: 3}
+  planeFlyDuration: 10
+  planeStartOffset: {x: 1.25, y: 5, z: 50}
+  planeEndOffset: {x: 1.25, y: 5, z: -50}
 --- !u!4 &1865300935
 Transform:
   m_ObjectHideFlags: 0

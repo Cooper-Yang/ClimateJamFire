@@ -56,6 +56,12 @@ public class ActionPoint : MonoBehaviour
     [SerializeField] private Texture2D waterTankerCursor;
     [SerializeField] private Texture2D cutTreeCursor;
 
+    [Header("Water Tanker Plane")]
+    public GameObject waterTankerPlanePrefab;  
+    public float planeFlyDuration = 8f;
+    public Vector3 planeStartOffset = new Vector3(1.25f, 5f, 50f); //-50 to 50 z, X to -20
+    public Vector3 planeEndOffset = new Vector3(1.25f, 5f, -50f);
+
     private void Start()
     {
 #if UNITY_EDITOR
@@ -412,19 +418,55 @@ public class ActionPoint : MonoBehaviour
         waterTankerActive = false;
         TileClickManager.Instance.OnTileSelectionMode(false, null);
 
-        // Play water tanker sound
         if (AudioManager.Instance != null)
         {
             AudioManager.Instance.PlayWaterTankerSound();
         }
 
-        StartCoroutine(DropWaterBombAfterDelay(centerTile, 1.5f));
+        //StartCoroutine(DropWaterBombAfterDelay(centerTile, 1.5f));
+        StartCoroutine(SpawnAndAnimateWaterTanker(centerTile));
+    }
+    private IEnumerator SpawnAndAnimateWaterTanker(Tile centerTile)
+    {
+        Vector3 targetPosition = centerTile.transform.position;
+        float targetX = targetPosition.x;
+        Vector3 startPosition =  planeStartOffset;
+        Vector3 endPosition = planeEndOffset;
+        startPosition.x = targetX;
+        endPosition.x = targetX;
+        Debug.Log("Target" + targetPosition);
+        Debug.Log("Start" + startPosition);
+        Debug.Log("End" + endPosition);
+        GameObject plane = Instantiate(waterTankerPlanePrefab, startPosition, Quaternion.identity);
+        plane.transform.LookAt(endPosition);
+        /*Animation anim = plane.GetComponent<Animation>();
+        if (anim != null)
+        {
+            anim.Play(Take 001);
+        }*/
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < planeFlyDuration)
+        {
+            float t = elapsedTime / planeFlyDuration;
+            plane.transform.position = Vector3.Lerp(startPosition, endPosition, t);
+            if (t >= 0.5f && t - Time.deltaTime / planeFlyDuration < 0.5f)
+            {
+                
+                DropWaterOnTarget(centerTile);
+            }
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        plane.transform.position = endPosition;
+
+        Destroy(plane);
     }
 
-    private IEnumerator DropWaterBombAfterDelay(Tile center, float delay)
+    private void DropWaterOnTarget(Tile center)
     {
-        yield return new WaitForSeconds(delay);
-
         List<Tile> targetTiles = gridManager.GetTilesInSquare(center.gridX, center.gridZ, 2);
         foreach (Tile t in targetTiles)
         {
@@ -433,8 +475,12 @@ public class ActionPoint : MonoBehaviour
                 gridManager.ReplaceTileWithTree(t);
             }
         }
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayExtinguishSound();
+        }
 
-        Debug.Log("Water bomb dropped!");
+        Debug.Log("Water dropped!");
     }
 
     private Vector2 GetTextureCenter(Texture2D texture)
