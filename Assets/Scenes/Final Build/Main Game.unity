@@ -56410,7 +56410,7 @@ MonoBehaviour:
   defualtCursor: {fileID: 2800000, guid: 15f110cd6b8d3aa4c9785f439adeea4a, type: 3}
   waterTankerCursor: {fileID: 2800000, guid: 8f8252b53cda2db42830cfeacb0257cf, type: 3}
   cutTreeCursor: {fileID: 2800000, guid: fd39835706bd1574b860d3d89cd8b0bf, type: 3}
-  waterTankerPlanePrefab: {fileID: 919132149155446097, guid: 44ce7a50cbe5db04498b128655043d23, type: 3}
+  waterTankerPlanePrefab: {fileID: 9157690665750583776, guid: 95b53fb500cf7d94886dc61ee3d5fd99, type: 3}
   planeFlyDuration: 10
   planeStartOffset: {x: 1.25, y: 5, z: 50}
   planeEndOffset: {x: 1.25, y: 5, z: -50}
