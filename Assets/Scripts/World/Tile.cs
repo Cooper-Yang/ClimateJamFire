@@ -19,8 +19,25 @@ public class Tile : MonoBehaviour
 
     private void Start()
     {
-        tileRenderer = GetComponent<Renderer>();
-        originalMaterials = tileRenderer.materials;
+        InitializeMaterials();
+    }
+
+    private void Awake()
+    {
+        InitializeMaterials();
+    }
+
+    private void InitializeMaterials()
+    {
+        if (tileRenderer == null)
+        {
+            tileRenderer = GetComponent<Renderer>();
+        }
+        
+        if (originalMaterials == null && tileRenderer != null)
+        {
+            originalMaterials = tileRenderer.materials;
+        }
     }
 
     public void Highlight(bool active)
@@ -28,6 +45,19 @@ public class Tile : MonoBehaviour
         if (tileRenderer == null)
         {
             tileRenderer = GetComponent<Renderer>();
+        }
+
+        // Ensure originalMaterials is initialized
+        if (originalMaterials == null && tileRenderer != null)
+        {
+            originalMaterials = tileRenderer.materials;
+        }
+
+        // Safety check to prevent null reference errors
+        if (tileRenderer == null || originalMaterials == null)
+        {
+            Debug.LogWarning($"Tile ({gridX}, {gridZ}): Cannot highlight - missing Renderer or original materials");
+            return;
         }
 
         if (active)
@@ -41,7 +71,13 @@ public class Tile : MonoBehaviour
         }
         else
         {
-            tileRenderer.materials = originalMaterials;
+            // Create a copy of originalMaterials to avoid null assignment
+            Material[] materialsToSet = new Material[originalMaterials.Length];
+            for (int i = 0; i < originalMaterials.Length; i++)
+            {
+                materialsToSet[i] = originalMaterials[i];
+            }
+            tileRenderer.materials = materialsToSet;
         }
     }
 
