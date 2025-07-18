@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 public class StartMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject optionsPanel;
+    [SerializeField] private GameObject creditsPanel; 
     [SerializeField] private string gameSceneName; 
     public void StartGame()
     {
@@ -31,5 +32,12 @@ public class StartMenuManager : MonoBehaviour
         optionsPanel.SetActive(false);
     }
 
-    //PUT AUDIO SETTINGS RELATED STUFF IN THIS SCRIPT TOO!!
+    public void CreditsActive()
+    {
+        creditsPanel.SetActive(true);
+    }
+    public void CreditsDeactive()
+    {
+        creditsPanel.SetActive(false); 
+    }
 }
