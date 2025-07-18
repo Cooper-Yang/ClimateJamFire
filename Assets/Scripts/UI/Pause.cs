@@ -40,7 +40,7 @@ public class Pause : MonoBehaviour
 
     public void BackToMain()
     {
-        SceneManager.LoadSceneAsync("Main Game"); 
+        SceneManager.LoadSceneAsync("Start Menu"); 
     }
 
     private void Update()
