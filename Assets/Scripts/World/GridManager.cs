@@ -31,11 +31,27 @@ public class GridManager : MonoBehaviour
     public GameObject grassTilePrefab;
 
     [Header("Gameplay Data System")]
-    public GameplayTileDatabase gameplayDatabase;   
+    public GameplayTileDatabase gameplayDatabase;
+
+    public int totalBurnableTiles { get; private set; }
 
     private void Start()
     {
         RebuildTileMapFromScene();
+
+        totalBurnableTiles = 0;
+
+        for (int x = 0; x < width; x++)
+        {
+            for (int z = 0; z < height; z++)
+            {
+                Tile tile = GetTileAt(x, z);
+                if (tile != null && (tile.IsTileType(TileType.Tree) || tile.IsTileType(TileType.House)))
+                {
+                    totalBurnableTiles++;
+                }
+            }
+        }
     }
     /*
     void Update()

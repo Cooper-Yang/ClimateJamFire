@@ -126,6 +126,10 @@ public class Tile : MonoBehaviour
         if (fireObject != null)
         {
             DestroyImmediate(fireObject);
+            if (FireManager.Instance != null)
+            {
+                FireManager.Instance.NotifyTileBurnedDown(this);
+            }
             if (definition.tileType == TileType.Tree)
             {
                 gridManager.ReplaceTileWithPlain(this, gridManager.burnedTilePrefab);

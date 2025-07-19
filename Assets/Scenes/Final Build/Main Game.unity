@@ -26118,6 +26118,7 @@ GameObject:
   - component: {fileID: 726482827}
   - component: {fileID: 726482826}
   - component: {fileID: 726482825}
+  - component: {fileID: 726482828}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -26188,8 +26189,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 47138774}
-        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+      - m_Target: {fileID: 726482828}
+        m_TargetAssemblyTypeName: RTMM, Assembly-CSharp
         m_MethodName: BackToMain
         m_Mode: 1
         m_Arguments:
@@ -26238,6 +26239,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726482823}
   m_CullTransparentMesh: 1
+--- !u!114 &726482828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726482823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfe66bf48781eae4f96abf0c32fb762d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &726775958
 GameObject:
   m_ObjectHideFlags: 0
@@ -48994,9 +49007,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You get 60 seconds to prep for the incoming fire! <b>Only 2 out of 3 smokes
-    will start a fire.</b> Spawn firefighters to cut down trees and create a buffer
-    zone.
+  m_text: You get 30 seconds to prep for the incoming fire! <b>Only 2 out of 3 smoke
+    tiles will start a fire.</b> Spawn firefighters to cut down trees and create
+    a buffer zone.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1af45b4c4b77174c81982ea90fd6ec6, type: 2}
   m_sharedMaterial: {fileID: 1968527973759544610, guid: f1af45b4c4b77174c81982ea90fd6ec6, type: 2}
