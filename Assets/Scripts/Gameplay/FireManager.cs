@@ -6,7 +6,7 @@ using System.Collections;
 
 public class FireManager : MonoBehaviour
 {
-
+    public static FireManager Instance { get; private set; }
     private GridManager gridManager;
     private List<Tile> smokeTiles;
     public List<Tile> fireTiles;
@@ -19,6 +19,8 @@ public class FireManager : MonoBehaviour
     public int finalScore = 0;
     private int initialHouseCount = 0;
     private float lastHouseDestroyedTime = -1f;
+    public int burnedTileCount = 0;
+
 
     // Events for UI
     public static event Action<bool, int> OnGameEnded; // bool = hasWon, int = finalScore
@@ -26,6 +28,15 @@ public class FireManager : MonoBehaviour
     private void Awake()
     {
         gridManager = GetComponent<GridManager>();
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Debug.LogWarning("More than one FireManager in the scene!");
+            Destroy(gameObject);
+        }
     }
 
     private void Start()
@@ -53,6 +64,11 @@ public class FireManager : MonoBehaviour
         fireTiles.Add(smokeTiles[0]);
         smokeTiles[1].OnFire(firePrefab);
         fireTiles.Add(smokeTiles[1]);
+    }
+
+    public void NotifyTileBurnedDown(Tile tile)
+    {
+        burnedTileCount++;
     }
 
     private bool isCheckingConditions = false; // Flag to control delayed checks

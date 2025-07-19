@@ -9,8 +9,16 @@ public class FireProgress : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int fire = fireManager.fireTiles.Count;
-        int trees = gridManager.numberOfRemainingTree;
-        fireProgressSlider.value = fire / trees; 
+        int burned = fireManager.burnedTileCount;
+        int total = gridManager.totalBurnableTiles;
+
+        if (total > 0)
+        {
+            fireProgressSlider.value = (float)burned / total;
+        }
+        else
+        {
+            fireProgressSlider.value = 0f;
+        }
     }
 }

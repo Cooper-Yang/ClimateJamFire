@@ -8,7 +8,6 @@ public class GameResultsUI : MonoBehaviour
     public GameObject resultPanel;
     public TextMeshProUGUI resultTitleText;
     public TextMeshProUGUI scoreText;
-    public Button restartButton;
     public Button quitButton;
     
     [Header("Star Rating UI (from ScoreManager)")]
@@ -51,11 +50,6 @@ public class GameResultsUI : MonoBehaviour
             gridManager = FindFirstObjectByType<GridManager>();
         }
         
-        // Setup buttons
-        if (restartButton != null)
-        {
-            restartButton.onClick.AddListener(RestartGame);
-        }
         
         if (quitButton != null)
         {
@@ -192,22 +186,6 @@ public class GameResultsUI : MonoBehaviour
         if (starImage3 != null) starImage3.SetActive(false);
     }
     
-    private void RestartGame()
-    {
-        // Hide the panel
-        if (resultPanel != null)
-        {
-            resultPanel.SetActive(false);
-        }
-        
-        uiShown = false;
-        phaseManager.currentPhase = Phase.PREP;
-        
-        // Reload the current scene
-        UnityEngine.SceneManagement.SceneManager.LoadScene(
-            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
-        );
-    }
     
     private void QuitGame()
     {
