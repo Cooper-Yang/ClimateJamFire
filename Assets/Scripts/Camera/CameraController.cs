@@ -6,6 +6,12 @@ public class CameraController : MonoBehaviour
     public float scrollSpeed = 2f;
     public float minOrthoSize = 10f;
     public float maxOrthoSize = 20f;
+    
+    [Header("Camera Position Limits")]
+    public float minXPosition = -40f;
+    public float maxXPosition = -16f;
+    public float minZPosition = 8f;
+    public float maxZPosition = 28f;
 
     private Vector3 initialPosition;
     private Quaternion initialRotation;
@@ -58,6 +64,12 @@ public class CameraController : MonoBehaviour
         {
             transform.position += right * panSpeed * Time.deltaTime;
         }
+
+        // Clamp the camera's position
+        Vector3 pos = transform.position;
+        pos.x = Mathf.Clamp(pos.x, minXPosition, maxXPosition);
+        pos.z = Mathf.Clamp(pos.z, minZPosition, maxZPosition);
+        transform.position = pos;
     }
 
     // Zoom the camera in and out using the mouse scroll wheel
