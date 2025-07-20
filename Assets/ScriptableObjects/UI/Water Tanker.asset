@@ -15,4 +15,5 @@ MonoBehaviour:
   abilityName: Water Tanker
   abilityDescription: Choose a small area anywhere on the map to extinguish any fire
     there instantly.
-  abilityCost: 6
+  abilityCost: 4
+  abilityCooldown: 2

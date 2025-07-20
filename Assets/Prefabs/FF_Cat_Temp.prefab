@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveTimePerTile: 1.5
-  cutTime: 2.5
+  cutTime: 2
   hasFlameRetardantBuff: 0
   usesFastExtinguish: 0
   progressBarPrefab: {fileID: 2876406657890284610, guid: 64754421466ba6b40a0126952d833b2c, type: 3}

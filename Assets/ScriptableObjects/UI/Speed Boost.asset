@@ -15,4 +15,5 @@ MonoBehaviour:
   abilityName: Speed Boost
   abilityDescription: Increases the movement speed of all active units by 50%. Lasts
     10 seconds.
-  abilityCost: 3
+  abilityCost: 2
+  abilityCooldown: 2

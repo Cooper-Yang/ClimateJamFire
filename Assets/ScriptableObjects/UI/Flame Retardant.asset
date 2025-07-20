@@ -15,4 +15,5 @@ MonoBehaviour:
   abilityName: Flame Retardant
   abilityDescription: Extinguishing a fire will take half the usual time. Lasts 10
     seconds.
-  abilityCost: 4
+  abilityCost: 2
+  abilityCooldown: 2

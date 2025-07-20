@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Break Line
   abilityDescription: Choose a single column. Cut down any trees in that column.
-  abilityCost: 8
+  abilityCost: 6
+  abilityCooldown: 2
