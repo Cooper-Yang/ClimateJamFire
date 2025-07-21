@@ -122,7 +122,7 @@ public class Tile : MonoBehaviour
 
     private IEnumerator FireTurnTileToPlain()
     {
-        yield return new WaitForSeconds(15f); // Wait 15 seconds
+        yield return new WaitForSeconds(20f); // Wait 15 seconds
         if (fireObject != null)
         {
             DestroyImmediate(fireObject);

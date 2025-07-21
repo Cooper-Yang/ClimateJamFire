@@ -114,7 +114,7 @@ public class ActionPoint : MonoBehaviour
             }
             else if (phaseManager.currentPhase == Phase.ACTION)
             {
-                firefighter.BeginFirefightingMode();
+                TileClickManager.Instance.SetActiveFirefighter(firefighter);
             }
         }
         else
