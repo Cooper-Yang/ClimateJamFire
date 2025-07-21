@@ -4,6 +4,7 @@ public class TileClickManager : MonoBehaviour
 {
     public static TileClickManager Instance { get; private set; }
     private Firefighter activeFirefighter;
+    [SerializeField] public PhaseManager phaseManager;
 
     // Column selection mode for Break Line ability
     private bool columnSelectionMode = false;
@@ -116,6 +117,8 @@ public class TileClickManager : MonoBehaviour
         }
     }
 
+    
+
     public void SetActiveFirefighter(Firefighter ff)
     {
         activeFirefighter = ff;
@@ -141,9 +144,22 @@ public class TileClickManager : MonoBehaviour
             return;
         }
 
-        if (tile.IsTileType(TileType.Tree) && tile.IsWalkable() && activeFirefighter != null)
+        if (tile.IsTileType(TileType.Tree) && tile.IsWalkable() && activeFirefighter != null && phaseManager.currentPhase == Phase.PREP)
         {
             activeFirefighter.MoveToAndCut(tile);
+
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayFirefighterSpawnSound();
+            }
+
+            ClearAllHighlights();
+            activeFirefighter = null;
+        }
+
+        else if (tile.IsTileType(TileType.Smoke) && tile.IsWalkable() && activeFirefighter != null && phaseManager.currentPhase == Phase.ACTION)
+        {
+            activeFirefighter.BeginFirefightingMode(tile);
 
             if (AudioManager.Instance != null)
             {
