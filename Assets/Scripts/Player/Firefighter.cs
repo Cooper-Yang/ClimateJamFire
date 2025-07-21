@@ -15,9 +15,8 @@ public class Firefighter : MonoBehaviour
     public bool usesFastExtinguish = false;
     internal Vector3 positionOffset;
 
-    public GameObject progressBarPrefab;
+    public GameObject progressBarCanvas;
     private Slider progressSlider;
-    private GameObject progressBarInstance;
 
     /*private void Start()
     {
@@ -42,7 +41,15 @@ public class Firefighter : MonoBehaviour
         currentTile = gridManager.GetTileAtCoord(transform.position);
         gmm = gridManager;
         positionOffset = defaultPositionOffset;
-        SetupProgressBar();
+        if (progressBarCanvas != null)
+        {
+            progressSlider = progressBarCanvas.GetComponentInChildren<Slider>();
+            progressBarCanvas.SetActive(false); // Make sure it's off by default
+        }
+        else
+        {
+            Debug.LogError($"[Firefighter] No progressBarCanvas assigned for {gameObject.name}");
+        }
 
         if (currentTile == null)
         {
@@ -53,6 +60,11 @@ public class Firefighter : MonoBehaviour
         if (phase == Phase.PREP)
         {
             HighlightCuttableTrees();
+        }
+
+        if (phase == Phase.ACTION)
+        {
+            HighlightBurningSmokeTiles();
         }
     }
 
@@ -70,6 +82,24 @@ public class Firefighter : MonoBehaviour
                 bool hasPlainNeighbor = neighbors.Exists(n => n.IsTileType(TileType.Plain));
 
                 if (hasPlainNeighbor && Pathfinding.Exists(fireStation, tile))
+                {
+                    tile.Highlight(true);
+                }
+            }
+        }
+    }
+
+    private void HighlightBurningSmokeTiles()
+    {
+        GridManager gridManager = FindFirstObjectByType<GridManager>();
+        if (gridManager == null) return;
+
+        for (int x = 0; x < gridManager.width; x++)
+        {
+            for (int z = 0; z < gridManager.height; z++)
+            {
+                Tile tile = gridManager.GetTileAt(x, z);
+                if (tile != null && tile.IsTileType(TileType.Smoke) && tile.IsBurning() && tile.IsWalkable())
                 {
                     tile.Highlight(true);
                 }
@@ -174,12 +204,12 @@ public class Firefighter : MonoBehaviour
         Debug.Log($"Speed reset to normal: {moveTimePerTile}");
     }
 
-    public void BeginFirefightingMode()
+    public void BeginFirefightingMode(Tile TargetTile)
     {
         Tile smokeTarget = FindClosestSmokeTile();
         if (smokeTarget != null)
         {
-            StartCoroutine(MoveToAndExtinguish(smokeTarget));
+            StartCoroutine(MoveToAndExtinguish(TargetTile));
         }
         else
         {
@@ -318,35 +348,18 @@ public class Firefighter : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void SetupProgressBar()
-    {
-        if (progressBarPrefab != null)
-        {
-            Canvas canvas = FindObjectOfType<Canvas>();
-            if (canvas == null)
-            {
-                Debug.LogError("No Canvas found in scene.");
-                return;
-            }
-
-            progressBarInstance = Instantiate(progressBarPrefab, canvas.transform);
-
-            Billboard billboard = progressBarInstance.GetComponent<Billboard>();
-            if (billboard != null)
-            {
-                billboard.targetWorldObject = this.transform;
-            }
-
-            progressSlider = progressBarInstance.GetComponentInChildren<Slider>();
-            progressBarInstance.SetActive(false);
-        }
-    }
 
     private IEnumerator ShowProgressBar(float duration)
     {
-        if (progressBarInstance == null || progressSlider == null) yield break;
+        if (progressBarCanvas == null || progressSlider == null)
+        {
+            Debug.LogWarning($"[Firefighter] Missing progress bar canvas or slider on {gameObject.name}");
+            yield break;
+        }
 
-        progressBarInstance.SetActive(true);
+        progressBarCanvas.SetActive(true);
+        progressSlider.value = 0f;
+
         float elapsed = 0f;
         while (elapsed < duration)
         {
@@ -356,6 +369,6 @@ public class Firefighter : MonoBehaviour
         }
 
         progressSlider.value = 1f;
-        progressBarInstance.SetActive(false);
+        progressBarCanvas.SetActive(false);
     }
 }

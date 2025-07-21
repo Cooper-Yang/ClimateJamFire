@@ -54785,6 +54785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f715b25da97a96488e90d9ac5242bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  phaseManager: {fileID: 1865300937}
 --- !u!114 &1865300937
 MonoBehaviour:
   m_ObjectHideFlags: 0
