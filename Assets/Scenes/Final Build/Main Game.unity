@@ -46718,9 +46718,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You get 30 seconds to prep for the incoming fire! <b>Only 2 out of 3 smoke
-    tiles will start a fire.</b> Spawn firefighters to cut down trees and create
-    a buffer zone.
+  m_text: You have 30 seconds to prep for the incoming fire! Only 2 out of 3 smoke
+    tiles will start a fire.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1af45b4c4b77174c81982ea90fd6ec6, type: 2}
   m_sharedMaterial: {fileID: 1968527973759544610, guid: f1af45b4c4b77174c81982ea90fd6ec6, type: 2}
