@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Firefighter
   m_EditorClassIdentifier: 
   abilityName: Spawn Firefighter
-  abilityDescription: Spawn a firefighter from base. Firefighters will cut down trees
-    during prep phase and extinguish fires during action phase.
+  abilityDescription: Spawn a firefighter. Firefighters will cut down trees and extinguish
+    fires.
   abilityCost: 1
   abilityCooldown: 2
