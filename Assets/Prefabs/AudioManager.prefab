@@ -338,7 +338,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 005df0caeb755e24e874f29ee7290603, type: 3}
   - {fileID: 8300000, guid: f70bd38d953720043b7f1fbd6007bc18, type: 3}
   UI_StartSound: {fileID: 8300000, guid: 75bba4a1d46d34b4ebd0643c01d6e546, type: 3}
-  UI_WarningFiveSecsSound: {fileID: 8300000, guid: 02215529d63afe541a778f18dcb751b2, type: 3}
+  UI_WarningFiveSecsSound: {fileID: 8300000, guid: 38718e5f4d578df45869add0ada90b56, type: 3}
   UI_PauseSound: {fileID: 8300000, guid: b3e07471283af6e40874544be6fa8eef, type: 3}
   musicVolume: 0.5
   sfxVolume: 0.8
