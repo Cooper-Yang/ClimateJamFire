@@ -64,6 +64,7 @@ public class FireManager : MonoBehaviour
         fireTiles.Add(smokeTiles[0]);
         smokeTiles[1].OnFire(firePrefab);
         fireTiles.Add(smokeTiles[1]);
+        gridManager.ReplaceTileWithTree(smokeTiles[2]);
     }
 
     public void NotifyTileBurnedDown(Tile tile)

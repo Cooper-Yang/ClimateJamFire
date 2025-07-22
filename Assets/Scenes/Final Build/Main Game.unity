@@ -44255,9 +44255,11 @@ MonoBehaviour:
   numberOfHouses: 5
   currentLevel: {fileID: 11400000, guid: d4d47bcaaa826444fa677bfc36c715cf, type: 2}
   plainTilePrefab: {fileID: 8343126782851180408, guid: 7639952889f582c4cb77865dad8854f0, type: 3}
-  smokeTilePrefab: {fileID: 5069355273941743042, guid: c598d08fd3e614541abd3bab25246242, type: 3}
+  smokeTreeTilePrefab: {fileID: 5069355273941743042, guid: c598d08fd3e614541abd3bab25246242, type: 3}
+  smokeHouseTilePrefab: {fileID: 5069355273941743042, guid: b8bae8e23183cf44fa4dc37bbf761c4e, type: 3}
   treeTilePrefab: {fileID: 5069355273941743042, guid: 3f19a151b04b6c24da64fd73b6f413b3, type: 3}
-  burnedTilePrefab: {fileID: 8343126782851180408, guid: 7639952889f582c4cb77865dad8854f0, type: 3}
+  burnedTreeTilePrefab: {fileID: 8343126782851180408, guid: 7639952889f582c4cb77865dad8854f0, type: 3}
+  burnedHouseTilePrefab: {fileID: 8343126782851180408, guid: 461d566da3c73a64281344be8a09803d, type: 3}
   choppedTilePrefab: {fileID: 5069355273941743042, guid: db860a56013e0e34fbdbc2c8be07717d, type: 3}
   grassTilePrefab: {fileID: 6905445088601705378, guid: da02dc8988a5d1e4e816cb0ef72c39a9, type: 3}
   gameplayDatabase: {fileID: 11400000, guid: b771dfedb6567cb4b9c6901b69f3f2ed, type: 2}

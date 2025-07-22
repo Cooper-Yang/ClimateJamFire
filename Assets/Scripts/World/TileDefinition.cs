@@ -22,7 +22,7 @@ public class TileDefinition : ScriptableObject
             case TileType.Tree:
                 return "Tree";
             case TileType.Smoke:
-                return "Smoke";
+                return "SmokeTree";
             case TileType.Plain:
                 return "Plains";
             case TileType.House:

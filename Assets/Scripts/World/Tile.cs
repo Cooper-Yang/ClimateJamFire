@@ -16,6 +16,7 @@ public class Tile : MonoBehaviour
     public bool isBurning = false;
     private GameObject fireObject;
     internal GridManager gridManager;
+    internal bool isHouse = false;
 
     private void Start()
     {
@@ -109,7 +110,7 @@ public class Tile : MonoBehaviour
             AudioManager.Instance.PlayFireBurstSound();
         }
         
-        if (definition.tileType == TileType.Tree)
+        if (definition.tileType == TileType.Tree || definition.tileType == TileType.House)
         {
             gridManager.ReplaceTileWithSmoke(this);
             return;
@@ -132,11 +133,11 @@ public class Tile : MonoBehaviour
             }
             if (definition.tileType == TileType.Tree)
             {
-                gridManager.ReplaceTileWithPlain(this, gridManager.burnedTilePrefab);
+                gridManager.ReplaceTileWithPlain(this, gridManager.burnedTreeTilePrefab);
             }
-            else if (definition.tileType == TileType.House)
+            else if (isHouse)
             {
-                gridManager.ReplaceTileWithPlain(this, gridManager.grassTilePrefab);
+                gridManager.ReplaceTileWithPlain(this, gridManager.burnedHouseTilePrefab);
             }
             else
             {

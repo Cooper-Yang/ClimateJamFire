@@ -24,9 +24,11 @@ public class GridManager : MonoBehaviour
     public LevelData currentLevel;
     [Header("Tile Replacement Prefabs")]
     public GameObject plainTilePrefab;
-    public GameObject smokeTilePrefab;
+    public GameObject smokeTreeTilePrefab;
+    public GameObject smokeHouseTilePrefab;
     public GameObject treeTilePrefab;
-    public GameObject burnedTilePrefab;
+    public GameObject burnedTreeTilePrefab;
+    public GameObject burnedHouseTilePrefab;
     public GameObject choppedTilePrefab;
     public GameObject grassTilePrefab;
 
@@ -316,10 +318,10 @@ public class GridManager : MonoBehaviour
         int x = tile.gridX;
         int z = tile.gridZ;
         Vector3 pos = tile.transform.position;
-
+        Quaternion rotation = tile.transform.localRotation;
         Destroy(tile.gameObject);
 
-        GameObject newTileGO = Instantiate(tilePrefab, pos, Quaternion.identity, transform);
+        GameObject newTileGO = Instantiate(tilePrefab, pos, rotation, transform);
         newTileGO.transform.localScale = new Vector3(GridManager.cellSize, 1f, GridManager.cellSize);
 
         Tile newTile = newTileGO.GetComponent<Tile>();
@@ -349,10 +351,11 @@ public class GridManager : MonoBehaviour
         int x = tile.gridX;
         int z = tile.gridZ;
         Vector3 pos = tile.transform.position;
-
+        Quaternion rotation = tile.transform.localRotation;
+        bool isTileHouse = tile.IsTileType(TileType.House);
         Destroy(tile.gameObject);
 
-        GameObject newTileGO = Instantiate(smokeTilePrefab, pos, Quaternion.identity, transform);
+        GameObject newTileGO = Instantiate( isTileHouse? smokeHouseTilePrefab:smokeTreeTilePrefab, pos, rotation, transform);
         newTileGO.transform.localScale = new Vector3(cellSize, 1f, cellSize);
 
         Tile newTile = newTileGO.GetComponent<Tile>();
@@ -363,16 +366,16 @@ public class GridManager : MonoBehaviour
             newTile.definition = gameplayDatabase.GetGameplayDefinition(TileType.Smoke);
             newTile.cellSize = cellSize;
             newTile.gridManager = this;
+            newTile.isHouse = isTileHouse;
             tiles[x, z] = newTile;
 
             newTile.OnFire(firePrefab: FindFirstObjectByType<FireManager>().firePrefab);
         }
         else
         {
-            Debug.LogError("New Smoke tile prefab missing Tile component.");
+            Debug.LogError("New SmokeTree tile prefab missing Tile component.");
         }
     }
-
     public void ReplaceTileWithTree(Tile tile)
     {
         if (tile == null)
@@ -384,10 +387,10 @@ public class GridManager : MonoBehaviour
         int x = tile.gridX;
         int z = tile.gridZ;
         Vector3 pos = tile.transform.position;
-
+        Quaternion rotation = tile.transform.localRotation;
         Destroy(tile.gameObject);
 
-        GameObject newTileGO = Instantiate(treeTilePrefab, pos, Quaternion.identity, transform);
+        GameObject newTileGO = Instantiate(treeTilePrefab, pos, rotation, transform);
         newTileGO.transform.localScale = new Vector3(cellSize, 1f, cellSize);
 
         Tile newTile = newTileGO.GetComponent<Tile>();
