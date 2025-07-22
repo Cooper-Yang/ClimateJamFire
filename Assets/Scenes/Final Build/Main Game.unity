@@ -44262,6 +44262,7 @@ MonoBehaviour:
   burnedHouseTilePrefab: {fileID: 8343126782851180408, guid: 461d566da3c73a64281344be8a09803d, type: 3}
   choppedTilePrefab: {fileID: 5069355273941743042, guid: db860a56013e0e34fbdbc2c8be07717d, type: 3}
   grassTilePrefab: {fileID: 6905445088601705378, guid: da02dc8988a5d1e4e816cb0ef72c39a9, type: 3}
+  houseTilePrefab: {fileID: 2574311490892049469, guid: 61bea7971b7b87a49ac68b7bde3cb9cd, type: 3}
   gameplayDatabase: {fileID: 11400000, guid: b771dfedb6567cb4b9c6901b69f3f2ed, type: 2}
 --- !u!4 &1405747466
 Transform:

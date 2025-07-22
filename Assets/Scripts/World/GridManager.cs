@@ -31,6 +31,7 @@ public class GridManager : MonoBehaviour
     public GameObject burnedHouseTilePrefab;
     public GameObject choppedTilePrefab;
     public GameObject grassTilePrefab;
+    public GameObject houseTilePrefab;
 
     [Header("Gameplay Data System")]
     public GameplayTileDatabase gameplayDatabase;
@@ -403,6 +404,41 @@ public class GridManager : MonoBehaviour
             newTile.gridManager = this;
             tiles[x, z] = newTile;
             numberOfRemainingTree++;
+            
+        }
+        else
+        {
+            Debug.LogError("New Tree tile prefab missing Tile component.");
+        }
+    }
+
+    public void ReplaceTileWithHouse(Tile tile)
+    {
+        if (tile == null)
+        {
+            Debug.LogWarning("ReplaceTileWithTree called on invalid tile.");
+            return;
+        }
+
+        int x = tile.gridX;
+        int z = tile.gridZ;
+        Vector3 pos = tile.transform.position;
+        Quaternion rotation = tile.transform.localRotation;
+        Destroy(tile.gameObject);
+
+        GameObject newTileGO = Instantiate(houseTilePrefab, pos, rotation, transform);
+        newTileGO.transform.localScale = new Vector3(cellSize, 1f, cellSize);
+
+        Tile newTile = newTileGO.GetComponent<Tile>();
+        if (newTile != null)
+        {
+            newTile.gridX = x;
+            newTile.gridZ = z;
+            newTile.definition = gameplayDatabase.GetGameplayDefinition(TileType.House);
+            newTile.cellSize = cellSize;
+            newTile.gridManager = this;
+            tiles[x, z] = newTile;
+            //numberOfHouses++;
         }
         else
         {
