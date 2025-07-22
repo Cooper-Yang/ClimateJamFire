@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Team 1-J
-  productName: 'Purr Force: Scratch and Rescue'
+  productName: 'Purr Force: Scratch & Rescue'
   defaultCursor: {fileID: 2800000, guid: 15f110cd6b8d3aa4c9785f439adeea4a, type: 3}
   cursorHotspot: {x: 37, y: 37}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
