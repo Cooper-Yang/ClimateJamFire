@@ -17303,8 +17303,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1597383902}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 1556759471}
+        m_TargetAssemblyTypeName: TempAudioForUI, Assembly-CSharp
         m_MethodName: PlayUIStartSound
         m_Mode: 1
         m_Arguments:
@@ -17315,8 +17315,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1597383902}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 1556759471}
+        m_TargetAssemblyTypeName: TempAudioForUI, Assembly-CSharp
         m_MethodName: CrossfadeToGameMusic
         m_Mode: 1
         m_Arguments:
@@ -23706,8 +23706,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1597383902}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+      - m_Target: {fileID: 1556759471}
+        m_TargetAssemblyTypeName: TempAudioForUI, Assembly-CSharp
         m_MethodName: CrossfadeToStartMusic
         m_Mode: 1
         m_Arguments:
@@ -48300,6 +48300,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556190524}
   m_Mesh: {fileID: -2232952877369940510, guid: 5c2dc0329fc2b084b9250458358f94b2, type: 3}
+--- !u!1 &1556759470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1556759472}
+  - component: {fileID: 1556759471}
+  m_Layer: 0
+  m_Name: TempAudioforUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1556759471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556759470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9cc6fbe073a05e4ab3d5bd4a42f6255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1556759472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556759470}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1557322580
 GameObject:
   m_ObjectHideFlags: 0
@@ -49344,14 +49388,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9142434389188859039, guid: d36a8a533588dfe43af93b39ad7f339b, type: 3}
-      propertyPath: UI_PauseSound
-      value: 
-      objectReference: {fileID: 8300000, guid: b3e07471283af6e40874544be6fa8eef, type: 3}
-    - target: {fileID: 9142434389188859039, guid: d36a8a533588dfe43af93b39ad7f339b, type: 3}
-      propertyPath: UI_WarningFiveSecsSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 38718e5f4d578df45869add0ada90b56, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -66967,3 +67003,4 @@ SceneRoots:
   - {fileID: 47138773}
   - {fileID: 1199763620}
   - {fileID: 1597383901}
+  - {fileID: 1556759472}
