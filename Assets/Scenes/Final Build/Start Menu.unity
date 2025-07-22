@@ -1524,7 +1524,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Sound Effects
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8cbf90e59f54f7a4294b3bf88a4ef84f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ee9293c9c31660f4d8bc816d7e2067f9, type: 2}
   m_sharedMaterial: {fileID: -2717692667950529073, guid: 8cbf90e59f54f7a4294b3bf88a4ef84f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1590,7 +1590,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &834064831
@@ -1660,7 +1660,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Background Music
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8cbf90e59f54f7a4294b3bf88a4ef84f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ee9293c9c31660f4d8bc816d7e2067f9, type: 2}
   m_sharedMaterial: {fileID: -2717692667950529073, guid: 8cbf90e59f54f7a4294b3bf88a4ef84f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1726,7 +1726,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &914368156
@@ -3110,7 +3110,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Toggle MOU$ETRAPP
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8cbf90e59f54f7a4294b3bf88a4ef84f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ee9293c9c31660f4d8bc816d7e2067f9, type: 2}
   m_sharedMaterial: {fileID: -2717692667950529073, guid: 8cbf90e59f54f7a4294b3bf88a4ef84f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3176,7 +3176,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -280.86954, w: -33.93053}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1788428901
@@ -3250,7 +3250,7 @@ MonoBehaviour:
     Designer\r\n\r\nAriel Sol: Composer/Sound Designer\r\n\r\nOlivia Sooha Han: 3D
     Artist\r\n\r\nXinyu (April) Chen: 3D/UI Artist"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8cbf90e59f54f7a4294b3bf88a4ef84f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ee9293c9c31660f4d8bc816d7e2067f9, type: 2}
   m_sharedMaterial: {fileID: -2717692667950529073, guid: 8cbf90e59f54f7a4294b3bf88a4ef84f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3275,8 +3275,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 33.45
+  m_fontSizeBase: 33.45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3316,7 +3316,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 125.45563}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1894416204
