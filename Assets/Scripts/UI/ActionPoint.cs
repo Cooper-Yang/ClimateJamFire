@@ -472,7 +472,14 @@ public class ActionPoint : MonoBehaviour
         {
             if (t != null && t.IsBurning())
             {
-                gridManager.ReplaceTileWithTree(t);
+                if (t.isHouse)
+                {
+                    gridManager.ReplaceTileWithHouse(t);
+                }
+                else
+                {
+                    gridManager.ReplaceTileWithTree(t);
+                }
             }
         }
         if (AudioManager.Instance != null)

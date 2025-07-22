@@ -66,6 +66,8 @@ public class Firefighter : MonoBehaviour
         {
             HighlightBurningSmokeTiles();
         }
+
+        StartCoroutine(SelfDestructAfterDelay(50f));
     }
 
     private void HighlightCuttableTrees()
@@ -370,5 +372,22 @@ public class Firefighter : MonoBehaviour
 
         progressSlider.value = 1f;
         progressBarCanvas.SetActive(false);
+    }
+
+    private IEnumerator SelfDestructAfterDelay(float delaySeconds)
+    {
+        yield return new WaitForSeconds(delaySeconds);
+
+        if (this != null)
+        {
+            Debug.LogWarning($"[Firefighter] Auto-destroyed after {delaySeconds} seconds. Likely stuck.");
+
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayDespawnSound();
+            }
+
+            Destroy(gameObject);
+        }
     }
 }
