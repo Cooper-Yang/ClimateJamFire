@@ -1136,6 +1136,10 @@ PrefabInstance:
       value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 1391573318701401605, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: ee9293c9c31660f4d8bc816d7e2067f9, type: 2}
+    - target: {fileID: 1391573318701401605, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
       propertyPath: m_fontColor.b
       value: 1
       objectReference: {fileID: 0}
@@ -1154,6 +1158,10 @@ PrefabInstance:
     - target: {fileID: 1391573318701401605, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391573318701401605, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1419105534542313700, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1572,6 +1580,10 @@ PrefabInstance:
       value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4802941648375398439, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: ee9293c9c31660f4d8bc816d7e2067f9, type: 2}
+    - target: {fileID: 4802941648375398439, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
       propertyPath: m_fontColor.b
       value: 1
       objectReference: {fileID: 0}
@@ -1586,6 +1598,10 @@ PrefabInstance:
     - target: {fileID: 4802941648375398439, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802941648375398439, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4819966576125418249, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1740,6 +1756,10 @@ PrefabInstance:
       value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6053073634895718786, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: ee9293c9c31660f4d8bc816d7e2067f9, type: 2}
+    - target: {fileID: 6053073634895718786, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
       propertyPath: m_fontColor.b
       value: 1
       objectReference: {fileID: 0}
@@ -1754,6 +1774,10 @@ PrefabInstance:
     - target: {fileID: 6053073634895718786, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053073634895718786, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6112351959395261515, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
       propertyPath: m_Sprite
@@ -1888,6 +1912,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1405747465}
     - target: {fileID: 6718658369480772120, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: ee9293c9c31660f4d8bc816d7e2067f9, type: 2}
+    - target: {fileID: 6718658369480772120, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
       propertyPath: m_fontColor.b
       value: 0.8962264
       objectReference: {fileID: 0}
@@ -1902,6 +1930,10 @@ PrefabInstance:
     - target: {fileID: 6718658369480772120, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4293256677
+      objectReference: {fileID: 0}
+    - target: {fileID: 6718658369480772120, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7213632672409159370, guid: 3413ebf80786ae74fabbc09d7c616dd0, type: 3}
       propertyPath: m_Sprite
@@ -41679,7 +41711,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Spend Action Points to activate abilities to contain the fire! '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f1af45b4c4b77174c81982ea90fd6ec6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ee9293c9c31660f4d8bc816d7e2067f9, type: 2}
   m_sharedMaterial: {fileID: 1968527973759544610, guid: f1af45b4c4b77174c81982ea90fd6ec6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -41745,7 +41777,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1337086158
@@ -46757,7 +46789,7 @@ MonoBehaviour:
   m_text: You have 30 seconds to prep for the incoming fire! Only 2 out of 3 smoke
     tiles will start a fire.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f1af45b4c4b77174c81982ea90fd6ec6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ee9293c9c31660f4d8bc816d7e2067f9, type: 2}
   m_sharedMaterial: {fileID: 1968527973759544610, guid: f1af45b4c4b77174c81982ea90fd6ec6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -46823,7 +46855,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1494450599
